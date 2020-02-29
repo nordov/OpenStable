@@ -60,6 +60,13 @@ class Splash extends Component {
             <a href="#">Sign in</a>
           </div>
         </div>
+
+        <div className="splash-image-animation-container">
+          <img className="splash-img-anim1" src="/static/images/horses1.jpg"></img>
+          <img className="splash-img-anim2" src="/static/images/horses2.jpg"></img>
+          <img className="splash-img-anim3" src="/static/images/horses3.jpg"></img>
+        </div>
+
       </div>
     );
   }

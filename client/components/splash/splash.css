@@ -48,7 +48,6 @@
   font-family: Spartan;
   font-size: 12px;
   font-weight: 500;
-  margin-right: 15px;
   cursor: pointer;
 }
 
@@ -75,4 +74,126 @@
   .splash-top-bar {
     padding-left: 1.25rem;
   }
+}
+
+
+.splash-image-animation-container {
+  height: 416px;
+  overflow: hidden;
+  position: relative;
+}
+
+.splash-img-anim1 {
+  max-width: 100%;
+  margin-top: -15%;
+  position: absolute;
+  left: 0;
+}
+
+.splash-img-anim2 {
+  max-width: 100%;
+  margin-top: -15%;
+  position: absolute;
+  left: 0;
+}
+
+.splash-img-anim3 {
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  margin-top: -102%;
+}
+
+@media only screen and (max-width: 942px) {
+  .splash-img-anim1 {
+    margin-top: -12%;
+  }
+
+  .splash-img-anim2 {
+    margin-top: -12%;
+  }
+
+  .splash-img-anim3 {
+    margin-top: -90%;
+  }
+} 
+
+@media only screen and (max-width: 724px) {  
+  .splash-img-anim1 {
+    margin-top: 0%;
+  }
+
+  .splash-img-anim2 {
+    margin-top: 0%;
+  }
+
+  .splash-img-anim3 {
+    margin-top: -75%;
+  }
+}
+
+@media only screen and (max-width: 625px) {  
+  .splash-img-anim1 {
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 1500px;
+  }
+
+  .splash-img-anim2 {
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 1500px;
+  }
+
+  .splash-img-anim3 {
+    min-width: 100%;
+    max-width: 500px;
+    margin-top: -65%;
+  }
+}
+
+@keyframes example {
+  0% {
+    opacity:1;
+  }
+  20.5% {
+    opacity:0;
+  }
+  50% {
+    opacity:0;
+  }
+  87.5% {
+    opacity:1;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.splash-image-animation-container > img {
+  animation-name: example;
+  animation-duration: 18s;
+}
+
+.splash-img-anim1:nth-of-type(1) {
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 18s;
+}
+
+.splash-img-anim2:nth-of-type(2) {
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 12s;
+}
+.splash-img-anim3:nth-of-type(3) {
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 6s;
 }
