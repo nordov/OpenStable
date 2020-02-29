@@ -1,0 +1,101 @@
+## `users`
+| column name       | data type | details                   |
+|:------------------|:---------:|:--------------------------|
+| `id`              | integer   | not null, primary key     |
+| `fname`           | string    | not null,                 | 
+| `lname`           | string    | not null,                 |  
+| `email`           | string    | not null, require, unique          |  
+| `city `           | string    | not null, require                |         
+| `password_digest` | string    | not null                  |
+| `session_token`   | string    | not null, unique          |
+| `created_at`      | datetime  | not null                  |
+| `updated_at`      | datetime  | not null                  |
+| `recently_viewed` | array     | ObjectIDs                 |
+| `saved_stables`   | array     | ObjectIDs                 |
+| `saved_tours`     | array     | ObjectIDs                 |
+| `reserved_tours   | array     | ObjectIDs                 |
+
+
+## `stables`
+| column name       | data type | details                   |
+|:------------------|:---------:|:--------------------------|
+| `id`              | integer   | not null, primary key     |
+| `name`            | string    | not null, unique          | 
+| `images`          | array     | ObjectID                  |
+| `description`     | string    |                           | 
+| `address`         | string    | ObjectID                  |
+| `city`            | string    | ObjectID                  |
+| `state`           | string    | ObjectID                  |
+| `longitud`        | float     |                           |
+| `latitud`         | float     |                           |
+| `tours`           | array     | ObjectID                  |
+| `created_at`      | datetime  | not null                  |
+| `updated_at`      | datetime  | not null                  |
+
+
+## `tours`
+| column name       | data type | details                   |
+|:------------------|:---------:|:--------------------------|
+| `id`              | integer   | not null, primary key     |
+| `tour_name`       | string    | not null,                 |
+| `images`          | array     | ObjectID                  |
+| `duration`        | int       | minutes                 |
+| `difficulty`      | string    | beginner, medium, hard, xtreme  |  
+| `terrain`         | string    | beach, mountain, dessert, urban | 
+| `capacity`        | int       | How many available resrvations  | 
+| `description`     | string    |                           |
+| `route`           | array     | [[long,lat]]              |
+| `horses`          | array     | ObjectID                  |
+| `reserved_horses` | array     | ObjectID                  |
+| `stable`          | ObjectID  | ObjectID                  |
+| `start_time`      | datetime  | not null                  |
+| `created_at`      | datetime  | not null                  |
+| `updated_at`      | datetime  | not null                  |
+
+## `av_times`
+To be discussed
+
+## `horses`
+| column name       | data type | details                   |
+|:------------------|:---------:|:--------------------------|
+| `id`              | integer   | not null, primary key     |
+| `name`            | string    |                           | 
+| `image`           | array     | ObjectID                  |
+| `breed`           | string    |                           | 
+| `color`           | string    |                           |  
+| `age`             | int       |                           |
+| `tours`           | array     | ObjectID                  |
+| `stable`          | ObjectID  | ObjectID                  | 
+| `description`     | string    |                           | 
+| `created_at`      | datetime  | not null                  |
+| `updated_at`      | datetime  | not null                  |
+
+## `reservation`
+| column name       | data type | details                   |
+|:------------------|:---------:|:--------------------------|
+| `id`              | integer   | not null, primary key     |
+| `user`            | string    | ObjectID                  | 
+| `tour`            | string    | ObjectID                  |
+| `prefered_horse`  | string    | ObjectID                  |
+| `reservation_date`| datetime  | not null                  |
+| `reservation__start_time`| datetime  | not null           |
+| `reservation__end_time`| datetime  | not null             |
+| `created_at`      | datetime  | not null                  |
+| `updated_at`      | datetime  | not null                  |
+
+## `images`
+| column name       | data type | details                   |
+|:------------------|:---------:|:--------------------------|
+| `id`              | integer   | not null, primary key     |
+| `url`             | string    | ObjectID                  | 
+| `image_text`      | string    | ObjectID                  |
+
+## `reviews`
+| column name       | data type | details                   |
+|:------------------|:---------:|:--------------------------|
+| `id`              | integer   | not null, primary key     |
+| `type`            | string    | stable, tour, horse       | 
+| `item_reviewed`   | string    | ObjectID                  |
+| `description`     | string    | ObjectID                  |
+| `reviewer`        | string    | ObjectID                  |
+| `score`           | int       | Star count                |
