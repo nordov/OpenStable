@@ -1,24 +1,35 @@
 import React, { Component } from "react";
 import resetCSS from '../reset.css';
 import splashCSS from './splash.css';
-import Modal from './modal';
+import SignUpModal from './signup_modal';
+import SignInModal from './signin_modal';
 
 class Splash extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showModal: false
+      showSignUpModal: false,
+      showSignInModal: false
     }
 
-    this.showModal = this.showModal.bind(this);
+    this.showSignUpModal = this.showSignUpModal.bind(this);
+    this.showSignInModal = this.showSignInModal.bind(this);
   }
 
-  showModal() {
-    this.setState({ showModal: true });
+  showSignUpModal() {
+    this.setState({ showSignUpModal: true });
+  }
+
+  showSignInModal() {
+    this.setState({ showSignInModal: true });
   }
 
   render() {
-    const modal = <Modal closeModal={() => this.setState({ showModal: false })}/>
+    const signUpModal = <SignUpModal closeModal={() => this.setState({ showSignUpModal: false })} />
+    const signInModal = <SignInModal 
+                          closeModal={() => this.setState({ showSignInModal: false })} 
+                          changeModal={() => this.setState({ showSignInModal: false, showSignUpModal: true })}
+                        />
 
     return (
       <div className="splash">
@@ -43,8 +54,8 @@ class Splash extends Component {
             </div>
           </div>
           <div className="splash-auth-container">
-            <button onClick={this.showModal}>Sign up</button>
-            <a href="#">Sign in</a>
+            <button onClick={this.showSignUpModal}>Sign up</button>
+            <a href="#" onClick={this.showSignInModal}>Sign in</a>
           </div>
         </div>
 
@@ -169,7 +180,8 @@ class Splash extends Component {
             </form>
           </div>
         </div>
-        { this.state.showModal ? modal : null }
+        { this.state.showSignUpModal ? signUpModal : null }
+        { this.state.showSignInModal ? signInModal : null }
       </div>
     );
   }

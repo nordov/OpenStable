@@ -13,7 +13,7 @@ const register = async data => {
       throw new Error(message);
     }
 
-    const { fname, email, password, city } = data;
+    const { fname, lname, email, password, city } = data;
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const existingUser = await User.findOne({ email });
@@ -24,6 +24,7 @@ const register = async data => {
     const user = new User(
       {
         fname,
+        lname,
         email,
         password: hashedPassword,
         city
