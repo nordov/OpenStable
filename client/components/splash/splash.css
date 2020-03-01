@@ -402,7 +402,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  overflow-y: hidden;
+  overflow-y: auto;
   background: rgba(0, 0, 0, 0.413);
   z-index: 1;
   display: flex;
@@ -594,7 +594,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  overflow-y: hidden;
+  overflow-y: auto;
   background: rgba(0, 0, 0, 0.413);
   z-index: 1;
   display: flex;
