@@ -1,45 +1,26 @@
 import React, { Component } from "react";
 import resetCSS from '../reset.css';
 import splashCSS from './splash.css';
-import { Query } from "react-apollo";
-
-// import gql from "graphql-tag";
-
-// export const FETCH_POSTS = gql`
-//   query fetchPosts {
-//     posts {
-//       id
-//       title
-//       body
-//     }
-//   }
-// `;
+import Modal from './modal';
 
 class Splash extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      showModal: false
+    }
 
+    this.showModal = this.showModal.bind(this);
+  }
+
+  showModal() {
+    this.setState({ showModal: true });
   }
 
   render() {
-    return (
-      // <Query query={FETCH_POSTS}>
-      //   {({ loading, error, data }) => {
-      //     if (loading) return "Loading...";
-      //     if (error) return `Error! ${error.message}`;
+    const modal = <Modal closeModal={() => this.setState({ showModal: false })}/>
 
-      //     return (
-      //       <ul>
-      //         {data.posts.map(post => (
-      //           <li key={post.id}>
-      //             <h2>{post.title}</h2>
-      //             <p>{post.body}</p>
-      //           </li>
-      //         ))}
-      //       </ul>
-      //     );
-      //   }}
-      // </Query>
+    return (
       <div className="splash">
         <div className="splash-top-bar">
           <div className="splash-left-side">
@@ -62,7 +43,7 @@ class Splash extends Component {
             </div>
           </div>
           <div className="splash-auth-container">
-            <button>Sign up</button>
+            <button onClick={this.showModal}>Sign up</button>
             <a href="#">Sign in</a>
           </div>
         </div>
@@ -96,7 +77,7 @@ class Splash extends Component {
                 </div>
                 <div className="splash-anim-select con2">
                   <img src="/static/images/splash-clock.png"></img>
-                  <select>
+                  <select defaultValue={"19:00"}>
                     <option value="00:00">12:00AM</option>
                     <option value="00:30">12:30AM</option>
                     <option value="01:00">1:00AM</option>
@@ -135,7 +116,7 @@ class Splash extends Component {
                     <option value="17:30">5:30PM</option>
                     <option value="18:00">6:00PM</option>
                     <option value="18:30">6:30PM</option>
-                    <option selected="selected" value="19:00">
+                    <option value="19:00">
                       7:00PM
                     </option>
                     <option value="19:30">7:30PM</option>
@@ -158,9 +139,9 @@ class Splash extends Component {
                 </div>
                 <div className="splash-anim-select con3">
                   <img src="/static/images/splash-person.png"></img>
-                  <select>
+                  <select defaultValue={"selectedGroup"}>
                     <option>1 person</option>
-                    <option selected="selected">2 people</option>
+                    <option value="selectedGroup">2 people</option>
                     <option>3 people</option>
                     <option>4 people</option>
                     <option>5 people</option>
@@ -188,6 +169,7 @@ class Splash extends Component {
             </form>
           </div>
         </div>
+        { this.state.showModal ? modal : null }
       </div>
     );
   }
