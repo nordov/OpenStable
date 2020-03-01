@@ -49,17 +49,30 @@
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+  margin-right: 10px;
+}
+
+.splash-auth-container > button:hover {
+  background-color: #1C627A;
 }
 
 .splash-auth-container > a {
   align-self: center;
   font-family: Spartan;
   text-decoration: none;
-  color: black;
+  color: rgb(36, 36, 36);
   font-size: 13px;
   font-weight: 500;
   padding: 0 0 0 0.50rem;
   margin-right: 25px;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.splash-auth-container > a:hover {
+  color: black;
 }
 
 @media only screen and (max-width: 1030px) {
@@ -76,11 +89,12 @@
   }
 }
 
-
 .splash-image-animation-container {
   height: 416px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .splash-img-anim1 {
@@ -172,7 +186,7 @@
 
 .splash-image-animation-container > img {
   animation-name: example;
-  animation-duration: 18s;
+  animation-duration: 24s;
 }
 
 .splash-img-anim1:nth-of-type(1) {
@@ -180,7 +194,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 18s;
+  animation-delay: 24s;
 }
 
 .splash-img-anim2:nth-of-type(2) {
@@ -188,12 +202,192 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 12s;
+  animation-delay: 16s;
 }
 .splash-img-anim3:nth-of-type(3) {
   animation-name: example;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  animation-delay: 8s;
+}
+
+.splash-image-animation-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(68, 68, 70, 0.118);
+}
+
+.splash-animation-text-container {
+  position: relative;
+  align-self: center;
+  z-index: 1;
+}
+
+.splash-animation-text-container > h1 {
+  color: white;
+  font-family: Spartan;
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 2.5;
+  text-align: center;
+}
+
+.splash-anim-selects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.splash-anim-select-container {
+  width: 480px;
+  height: 48px;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.splash-anim-select {
+  display: flex;
+  height: 90%;
+  align-items: center;
+  position: relative;
+  font-family: Spartan;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.splash-anim-select > img {
+  height: 18px;
+}
+
+.con1 {
+  width: 157px;
+  border-right: 1px solid #EBEBEB;
+  padding-left: 8px;
+}
+
+.con2 {
+  width: 150px;
+  border-right: 1px solid #EBEBEB;
+  padding-left: 8px;
+}
+
+.con3 {
+  width: 150px;
+  padding-left: 8px;
+}
+
+.con3 > img {
+  height: 15px;
+}
+
+.splash-anim-select > select {
+  opacity: 0;
+  height: 110%;
+  width: 102%;
+  position: absolute;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+.splash-anim-text-p {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0px 0px 10px;
+  width: 75%;
+}
+
+.splash-anim-input-container {
+  background: white;
+  border-radius: 5px;
+  margin-left: 25px;
+  width: 288px;
+  display: flex;
+  height: 48px;
+}
+
+.splash-anim-input-container > img {
+  align-self: center;
+  padding-left: 7px;
+}
+
+.splash-anim-input-container input {
+  border: none;
+  height: 40px;
+  width: 288px;
+  align-self: center;
+  border-radius: 5px;
+  position: absolute;
+  padding: 5px 0px 0px 40px;
+  background-color: rgba(238, 238, 238, 0);
+  font-family: Spartan;
+  font-size: 14px;
+  outline: 0;
+}
+
+.splash-anim-form-submit {
+  background-color: #DA3643;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  height: 48px;
+  width: 144px;
+  margin-left: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;  
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.splash-anim-form-submit:hover {
+  background-color: #B8222C;
+}
+
+@media only screen and (max-width: 999px) {
+  .splash-anim-selects {
+    flex-direction: column;
+    height: 175px;
+    justify-content: space-between;
+  }
+
+  .splash-anim-select-container {
+    width: 100%;
+  }
+
+  .splash-anim-select {
+    width: 33%
+  }
+
+  .splash-anim-text-p {
+    width: 80%;
+  }
+
+  .splash-anim-input-container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .splash-anim-input-container > input {
+    width: 100%;
+  }
+
+  .splash-anim-form-submit {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 707px) {
+  .splash-animation-text-container > h1 {
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
 }
