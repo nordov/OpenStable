@@ -35,6 +35,13 @@ class SignUpModal extends Component {
     });
   }
 
+  updateCache2(client, { data }) {
+    console.log(data);
+    client.writeData({
+      data: { isLoggedIn: data.login.loggedIn, userFirstName: data.login.fname }
+    });
+  }
+
   setLocation(event) {
     this.setState({ location: event.target.value, city: event.target.value });
   }
@@ -66,111 +73,144 @@ class SignUpModal extends Component {
       <Mutation
         mutation={REGISTER_USER}
         onCompleted={data => {
-          const { token } = data.register;
+          const { token, fname } = data.register;
           localStorage.setItem("auth-token", token);
           localStorage.setItem("fname", fname);
+          this.props.closeModal();
+          this.props.history.push("/");
         }}
         update={(client, data) => this.updateCache(client, data)}
       >
         {registerUser => (
-          <div
-            className="splash-modal-full-container-signup"
-            onClick={this.closeBorder}
+          <Mutation
+            mutation={LOGIN_USER}
+            onCompleted={data => {
+              console.log(data);
+              const { token, fname } = data.login;
+              localStorage.setItem("auth-token", token);
+              localStorage.setItem("fname", fname);
+              this.props.closeModal();
+              this.props.history.push("/");
+            }}
+            update={(client, data) => this.updateCache2(client, data)}
           >
-            <div className="splash-modal-inner-container-signup">
-              <form
-                className="splash-modal-form-signup"
-                onSubmit={e => {
-                  e.preventDefault();
-                  if (this.state.password !== this.state.retrypassword) {
-                    throw new Error("Passwords must match");
-                  } else if (this.state.city === "") {
-                    throw new Error("Must select a city")
-                  }
-                  registerUser({
-                    variables: {
-                      fname: this.state.fname,
-                      lname: this.state.lname,
-                      email: this.state.email,
-                      password: this.state.password,
-                      city: this.state.city
-                    }
-                  });
-                  this.props.closeModal();
-                  this.props.history.push("/");
-                }}
+            {loginUser => (
+              <div
+                className="splash-modal-full-container-signup"
+                onClick={this.closeBorder}
               >
-                <h1>Welcome to OpenStable!</h1>
-                <div className="splash-modal-divider-signup signup-divid1"></div>
-                <input
-                  type="text"
-                  className="splash-modal-inputs"
-                  placeholder="First Name *"
-                  onChange={this.update("fname")}
-                ></input>
-                <input
-                  type="text"
-                  className="splash-modal-inputs"
-                  placeholder="Last Name *"
-                  onChange={this.update("lname")}
-                ></input>
-                <input
-                  type="text"
-                  className="splash-modal-inputs"
-                  placeholder="Enter email *"
-                  onChange={this.update("email")}
-                ></input>
-                <input
-                  type="password"
-                  className="splash-modal-inputs"
-                  placeholder="Enter password *"
-                  onChange={this.update("password")}
-                ></input>
-                <input
-                  type="password"
-                  className="splash-modal-inputs"
-                  placeholder="Re-enter password *"
-                  onChange={this.update("retrypassword")}
-                ></input>
-                <select
-                  onChange={this.setLocation}
-                  defaultValue={"DEFAULT"}
-                  selected
-                  onClick={this.setBorder}
-                  name="modal-select"
-                >
-                  <option disabled value="DEFAULT">
-                    Cities..
-                  </option>
-                  <option>City 1</option>
-                  <option>City 2</option>
-                  <option>City 3</option>
-                </select>
-                <div className="splash-modal-signup-p1">
-                  <p>{this.state.location}</p>
-                  <img
-                    src="/static/images/upside-down-caret.png"
-                    width="12"
-                  ></img>
+                <div className="splash-modal-inner-container-signup">
+                  <form
+                    className="splash-modal-form-signup"
+                    onSubmit={e => {
+                      e.preventDefault();
+                      if (this.state.password !== this.state.retrypassword) {
+                        throw new Error("Passwords must match");
+                      } else if (this.state.city === "") {
+                        throw new Error("Must select a city");
+                      }
+                      registerUser({
+                        variables: {
+                          fname: this.state.fname,
+                          lname: this.state.lname,
+                          email: this.state.email,
+                          password: this.state.password,
+                          city: this.state.city
+                        }
+                      });
+                      this.props.closeModal();
+                      this.props.history.push("/");
+                    }}
+                  >
+                    <h1>Welcome to OpenStable!</h1>
+                    <div className="splash-modal-divider-signup signup-divid1"></div>
+                    <input
+                      type="text"
+                      className="splash-modal-inputs"
+                      placeholder="First Name *"
+                      onChange={this.update("fname")}
+                    ></input>
+                    <input
+                      type="text"
+                      className="splash-modal-inputs"
+                      placeholder="Last Name *"
+                      onChange={this.update("lname")}
+                    ></input>
+                    <input
+                      type="text"
+                      className="splash-modal-inputs"
+                      placeholder="Enter email *"
+                      onChange={this.update("email")}
+                    ></input>
+                    <input
+                      type="password"
+                      className="splash-modal-inputs"
+                      placeholder="Enter password *"
+                      onChange={this.update("password")}
+                    ></input>
+                    <input
+                      type="password"
+                      className="splash-modal-inputs"
+                      placeholder="Re-enter password *"
+                      onChange={this.update("retrypassword")}
+                    ></input>
+                    <select
+                      onChange={this.setLocation}
+                      defaultValue={"DEFAULT"}
+                      selected
+                      onClick={this.setBorder}
+                      name="modal-select"
+                    >
+                      <option disabled value="DEFAULT">
+                        Cities..
+                      </option>
+                      <option>City 1</option>
+                      <option>City 2</option>
+                      <option>City 3</option>
+                    </select>
+                    <div className="splash-modal-signup-p1">
+                      <p>{this.state.location}</p>
+                      <img
+                        src="/static/images/upside-down-caret.png"
+                        width="12"
+                      ></img>
+                    </div>
+                    <div className="splash-modal-bottom-container">
+                      <input type="checkbox" name="checkbox-signup"></input>
+                      <label htmlFor="checkbox-signup">Remember me</label>
+                      <br />
+                      <button
+                        type="submit"
+                        className="splash-modal-signup-account"
+                      >
+                        Create Account
+                      </button>
+                      <br />
+                      <button
+                        className="splash-modal-demo-account"
+                        onClick={e => {
+                          e.preventDefault();
+                          loginUser({
+                            variables: {
+                              email: "email@gmail.com",
+                              password: "hunter12"
+                            }
+                          });
+                        }}
+                      >
+                        Demo
+                      </button>
+                    </div>
+                    <div className="splash-modal-divider-signup second-modal-divider"></div>
+                    <p>
+                      By creating an account you agree to the OpenStable Terms
+                      of Use and Privacy Policy.
+                    </p>
+                  </form>
                 </div>
-                <div className="splash-modal-bottom-container">
-                  <input type="checkbox" name="checkbox-signup"></input>
-                  <label htmlFor="checkbox-signup">Remember me</label>
-                  <br />
-                  <button className="splash-modal-signup-account">
-                    Create Account
-                  </button>
-                  <br />
-                  <button className="splash-modal-demo-account">Demo</button>
-                </div>
-                <div className="splash-modal-divider-signup second-modal-divider"></div>
-                <p>
-                  By creating an account you agree to the OpenStable Terms of
-                  Use and Privacy Policy.
-                </p>
-              </form>
-            </div>
-          </div>
+              </div>
+            )}
+          </Mutation>
         )}
       </Mutation>
     );
