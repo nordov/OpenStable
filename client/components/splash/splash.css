@@ -1,9 +1,19 @@
+.app {
+  background-color: #F7F7F7;
+}
+
+.splash {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 .splash-top-bar {
   display: flex;
   padding-left: 2.25rem;
   padding-right: 1.25rem;
   justify-content: space-between;
   height: 54px;
+  background: white;
 }
 
 .splash-left-side {
@@ -692,4 +702,178 @@
 
 .signin-modal-create-account:hover {
   color: #B8222C;
+}
+
+/* Popular Stables Carousel CSS */
+
+.splash-popular-full-container {
+  display: flex;
+  justify-content: center;
+  background: white;
+
+  border: 1px solid red;
+}
+
+.splash-popular-inner-container {
+  width: 75%;
+
+  border: 1px solid orange;
+}
+
+.splash-popular-top-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.splash-popular-top-heading > h1 {
+  font-size: 20px;
+  font-family: Spartan;
+  font-weight: 600;
+}
+
+.splash-popular-top-heading > a {
+  font-family: Spartan;
+  text-decoration: none;
+  color: #DA3643;
+  font-size: 11px;
+  align-self: flex-end;
+  font-weight: 600;
+}
+
+.splash-popular-top-heading > a:hover {
+  text-decoration: underline;
+}
+
+.splash-popular-divider {
+  border-bottom: 1px solid #D8D9DB;
+  margin: 25px 0 18px 0;
+}
+
+/* test */
+
+.carousel-container > ul {
+  display: flex;
+}
+
+.carousel-container li {
+  width: 218px;
+  height: 236px;
+  margin: 0.5em;
+
+
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 965px) {
+  .splash-popular-inner-container {
+    position: absolute;
+    left: 0;
+  }
+}
+
+/* Featured Areas CSS */
+
+.splash-featured-full-container {
+  display: flex;
+  justify-content: center;
+  background: white;
+
+  border: 1px solid red;
+}
+
+.splash-featured-inner-container {
+  width: 75%;
+
+  border: 1px solid orange;
+}
+
+.splash-featured-top-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.splash-featured-top-heading > h1 {
+  font-size: 20px;
+  font-family: Spartan;
+  font-weight: 600;
+}
+
+.splash-featured-divider {
+  border-bottom: 1px solid #D8D9DB;
+  margin: 20px 0 10px 0;
+}
+
+.featured-cities-container {
+  display: flex;
+}
+
+/* TEST */
+
+.featured-cities-container > ul {
+  display: flex;
+  width: 100%;
+}
+
+.featured-cities-container li {
+  width: 385px;
+  height: 236px;
+  margin: 0.5em;
+
+
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 965px) {
+  .splash-popular-inner-container {
+    position: absolute;
+    left: 0;
+  }
+}
+
+/* Footer CSS */
+
+.footer-container {
+  background: #333333;
+  height: 200px;
+}
+
+.footer-inner-container {
+  display: flex;
+  color: white;
+  font-family: Spartan;
+  justify-content: space-between;
+  margin: 0 12.5%;
+}
+
+.footer-programmer-container {
+
+}
+
+.footer-programmer-container > h3 {
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.footer-github-img {
+  display: flex;
+  margin: 13px 0px;
+}
+
+.footer-github-img > a {
+  text-decoration: none;
+  color: #A5A5A5;
+  font-size: 13px;
+  align-self: center;
+}
+
+.footer-github-img > a:hover {
+  text-decoration: underline;
+}
+
+.footer-divider-line {
+  margin: 30px 12.5%;
+  border-bottom: 1px solid #626262;
 }

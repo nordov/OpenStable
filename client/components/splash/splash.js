@@ -3,6 +3,9 @@ import resetCSS from '../reset.css';
 import splashCSS from './splash.css';
 import SignUpModal from './signup_modal';
 import SignInModal from './signin_modal';
+import PopularCarousel from './popular_stables_carousel';
+import FeaturedAreas from './featured_areas';
+import Footer from './footer';
 
 class Splash extends Component {
   constructor(props) {
@@ -182,6 +185,9 @@ class Splash extends Component {
         </div>
         { this.state.showSignUpModal ? signUpModal : null }
         { this.state.showSignInModal ? signInModal : null }
+        <PopularCarousel />
+        <FeaturedAreas />
+        <Footer />
       </div>
     );
   }
