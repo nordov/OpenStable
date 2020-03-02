@@ -24,8 +24,9 @@ class SignInModal extends Component {
   }
 
   updateCache(client, { data }) {
+    console.log(data);
     client.writeData({
-      data: { isLoggedIn: data.login.loggedIn }
+      data: { isLoggedIn: data.login.loggedIn, userFirstName: data.login.fname }
     });
   }
 
@@ -39,8 +40,10 @@ class SignInModal extends Component {
       <Mutation
         mutation={LOGIN_USER}
         onCompleted={data => {
-          const { token } = data.login;
+          console.log(data);
+          const { token, fname } = data.login;
           localStorage.setItem("auth-token", token);
+          localStorage.setItem("fname", fname)
           this.props.closeModal();
           this.props.history.push("/")
         }}

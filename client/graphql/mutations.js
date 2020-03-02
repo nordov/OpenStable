@@ -5,6 +5,8 @@ export default {
       login(email: $email, password: $password) {
         token
         loggedIn
+        fname
+        lname
       }
     }
   `,
@@ -21,6 +23,8 @@ export default {
         email
         token
         loggedIn
+        fname
+        lname
       }
     }
   `

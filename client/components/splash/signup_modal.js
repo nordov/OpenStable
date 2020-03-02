@@ -5,7 +5,7 @@ import { Mutation } from "react-apollo";
 import Mutations from "../../graphql/mutations";
 import { withRouter } from "react-router";
 
-const { REGISTER_USER } = Mutations;
+const { REGISTER_USER, LOGIN_USER } = Mutations;
 
 class SignUpModal extends Component {
   constructor(props) {
@@ -68,6 +68,7 @@ class SignUpModal extends Component {
         onCompleted={data => {
           const { token } = data.register;
           localStorage.setItem("auth-token", token);
+          localStorage.setItem("fname", fname);
         }}
         update={(client, data) => this.updateCache(client, data)}
       >

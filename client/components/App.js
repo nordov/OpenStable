@@ -4,8 +4,7 @@ import Splash from "./splash/splash";
 
 const App = () => {
     return (
-        <div className="app">
-            {/* <h1>First Route goes here.</h1> */}
+        <div>
             <Route exact path="/" component={Splash} />
         </div>
     );
