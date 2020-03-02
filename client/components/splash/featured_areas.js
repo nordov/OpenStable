@@ -22,6 +22,24 @@ class FeaturedAreas extends Component {
               <li></li>
             </ul>
           </div>
+          <div className="splash-featured-text-container">
+            <div>
+              <p>Atlanta</p>
+              <p>Los Angelos</p>
+            </div>
+            <div>
+              <p>Houston</p>
+              <p>San Francisco</p>
+            </div>
+            <div>
+              <p>New York</p>
+              <p>Miami</p>
+            </div>
+            <div>
+              <p>Chicago</p> 
+              <p>Las Vegas</p>
+            </div>
+          </div>
         </div>
       </div>
     );

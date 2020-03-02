@@ -6,6 +6,10 @@ import SignInModal from './signin_modal';
 import PopularCarousel from './popular_stables_carousel';
 import FeaturedAreas from './featured_areas';
 import Footer from './footer';
+import { Query } from "react-apollo";
+import Queries from "../../graphql/queries";
+
+const { IS_LOGGED_IN } = Queries;
 
 class Splash extends Component {
   constructor(props) {
@@ -14,7 +18,7 @@ class Splash extends Component {
       showSignUpModal: false,
       showSignInModal: false
     }
-
+    
     this.showSignUpModal = this.showSignUpModal.bind(this);
     this.showSignInModal = this.showSignInModal.bind(this);
   }
@@ -27,22 +31,45 @@ class Splash extends Component {
     this.setState({ showSignInModal: true });
   }
 
-  render() {
-    const signUpModal = <SignUpModal closeModal={() => this.setState({ showSignUpModal: false })} />
-    const signInModal = <SignInModal 
-                          closeModal={() => this.setState({ showSignInModal: false })} 
-                          changeModal={() => this.setState({ showSignInModal: false, showSignUpModal: true })}
-                        />
-
-    return (
-      <div className="splash">
+  loggedIn() {
+    if (localStorage.getItem("auth-token")) {
+      return (
         <div className="splash-top-bar">
           <div className="splash-left-side">
             <div className="splash-logo-container">
               <a href="/">
                 <img
-                  src="https://components.otstatic.com/components/header/2.2.1/img/logo-en.svg"
-                  width="135"
+                  src="/static/images/openstable-logo.png"
+                  width="160"
+                  className="splash-logo"
+                ></img>
+              </a>
+            </div>
+            <div className="splash-location-container">
+              <div className="splash-location-spacing">
+                <img src="/static/images/marker.png" width="19"></img>
+                <img src="/static/images/upside-down-caret.png" width="12"></img>
+              </div>
+            </div>
+          </div>
+          <div className="splash-auth-container">
+            <img src="/static/images/signedin-calendar.png" width="25"></img>
+            <div></div>
+            <a>Hi, </a>
+            <img src="static/images/upside-down-caret.png" height="20"></img>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="splash-top-bar">
+          <div className="splash-left-side">
+            <div className="splash-logo-container">
+              <a href="/">
+                <img
+                  src="/static/images/openstable-logo.png"
+                  width="160"
+                  className="splash-logo"
                 ></img>
               </a>
             </div>
@@ -58,10 +85,25 @@ class Splash extends Component {
           </div>
           <div className="splash-auth-container">
             <button onClick={this.showSignUpModal}>Sign up</button>
-            <a href="#" onClick={this.showSignInModal}>Sign in</a>
+            <a href="#" onClick={this.showSignInModal}>
+              Sign in
+            </a>
           </div>
         </div>
+      );
+    }
+  }
 
+  render() {
+    const signUpModal = <SignUpModal closeModal={() => this.setState({ showSignUpModal: false })} />
+    const signInModal = <SignInModal 
+                          closeModal={() => this.setState({ showSignInModal: false })} 
+                          changeModal={() => this.setState({ showSignInModal: false, showSignUpModal: true })}
+                        />
+
+    return (
+      <div className="splash">
+        { this.loggedIn() }
         <div className="splash-image-animation-container">
           <img
             className="splash-img-anim1"
@@ -130,9 +172,7 @@ class Splash extends Component {
                     <option value="17:30">5:30PM</option>
                     <option value="18:00">6:00PM</option>
                     <option value="18:30">6:30PM</option>
-                    <option value="19:00">
-                      7:00PM
-                    </option>
+                    <option value="19:00">7:00PM</option>
                     <option value="19:30">7:30PM</option>
                     <option value="20:00">8:00PM</option>
                     <option value="20:30">8:30PM</option>
@@ -179,12 +219,14 @@ class Splash extends Component {
                 <img src="/static/images/splash-search.png" height="25"></img>
                 <input type="value" placeholder="Location"></input>
               </div>
-              <button className="splash-anim-form-submit" type="submit">Let's go</button>
+              <button className="splash-anim-form-submit" type="submit">
+                Let's go
+              </button>
             </form>
           </div>
         </div>
-        { this.state.showSignUpModal ? signUpModal : null }
-        { this.state.showSignInModal ? signInModal : null }
+        {this.state.showSignUpModal ? signUpModal : null}
+        {this.state.showSignInModal ? signInModal : null}
         <PopularCarousel />
         <FeaturedAreas />
         <Footer />

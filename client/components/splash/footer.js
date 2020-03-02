@@ -15,7 +15,9 @@ class Footer extends Component {
             <h3>SUHAIB KHAN</h3>
             <div className="footer-github-img">
               <img src="/static/images/github.png" width="25"></img>
-              <a href="https://github.com/SKhan1211">Github</a>
+              <a href="https://github.com/SKhan1211" target="_blank">
+                Github
+              </a>
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
@@ -26,7 +28,9 @@ class Footer extends Component {
             <h3>MICHELLE VONG</h3>
             <div className="footer-github-img">
               <img src="/static/images/github.png" width="25"></img>
-              <a href="https://github.com/misheMatcha">Github</a>
+              <a href="https://github.com/misheMatcha" target="_blank">
+                Github
+              </a>
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
@@ -37,7 +41,9 @@ class Footer extends Component {
             <h3>DAVID ODIO</h3>
             <div className="footer-github-img">
               <img src="/static/images/github.png" width="25"></img>
-              <a href="https://github.com/nordov">Github</a>
+              <a href="https://github.com/nordov" target="_blank">
+                Github
+              </a>
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
@@ -48,7 +54,9 @@ class Footer extends Component {
             <h3>TOM BETTHAUSER</h3>
             <div className="footer-github-img">
               <img src="/static/images/github.png" width="25"></img>
-              <a href="https://github.com/tombetthauser">Github</a>
+              <a href="https://github.com/tombetthauser" target="_blank">
+                Github
+              </a>
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>

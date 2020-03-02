@@ -404,6 +404,10 @@
   }
 }
 
+.splash-logo {
+  margin-bottom: 7px;
+}
+
 /* Sign Up Modal CSS */
 
 .splash-modal-full-container-signup {
@@ -710,6 +714,7 @@
   display: flex;
   justify-content: center;
   background: white;
+  height: 343px;
 
   border: 1px solid red;
 }
@@ -778,6 +783,7 @@
   display: flex;
   justify-content: center;
   background: white;
+  height: 478px;
 
   border: 1px solid red;
 }
@@ -805,8 +811,24 @@
   margin: 20px 0 10px 0;
 }
 
-.featured-cities-container {
+.splash-featured-text-container {
   display: flex;
+  justify-content: space-between;
+  font-family: Spartan;
+  font-weight: 500;
+  font-size: 13px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.splash-featured-text-container p {
+  margin: 20px 0px;
+  cursor: pointer;
+}
+
+.splash-featured-text-container p:hover {
+  color: #DA3643;
 }
 
 /* TEST */
@@ -826,7 +848,7 @@
 }
 
 @media only screen and (max-width: 965px) {
-  .splash-popular-inner-container {
+  .splash-featured-inner-container {
     position: absolute;
     left: 0;
   }

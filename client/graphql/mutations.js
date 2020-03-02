@@ -23,15 +23,5 @@ export default {
         loggedIn
       }
     }
-  `,
-  CREATE_PRODUCT: gql`
-    mutation NewProduct($name: String!, $description: String!, $weight: Int!) {
-      newProduct(name: $name, description: $description, weight: $weight) {
-        _id
-        name
-        description
-        weight
-      }
-    }
   `
 };
