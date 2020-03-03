@@ -54,7 +54,7 @@ const stableMutations = new Object({
             // Tom - Passed updateObj into new Stable instead of args, the only difference being the image.
             // Tom - Old Version:
                 // newStable = new Stable({ name, description, address, city, state });
-            newStable = new Stable(updateObj);
+            newStable = new Stable(updateObj); 
             return newStable.setLongitudeAndLatitude()
                 .then(stable => stable.save());
         }
