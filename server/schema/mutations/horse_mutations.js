@@ -58,10 +58,9 @@ const horseMutations = new Object({
                 updateObj.image = await singleFileUpload(args.image);
             }
 
-            // Tom - Passed updateObj into new Horse instead of args, the only difference being the image.
             return Stable.findById(args.stable)
                 .then(stable => {
-                    return newHorse = new Horse(updateObj)
+                    return newHorse = new Horse(updateObj) // Tom - Passed updateObj into new Horse instead of args, the only difference being the image.
                         .save()
                         .then(horse => {
                             stable.horses.push(horse.id);
