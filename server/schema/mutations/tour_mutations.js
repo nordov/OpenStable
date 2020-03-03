@@ -22,6 +22,10 @@ const Tour = mongoose.model("tours");
 const StableType = require("../types/stable_type");
 const Stable = mongoose.model("stables");
 
+// Tom - The consts below are for AWS image connectivity.
+const { singleFileUpload } = require("../s3")
+const { GraphQLUpload } = require('graphql-upload');
+
 const tourMutations = new Object({
     newTour: {
         // creating a Tour type
