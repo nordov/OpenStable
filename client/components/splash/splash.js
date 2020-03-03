@@ -36,12 +36,41 @@ class Splash extends Component {
   }
 
   showNavDropDown() {
-    this.setState({ showNavDropDown: true });
+    if (!this.state.showNavDropDown && localStorage.getItem("auth-token")) {
+      this.setState({ showNavDropDown: true });
+      const elem1 = document.getElementById("elem1");
+      const elem2 = document.getElementById("elem2");
+      const elem3 = document.getElementById("elem3-opened");
+      const elem4 = document.getElementById("elem4");
+      elem1.id = "splash-dropdown-inner-container-opened";
+      elem2.id = "splash-drop-p-opened";
+      elem3.id = "elem3-opened";
+      elem4.id = "elem4-opened";
+    }
   }
 
   closeNavDropdown(event) {
-    if(this.state.showNavDropDown && event.target.className !== "splash-drop-noclose") {
+    if (
+      this.state.showNavDropDown &&
+      event.target.className !== "splash-drop-noclose" &&
+      localStorage.getItem("auth-token")
+    ) {
       this.setState({ showNavDropDown: false });
+      const elem1 = document.getElementById(
+        "splash-dropdown-inner-container-opened"
+      );
+      const elem2 = document.getElementById("splash-drop-p-opened");
+      const elem3 = document.getElementById("elem3-opened");
+      const elem4 = document.getElementById("elem4-opened");
+      elem1.id = "elem1";
+      elem2.id = "elem2";
+      setTimeout(() => {
+        elem4.id = "elem4";
+      }, 150);
+      // if (elem3) {
+      //   debugger
+      //   elem3.id = "elem3";
+      // }
     }
   }
 
@@ -76,7 +105,7 @@ class Splash extends Component {
               width="25"
             ></img>
             <div className="splash-logged-divider"></div>
-            {this.state.showNavDropDown ? <NavDropdown /> : null}
+            <NavDropdown  setDropdownFalse={() => this.setState({ showNavDropDown: false })}/>
             <p onClick={this.showNavDropDown}>
               Hi, {localStorage.getItem("fname")}
             </p>
@@ -86,7 +115,6 @@ class Splash extends Component {
               height="12"
               onClick={this.showNavDropDown}
             ></img>
-            {/* { this.state.showNavDropDown ? <NavDropdown /> : null } */}
           </div>
         </div>
       );
@@ -130,12 +158,12 @@ class Splash extends Component {
                           closeModal={() => this.setState({ showSignInModal: false })} 
                           changeModal={() => this.setState({ showSignInModal: false, showSignUpModal: true })}
                         />
-
+                     
     return (
       <div className="app" onClick={this.closeNavDropdown}>
         <div className="splash">
           {this.loggedIn()}
-          <div className="splash-image-animation-container">
+          <div id="elem3-opened" className="splash-image-animation-container">
             <img
               className="splash-img-anim1"
               src="/static/images/horses1.jpg"
@@ -247,7 +275,10 @@ class Splash extends Component {
                   </div>
                 </div>
                 <div className="splash-anim-input-container">
-                  <img src="/static/images/splash-search.png" height="25"></img>
+                  <img
+                    src="/static/images/splash-search.png"
+                    height="25"
+                  ></img>
                   <input type="value" placeholder="Location"></input>
                 </div>
                 <button className="splash-anim-form-submit" type="submit">
