@@ -23,7 +23,7 @@ const Horse = mongoose.model("horses");
 const StableType = require("../types/stable_type");
 const Stable = mongoose.model("stables");
 
-// TB - The consts below are for AWS image connectivity.
+// Tom - The consts below are for AWS image connectivity.
 const { singleFileUpload } = require("../s3")
 const { GraphQLUpload } = require('graphql-upload');
 
@@ -31,8 +31,8 @@ const horseMutations = new Object({
     newHorse: {
         // creating a Horse type
         type: HorseType,
-        
-        // TB - Image is added to the args for AWS.
+
+        // Tom - Image is added to the args for AWS.
         args: {
             name: { type: new GraphQLNonNull(GraphQLString) },
             description: { type: new GraphQLNonNull(GraphQLString) },
@@ -43,7 +43,7 @@ const horseMutations = new Object({
             image: { type: GraphQLUpload }
         },
 
-        // TB - Async is added before resolve presumably to wait for image to upload.
+        // Tom - Async is added before resolve presumably to wait for image to upload.
         async resolve(parentValue, args) {
             
             // Tom - Created this update object based on a/A AWS instructions.
@@ -54,8 +54,8 @@ const horseMutations = new Object({
             if (args.height) updateObj.height = args.height;
             if (args.stable) updateObj.stable = args.stable;
             if (args.description) updateObj.description = args.description;
-            if (image) {
-                updateObj.image = await singleFileUpload(image);
+            if (args.image) {
+                updateObj.image = await singleFileUpload(args.image);
             }
 
             // Tom - Passed updateObj into new Horse instead of args, the only difference being the image.
