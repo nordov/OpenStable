@@ -23,7 +23,10 @@ const Horse = mongoose.model("horses");
 const StableType = require("../types/stable_type");
 const Stable = mongoose.model("stables");
 
-// these are for AWS images
+// The consts below are for AWS image connectivity.
+// Below in the args, 'image' is added to correspond to these.
+// Async is added before resolve presumably to wait for image to upload.
+// The added code was taken directly from -- https://github.com/ssoonmi/aws-graphql under step 4
 const { singleFileUpload } = require("../s3")
 const { GraphQLUpload } = require('graphql-upload');
 
@@ -38,8 +41,9 @@ const horseMutations = new Object({
             color: { type: new GraphQLNonNull(GraphQLString) },
             height: { type: new GraphQLNonNull(GraphQLFloat) },
             stable: { type: new GraphQLNonNull(GraphQLID) },
+            image: { type: GraphQLUpload }
         },
-        resolve(parentValue, args) {
+        async resolve(parentValue, args) {
             
             return Stable.findById(args.stable)
                 .then(stable => {
