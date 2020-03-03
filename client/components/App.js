@@ -1,6 +1,9 @@
 import React from "react";
-//import componenst here
+import { Query } from "react-apollo";
 import { Route } from "react-router-dom";
+import Queries from "../graphql/queries";
+
+const { IS_LOGGED_IN } = Queries;
 
 const App = () => {
     return (
