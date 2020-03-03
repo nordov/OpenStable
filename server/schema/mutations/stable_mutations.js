@@ -35,7 +35,7 @@ const stableMutations = new Object({
             address: { type: new GraphQLNonNull(GraphQLString) },
             city: { type: new GraphQLNonNull(GraphQLString) },
             state: { type: new GraphQLNonNull(GraphQLString) },
-            image: { type: GraphQLUpload }
+            image: { type: GraphQLUpload } // Tom - Are we going to want multiple image capability here?
         },
 
         // Tom - Async is added before resolve so that await can be used in if (image) conditional.

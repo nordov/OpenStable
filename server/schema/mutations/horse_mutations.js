@@ -40,7 +40,7 @@ const horseMutations = new Object({
             color: { type: new GraphQLNonNull(GraphQLString) },
             height: { type: new GraphQLNonNull(GraphQLFloat) },
             stable: { type: new GraphQLNonNull(GraphQLID) },
-            image: { type: GraphQLUpload }
+            image: { type: GraphQLUpload } // Tom - Are we going to want multiple image capability here?
         },
 
         // Tom - Async is added before resolve presumably to wait for image to upload.
