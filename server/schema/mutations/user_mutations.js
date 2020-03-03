@@ -1,15 +1,19 @@
+/********** USER MUTATIONS ************
+    - Register new user (Sign up)
+    - Login exisiting user (Sign in)
+    - Logout user
+    - Verify if user is logged in
+/********** TOUR MUTATIONS ************/
+
 const graphql = require("graphql");
 const { GraphQLObjectType, GraphQLString, GraphQLNonNull, GraphQLID } = graphql;
 const mongoose = require("mongoose");
-const UserType = require("./types/user_type");
+const UserType = require("../types/user_type");
 
-const AuthService = require("../../services/auth");
+const AuthService = require("../../../services/auth");
 const User = mongoose.model("users");
 
-const mutation = new GraphQLObjectType({
-  name: "Mutation",
-  fields: {
-    // this will be the name of this mutation
+const userMutations = new Object({
     register: {
         // creating a User type
         type: UserType,
@@ -38,23 +42,22 @@ const mutation = new GraphQLObjectType({
     logout: {
         type: UserType,
         args: {
-          // all we need to log the user our is an id
-          _id: { type: GraphQLID }
+        // all we need to log the user our is an id
+        _id: { type: GraphQLID }
         },
         resolve(_, args) {
-          return AuthService.logout(args);
+        return AuthService.logout(args);
         }
     },
     verifyUser: {
         type: UserType,
         args: {
-          token: { type: GraphQLString }
+        token: { type: GraphQLString }
         },
         resolve(_, args) {
-          return AuthService.verifyUser(args);
+        return AuthService.verifyUser(args);
         }
-    }            
-  }
+    } 
 });
 
-module.exports = mutation;
+module.exports = userMutations;

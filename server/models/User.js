@@ -31,4 +31,10 @@ const UserSchema = new Schema({
 },{ timestamps: true }
 );
 
+//Add recently viewed method
+
+//Add saved/favorites stables method
+
+//Add reserved tours and set reservations
+
 module.exports = mongoose.model("users", UserSchema);
