@@ -23,6 +23,10 @@ const Horse = mongoose.model("horses");
 const StableType = require("../types/stable_type");
 const Stable = mongoose.model("stables");
 
+// these are for AWS images
+const { singleFileUpload } = require("../s3")
+const { GraphQLUpload } = require('graphql-upload');
+
 const horseMutations = new Object({
     newHorse: {
         // creating a Horse type
