@@ -1,0 +1,181 @@
+////////////////////QUERIES\\\\\\\\\\\\\\\\\\\\\\
+ALL STABLES:
+
+{
+  stables{
+    id,
+    name,
+    description,
+    address,
+    city,
+    state,
+    longitude,
+    latitude    
+  }
+}
+----------------
+
+STABLE BY ID:
+
+{
+  stable(id:"5e5c829464a3a83938419739"){
+    id,
+    name,
+    description,
+    address,
+    city,
+    state,
+    longitude,
+    latitude    
+  }
+}
+
+////////////////////MUTATIONS\\\\\\\\\\\\\\\\\\\\\\
+
+CREATE A STABLE:
+
+mutation{
+	newStable(
+    name:"Moss Beach Ranch"
+    description:"The world famous" 
+    address:"1862 Etheldore St"
+    city:"Moss Beach"
+  	state:"CA"
+  ){
+    id
+    name,
+    description,
+    address,
+    city,
+    state,
+    latitude,
+    longitude,
+    horses{
+      id,
+      name
+    },
+    tours{
+      id,
+      name
+    },
+    images{
+      id,
+      image_url      
+    }
+  }
+}
+
+-----------------
+
+CREQATE A HORSE:
+
+mutation{
+  newHorse(
+    name:"Quiet, Brave"
+    description: "Honest Hunter/Jumper/Eventing Mare"
+    breed: "Thoroughbred"
+    color: "Bay"
+    height: 15.3
+    stable: "5e5e040729bcea4a739b5460"
+    
+  ){
+    name,
+    description,
+    breed,
+    color,
+    height,
+    stable{
+      name
+    }
+  }
+}
+
+-----------------
+
+CREATE A NEW TOUR:
+
+mutation{
+  newTour(
+    name:"Sunset at the beach"
+    description:"Romantic"
+    duration:60
+    difficulty:"Novice"
+    terrain:"Beach"
+    start_time:"6 pm"
+    stable:"5e5e040729bcea4a739b5460"    
+  ){
+    id,
+    name,
+    description,
+    duration,
+    difficulty,
+    terrain,
+    capacity,
+    start_time,
+    stable{
+      id,
+      name
+    }
+    
+  }
+}
+
+-----------------
+
+CREATE A NEW HORSE IMAGE:
+
+mutation{
+  newHorseImage(
+    horse:"5e5e5455f9441f57ab3da0a7"
+    image_url:"https://img.equinenow.com/slir/w600/equine/data/photos/1318323/1583181587/all-around-quarter-horse.jpg"
+    image_text:"Weaver Tonka Poco"
+  ) {
+    id,
+    horse {
+      id,
+      name
+    },
+    image_url,
+    image_text
+  }
+}
+
+-----------------
+
+CREATE A NEW TOUR IMAGE:
+
+mutation{
+  newTourImage(
+    tour:"5e5e57bba9e1c061b89b6262"
+    image_url:"https://previews.123rf.com/images/nisanga/nisanga1706/nisanga170600127/81018937-horse-riding-at-the-beach-at-the-atlantic-ocean.jpg"
+    image_text:"Sunset Beach Ride"
+  ) {
+    id,
+    tour {
+      id,
+      name
+    },
+    image_url,
+    image_text
+  }
+}
+
+-----------------
+
+CREATE A NEW STABLE IMAGE:
+
+mutation{
+  newStableImage(
+    stable:"5e5e040729bcea4a739b5460"
+    image_url:"https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg"
+    image_text:"Nice Stable facilities"
+  ) {
+    id,
+    stable {
+      id,
+      name
+    },
+    image_url,
+    image_text
+  }
+}

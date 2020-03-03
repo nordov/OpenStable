@@ -26,8 +26,8 @@
 | `address`         | string    | ObjectID                  |
 | `city`            | string    | ObjectID                  |
 | `state`           | string    | ObjectID                  |
-| `longitud`        | float     |                           |
-| `latitud`         | float     |                           |
+| `longitude`        | float     |                           |
+| `latitude`         | float     |                           |
 | `tours`           | array     | ObjectID                  |
 | `created_at`      | datetime  | not null                  |
 | `updated_at`      | datetime  | not null                  |
@@ -63,7 +63,7 @@ To be discussed
 | `image`           | array     | ObjectID                  |
 | `breed`           | string    |                           | 
 | `color`           | string    |                           |  
-| `age`             | int       |                           |
+| `height`          | float     |                           |
 | `tours`           | array     | ObjectID                  |
 | `stable`          | ObjectID  | ObjectID                  | 
 | `description`     | string    |                           | 
