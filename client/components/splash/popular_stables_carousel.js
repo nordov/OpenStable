@@ -8,13 +8,24 @@ class PopularCarousel extends Component {
   }
 
   translateX(event) {
-    const ul = document.getElementById("carousel-ul");
-    if (event.target.className === "splash-carousel-right-arrow") {
-      ul.style.transform = 'translateX(-100%)';
+    const container = document.getElementById("carousel-container");
+    if (event.target.className === "fa fa-angle-right") {
+      // container.style.transform = 'translateX(-100%)';
+      container.scrollLeft = 1010
     } else {
-      ul.style.transform = 'translateX(0%)';
+      // container.style.transform = 'translateX(0%)';
+      container.scrollLeft = -1010
     }
   }
+
+  // handleScroll() {
+  //   var sdegree = 0;
+  //   sdegree++;
+  //   var srotate = "translateX(" + sdegree + "%)";
+  //   const ul = document.getElementById("carousel-ul");
+  //   ul.style.transform = srotate;
+
+  // }
 
   render() {
     return (
@@ -25,7 +36,7 @@ class PopularCarousel extends Component {
             <a href="#">View all</a>
           </div>
           <div className="splash-popular-divider"></div>
-          <div className="carousel-container">
+          <div id="carousel-container" className="carousel-container" >
             <ul id="carousel-ul">
               <li id="first-li">
                 <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
@@ -94,10 +105,10 @@ class PopularCarousel extends Component {
             </ul>
           </div>
           <div className="splash-carousel-arrow-container">
-            <div className="splash-carousel-right-arrow" onClick={this.translateX}></div>
+            <div className="splash-carousel-right-arrow" onClick={this.translateX}><i class="fa fa-angle-right"></i></div>
           </div>
           <div className="splash-carousel-arrow-container2">
-            <div className="splash-carousel-right-arrow2" onClick={this.translateX}></div>
+            <div className="splash-carousel-right-arrow2" onClick={this.translateX}><i class="fa fa-angle-left"></i></div>
           </div>
         </div>
       </div>
