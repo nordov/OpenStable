@@ -1331,3 +1331,48 @@
   background: #F7F7F7;
   color: black;
 }
+
+
+.test {
+    transform: translate(0px, -6px);
+    box-shadow: 0 2px 4px rgba(45,51,63,.2);
+    transition: all .3s
+}
+
+.test2 {
+    transform: translate(0px, 0px);
+    transition: all .3s
+}
+
+.primary-li {
+    transform: translate(0px, 0px);
+    transition: all .3s
+}
+
+.secondary-li {
+    transform: translate(0px, 0px);
+    transition: all .3s
+}
+
+.carousel-holder-div {
+  height: 100%;
+  position: relative;
+  top: -100.1%;
+  opacity: 0;
+  z-index: 2;
+}
+
+#carousel-ul > li {
+  overflow: hidden;
+}
+
+#carousel-ul img {
+  transition: all .3s
+}
+
+.carousel-li-bottom-holder {
+  height: 44%;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+}

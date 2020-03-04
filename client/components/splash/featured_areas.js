@@ -19,21 +19,21 @@ class FeaturedAreas extends Component {
             <ul className="featured-random-ul">
               <div className="featured-li-ele featured-li-ele-first">
                 <li id="featured-first-img">
-                  <img src="/static/images/newyork.jpg"></img>
+                  <img src="/static/images/newyork.jpeg"></img>
                   <div className="overlay">
                     <h3>New York Area</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li>
-                  <img src="/static/images/chicago.jpg"></img>
+                  <img src="/static/images/chicago.jpeg"></img>
                   <div className="overlay">
                     <h3>Chicago</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li id="featured-last-img">
-                  <img src="/static/images/losangeles.jpg"></img>
+                  <img src="/static/images/losangeles.jpeg"></img>
                   <div className="overlay">
                     <h3>Los Angeles</h3>
                     <p>stables</p>
@@ -42,21 +42,21 @@ class FeaturedAreas extends Component {
               </div>
               <div className="featured-li-ele featured-li-ele-second">
                 <li id="featured-first-img">
-                  <img src="/static/images/sanfrancisco.jpg"></img>
+                  <img src="/static/images/sanfrancisco.jpeg"></img>
                   <div className="overlay">
                     <h3>San Francisco</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li>
-                  <img src="/static/images/miami.jpg"></img>
+                  <img src="/static/images/miami.jpeg"></img>
                   <div className="overlay">
                     <h3>Miami</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li id="featured-last-img">
-                  <img src="/static/images/lasvegas.jpg"></img>
+                  <img src="/static/images/lasvegas.jpeg"></img>
                   <div className="overlay">
                     <h3>Las Vegas</h3>
                     <p>stables</p>
