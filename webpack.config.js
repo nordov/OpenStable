@@ -3,10 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   // Tom - Added this to avoid fs module error, taken from: https://github.com/webpack-contrib/css-loader/issues/447
-  node: {
-    fs: 'empty'
-  },
-  
+  // node: {
+  //   fs: 'empty'
+  // },
+
   mode: "development",
   entry: "./client/index.js",
   output: {

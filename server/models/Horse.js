@@ -25,7 +25,15 @@ const HorseSchema = new Schema({
         type: Schema.Types.ObjectId, ref: 'Stable',
         //required: true
     },
-    images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
+    
+    // Tom - Old image version, kept it around just in case.
+    // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
+    
+    // Tom - New version, treats images like strings for AWS.
+    images: [{ 
+        type: String
+    }],
+
     tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
 }, { timestamps: true }
 );
