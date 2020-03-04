@@ -32,7 +32,7 @@ class PopularCarousel extends Component {
         (window.innerWidth > 1618 && container.scrollLeft === 760)
       ) {
         container.scrollLeft = -1010;
-      }
+      } else container.scrollLeft = -1010
     }
   }
 

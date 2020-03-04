@@ -809,6 +809,7 @@
   right: calc(-1*44px/2);
   cursor: pointer;
   top: calc(103% - (24px - -14.5rem)/2);
+  z-index: 1;
 }
 
 .splash-carousel-right-arrow:hover {
@@ -832,6 +833,7 @@
   cursor: pointer;
   top: calc(103% - (24px - -14.5rem)/2);
   display: none;
+  z-index: 1;
 }
 
 .splash-carousel-right-arrow2:hover {
