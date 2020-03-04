@@ -7,6 +7,9 @@ const db = require("../config/keys").mongoURI;
 const schema = require("./schema/schema");
 const path = require("path");
 
+// graphQLUploadExpress imported for AWS connection
+const { graphQLUploadExpress } = require('graphql-upload');
+
 const app = express();
 
 if (!db) {
@@ -23,6 +26,8 @@ app.use(bodyParser.json());
 
 app.use(
   "/graphql",
+  // graphQLUploadExpress added as middleware for AWS connection
+  graphQLUploadExpress({ maxFileSize: 10000000, maxFiles: 10 }),
   expressGraphQL({
     schema,
     graphiql: true
