@@ -31,8 +31,11 @@ class SignInModal extends Component {
   }
 
   closeModal(event) {
-    if (event.target.className === "splash-modal-full-container-signin")
+    if (event.target.className === "splash-modal-full-container-signin") {
       this.props.closeModal();
+      document.body.style.height = "auto";
+      document.body.style.overflow = "auto";
+    }
   }
 
   render() {
@@ -59,6 +62,8 @@ class SignInModal extends Component {
                 className="splash-modal-form-signin" 
                 onSubmit={e => {
                   e.preventDefault();
+                  document.body.style.height = "auto";
+                  document.body.style.overflow = "auto";
                   loginUser({
                     variables: {
                       email: this.state.email,

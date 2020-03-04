@@ -64,8 +64,11 @@ class SignUpModal extends Component {
   }
 
   closeModal(event) {
-    if (event.target.className === "splash-modal-full-container-signup")
+    if (event.target.className === "splash-modal-full-container-signup") {
       this.props.closeModal();
+      document.body.style.height = "auto";
+      document.body.style.overflow = "auto";
+    }
   }
 
   render() {
@@ -109,6 +112,8 @@ class SignUpModal extends Component {
                       } else if (this.state.city === "") {
                         throw new Error("Must select a city");
                       }
+                      document.body.style.height = "auto";
+                      document.body.style.overflow = "auto";
                       registerUser({
                         variables: {
                           fname: this.state.fname,
@@ -190,9 +195,11 @@ class SignUpModal extends Component {
                         className="splash-modal-demo-account"
                         onClick={e => {
                           e.preventDefault();
+                          document.body.style.height = "auto";
+                          document.body.style.overflow = "auto";
                           loginUser({
                             variables: {
-                              email: "email@gmail.com",
+                              email: "demo@testing.com",
                               password: "hunter12"
                             }
                           });

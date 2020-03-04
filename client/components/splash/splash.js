@@ -29,10 +29,14 @@ class Splash extends Component {
 
   showSignUpModal() {
     this.setState({ showSignUpModal: true });
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
   }
 
   showSignInModal() {
     this.setState({ showSignInModal: true });
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
   }
 
   showNavDropDown() {
