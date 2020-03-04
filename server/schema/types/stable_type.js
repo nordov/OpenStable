@@ -43,7 +43,6 @@ const StableType = new GraphQLObjectType({
       }
     }, 
 
-
     // Tom - Boilerplate, should be adapted to multiple images once tested.
     image: {
       type: GraphQLString,
