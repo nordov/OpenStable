@@ -19,6 +19,7 @@ const userMutations = new Object({
         type: UserType,
         args: {
         fname: { type: new GraphQLNonNull(GraphQLString) },
+        lname: { type: GraphQLString },
         email: { type: new GraphQLNonNull(GraphQLString) },
         password: { type: new GraphQLNonNull(GraphQLString) },
         city: { type: new GraphQLNonNull(GraphQLString) }

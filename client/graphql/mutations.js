@@ -5,6 +5,8 @@ export default {
       login(email: $email, password: $password) {
         token
         loggedIn
+        fname
+        lname
       }
     }
   `,
@@ -16,21 +18,13 @@ export default {
     }
   `,
   REGISTER_USER: gql`
-    mutation RegisterUser($name: String!, $email: String!, $password: String!) {
-      register(name: $name, email: $email, password: $password) {
+    mutation RegisterUser($fname: String!, $lname: String!, $email: String!, $password: String!, $city: String!) {
+      register(fname: $fname, lname: $lname, email: $email, password: $password, city: $city) {
         email
         token
         loggedIn
-      }
-    }
-  `,
-  CREATE_PRODUCT: gql`
-    mutation NewProduct($name: String!, $description: String!, $weight: Int!) {
-      newProduct(name: $name, description: $description, weight: $weight) {
-        _id
-        name
-        description
-        weight
+        fname
+        lname
       }
     }
   `
