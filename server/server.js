@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const models = require('./models');
 const db = require("../config/keys").mongoURI;
 const schema = require("./schema/schema");
+const path = require("path");
 
 // graphQLUploadExpress imported for AWS connection
 const { graphQLUploadExpress } = require('graphql-upload');
@@ -32,6 +33,8 @@ app.use(
     graphiql: true
   })
 );
+
+app.use("/static", express.static(path.join(__dirname, "public")));
 
 const webpackMiddleware = require("webpack-dev-middleware");
 const webpack = require("webpack");
