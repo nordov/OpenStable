@@ -25,6 +25,7 @@
     "express-graphql": "^0.9.0",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
+    "graphql-upload": "^10.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.2",
     "node-geocoder": "^3.25.0",
