@@ -18,16 +18,29 @@ class PopularCarousel extends Component {
     const container = document.getElementById("carousel-container");
     if (event.target.className === "splash-carousel-right-arrow" || event.target.id === "right>") {
       // container.style.transform = 'translateX(-100%)';
-      container.scrollLeft = 1010
+      if (container.scrollLeft === 0) {
+        container.scrollLeft = 350;
+        setTimeout(() => {
+          container.scrollLeft = 1010;
+        }, 180);
+      } else {
+        container.scrollLeft = 1010;
+      }
+      
     } else if (event.target.className === "fa-angle-left" || "splash-carousel-right-arrow2") {
       // container.style.transform = 'translateX(0%)';
-      container.scrollLeft = -1010
+      if (container.scrollLeft === 1010 || window.innerWidth > 1618 && container.scrollLeft === 760) {
+        container.scrollLeft = -350;
+        setTimeout(() => {
+          container.scrollLeft = -1010;
+        }, 180);
+      } else {
+        container.scrollLeft = -1010;
+      }
     }
   }
 
   updateDimensions() {
-    console.log(window.innerWidth)
-
     const container = document.getElementById("carousel-container");
     const rightArrow = document.getElementById("right-arr")
     const leftArrow = document.getElementById("left-arr")
