@@ -7,6 +7,9 @@ const {
   GraphQLList
 } = graphql;
 
+// Tom - This is for AWS.
+const { s3 } = require('../s3');
+
 const mongoose = require("mongoose");
 const Stable = mongoose.model("stables");
 
@@ -39,15 +42,33 @@ const StableType = new GraphQLObjectType({
             .catch(err => null)
       }
     }, 
-    images: { 
-      type: new GraphQLList(require("./image_type")),
-      resolve(parentValue){
-          return Stable.findById(parentValue.id)
-            .populate("images")
-            .then(stable => stable.images)
-            .catch(err => null)
+
+
+    // Tom - Boilerplate, should be adapted to multiple images once tested.
+    image: {
+      type: GraphQLString,
+      resolve(parentValue) {
+        let imageUrl;
+        if (parentValue.image) {
+          imageUrl = s3.getSignedUrl('getObject', {
+            Bucket: "aws-graphql-dev-testing",
+            Key: parentValue.image
+          });
+        }
+        return imageUrl || parentValue.image;
       }
-    },        
+    }
+
+    // Tom - Old image code, just in case something breaks.
+    // images: {
+    //   type: new GraphQLList(require("./image_type")),
+    //   resolve(parentValue){
+    //       return Stable.findById(parentValue.id)
+    //         .populate("images")
+    //         .then(stable => stable.images)
+    //         .catch(err => null)
+    //   }
+    // },        
   })
 });
 
