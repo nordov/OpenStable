@@ -1,0 +1,39 @@
+.react-calendar-full {
+  position: absolute;
+  top: 330px;
+  left: 16%;
+  z-index: 1;
+  font-family: Spartan;
+  height: 301px;
+  width: 352px;
+  border: 1px solid rgb(222, 221, 221);
+  border-radius: 3px;
+}
+
+.react-calendar__month-view__weekdays {
+  font-weight: lighter;
+  color: rgb(147, 146, 146);
+  text-decoration: none;
+}
+
+.react-calendar__month-view__weekdays__weekday > abbr {
+  text-decoration: none;
+}
+
+.calendar-divider {
+  border-bottom: 1px solid rgb(235, 229, 229);
+  position: absolute;
+  top: 89px;
+  margin: 0 8px;
+  width: 95%;
+}
+
+.react-calendar__month-view__days button {
+  font-family: Spartan;
+  font-size: 12px;
+  margin-bottom: 1px;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  /* color: black; */
+}
