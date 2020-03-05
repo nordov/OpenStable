@@ -36,7 +36,14 @@ const TourSchema = new Schema({
         type: Schema.Types.ObjectId, ref: 'Stable',
         required: true
     },
-    images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
+    
+    // Tom - Old image version, kept it around just in case.
+    // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
+
+    // Tom - New version, treats image like strings for AWS.
+    image: { type: String },
+
+
     horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
     reserved_horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
 }, { timestamps: true }
