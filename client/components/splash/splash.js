@@ -9,6 +9,8 @@ import NavDropdown from './nav_dropdown';
 import Footer from './footer';
 import { Query } from "react-apollo";
 import Queries from "../../graphql/queries";
+import Calendar from "react-calendar";
+import calendarCSS from './calendar.css';
 
 const { IS_LOGGED_IN } = Queries;
 
@@ -18,7 +20,8 @@ class Splash extends Component {
     this.state = {
       showSignUpModal: false,
       showSignInModal: false,
-      showNavDropDown: false
+      showNavDropDown: false,
+      selectedDate: new Date()
     }
     
     this.showSignUpModal = this.showSignUpModal.bind(this);
@@ -156,7 +159,22 @@ class Splash extends Component {
     }
   }
 
+  componentDidMount() {
+    this.appendToCalendar();
+
+  }
+
+  appendToCalendar() {
+    const calendarEle = document.getElementsByClassName(
+      "react-calendar__month-view__weekdays"
+    );
+    const calendarDivider = document.createElement("div")
+    calendarDivider.className = 'calendar-divider'
+    calendarEle[0].parentElement.appendChild(calendarDivider);
+  }
+
   render() {
+    console.log(this.state.selectedDate)
     const signUpModal = <SignUpModal closeModal={() => this.setState({ showSignUpModal: false })} />
     const signInModal = <SignInModal 
                           closeModal={() => this.setState({ showSignInModal: false })} 
@@ -279,10 +297,7 @@ class Splash extends Component {
                   </div>
                 </div>
                 <div className="splash-anim-input-container">
-                  <img
-                    src="/static/images/splash-search.png"
-                    height="25"
-                  ></img>
+                  <img src="/static/images/splash-search.png" height="25"></img>
                   <input type="value" placeholder="Location"></input>
                 </div>
                 <button className="splash-anim-form-submit" type="submit">
@@ -293,10 +308,21 @@ class Splash extends Component {
           </div>
           {this.state.showSignUpModal ? signUpModal : null}
           {this.state.showSignInModal ? signInModal : null}
+          <Calendar
+            onChange={selectedDate => {
+              this.setState({ selectedDate });
+            }}
+            value={this.state.date}
+            className="react-calendar-full"
+            onActiveDateChange={() => {
+              this.appendToCalendar();
+            }}
+          />
           <PopularCarousel />
           <FeaturedAreas />
           <Footer />
         </div>
+        <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/1583369420807.jpeg"></img>
       </div>
     );
   }
