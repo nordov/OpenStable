@@ -4,7 +4,7 @@ const myCredentials = require("../../credentials.json");
 
 if (process.env.NODE_ENV !== "production") {
   // comment the line below out to access the frontend
-  // AWS.config.loadFromPath("./credentials.json");
+  AWS.config.loadFromPath("./credentials.json");
 }
 const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 
@@ -13,7 +13,7 @@ const singleFileUpload = async (source, targetName, res) => {
   // const fileStream = createReadStream;
   const path = require("path");
   // name of the file in your S3 bucket will be the date in ms plus the extension name
-  const Key = new Date().getTime().toString() + path.extname(targetName);
+  // const Key = new Date().getTime().toString() + path.extname(targetName);
   // const result = await s3.upload(uploadParams).promise();
 
   fs.readFile(source, function (err, filedata) {
@@ -21,7 +21,7 @@ const singleFileUpload = async (source, targetName, res) => {
       const uploadParams = {
         // name of your bucket here
         Bucket: "open-stable-app-dev",
-        Key,
+        Key: targetName,
         Body: filedata
       };
       
