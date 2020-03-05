@@ -25,4 +25,22 @@ export default {
       }
     }
   `,
+  FETCH_TOUR: gql`
+    query FetchTour($id: ID!){
+      tour(id: $id){
+        id
+        name
+        description
+        duration
+        difficulty
+        terrain
+        capacity
+        start_time
+        stable{
+          id
+          name
+        }
+      }
+    }
+  `,
 };

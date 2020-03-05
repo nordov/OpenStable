@@ -63,7 +63,6 @@ export class StableMap extends React.Component{
               lat: data.stable.latitude,
               lng:data.stable.longitude,
             };
-            console.log(data)
             return(
               <div className="map">
                 <Map google={this.props.google}
