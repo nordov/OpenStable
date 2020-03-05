@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 const fs = require("fs");
-const myCredentials = require("../../credentials.json");
+//const myCredentials = require("../../credentials.json");
 
 if (process.env.NODE_ENV !== "production") {
   // comment the line below out to access the frontend

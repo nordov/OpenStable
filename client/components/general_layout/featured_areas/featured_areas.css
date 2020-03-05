@@ -1,0 +1,211 @@
+/* Featured Areas CSS */
+
+.splash-featured-full-container {
+  display: flex;
+  justify-content: center;
+  background: white;
+  height: 650px;
+}
+
+.splash-featured-inner-container {
+  width: 75%;
+}
+
+.splash-featured-top-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.splash-featured-top-heading > h1 {
+  font-size: 20px;
+  font-family: Spartan;
+  font-weight: 600;
+}
+
+.splash-featured-divider {
+  border-bottom: 1px solid #D8D9DB;
+  margin: 20px 0 10px 0;
+}
+
+.splash-featured-text-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: Spartan;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.splash-featured-text-container p {
+  margin: 20px 0px;
+  cursor: pointer;
+}
+
+.splash-featured-text-container p:hover {
+  color: #DA3643;
+}
+
+.featured-li-ele {
+  display: flex;
+  width: 100%;
+}
+
+.featured-cities-container li {
+  width: 385px;
+  height: 195px;
+  margin: 0.5em 1.4em;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: -195px;
+  background-color: rgba(32, 35, 52, 0.297);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Spartan;
+  z-index: 0;
+}
+
+.overlay > h3 {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.413);
+  margin-bottom: 10px;
+}
+
+.overlay > p {
+  color: rgb(242, 235, 241);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.413);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.featured-li-ele img {
+  object-fit: cover;
+  width: 100%;
+  height: 195px;
+}
+
+#featured-first-img {
+  margin: 0.5em 0 0 0;
+}
+
+#featured-last-img {
+  margin: 0.5em 0 0 0;
+}
+
+@media only screen and (max-width: 1606px) {
+  .splash-featured-inner-container {
+    width: 950px;    
+  }
+  
+  .featured-li-ele img {
+    height: 144px;
+  }
+
+  .overlay {
+    top: -144px;
+  }
+
+  .featured-cities-container li {
+    height: 144px;
+  }
+
+  .splash-featured-full-container {
+    height: 545px;
+  }
+
+}
+
+@media only screen and (max-width: 990px) {
+  .splash-featured-inner-container {
+    width: 96%;
+  }
+
+  .featured-li-ele img {
+    height: 14.6vw;
+  }
+
+  .overlay {
+    top: -14.6vw;
+    height: 14.6vw;
+  }
+
+  .featured-cities-container li {
+    height: 14.6vw;
+    margin: 1% 1%;
+  }
+
+  #featured-first-img {
+    margin: 1% 1% 0 0;
+  }
+
+  #featured-last-img {
+    margin: 1% 0% 0 1%;
+  }
+
+  .splash-featured-full-container {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 773px) {
+  .splash-featured-inner-container {
+    height: auto;
+    width: 95%;
+  }
+
+  .featured-cities-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .featured-li-ele {
+    display: inline-block;
+    width: 48.5%;
+    height: auto;
+  }
+
+  .featured-random-ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .overlay {
+    top: -23.7vw;
+    height: 21.8vw;
+    width: 46vw;
+  }
+
+  #featured-first-img {
+    margin: 0 0 4% 0;
+  }
+
+  #featured-last-img {
+    margin: 0 0 4% 0;
+  }
+  
+  .featured-cities-container li {
+    height: 21.8vw;
+    width: 46vw;
+    margin: 0 0 4% 0;
+  }
+
+  .featured-li-ele img {
+    height: 21.8vw;
+    width: 46vw;
+    margin: 0 0 4% 0;
+  }
+}

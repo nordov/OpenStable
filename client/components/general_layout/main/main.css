@@ -1,0 +1,793 @@
+.app {
+  background-color: #F7F7F7;
+}
+
+.splash {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.splash-top-bar {
+  display: flex;
+  padding-left: 2.25rem;
+  padding-right: 1.25rem;
+  justify-content: space-between;
+  height: 54px;
+  background: white;
+}
+
+.splash-left-side {
+  display: flex;
+}
+
+.splash-logo-container {
+  align-self: center;
+}
+
+.splash-location-container {
+  margin-left: 16px;
+  margin: 2px 25px;
+  border-left: 1px solid #F0F0F0;
+  border-right: 1px solid #F0F0F0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 75px;
+}
+
+.splash-location-spacing {
+  display: flex;
+  width: 45px;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  height: 100%;
+}
+
+.splash-auth-container {
+  display: flex;
+  align-self: center;
+}
+
+.splash-auth-container > button {
+  color: white;
+  background-color: rgb(36, 126, 156);
+  padding: 0 1rem;
+  line-height: 2rem;
+  border-radius: 3px;
+  font-family: Spartan;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+  margin-right: 10px;
+  outline: 0;
+}
+
+.splash-auth-container > button:hover {
+  background-color: #1C627A;
+}
+
+.splash-auth-container > a {
+  align-self: center;
+  font-family: Spartan;
+  text-decoration: none;
+  color: rgb(36, 36, 36);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0 0 0 0.50rem;
+  margin-right: 25px;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.splash-auth-container > a:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 1030px) {
+  .splash-auth-container > button {
+    margin-right: 0;
+  }
+
+  .splash-auth-container > a {
+    margin-right: 0;
+  }
+
+  .splash-top-bar {
+    padding-left: 1.25rem;
+  }
+}
+
+.splash-image-animation-container {
+  height: 416px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.splash-img-anim1 {
+  max-width: 100%;
+  margin-top: -15%;
+  position: absolute;
+  left: 0;
+}
+
+.splash-img-anim2 {
+  max-width: 100%;
+  margin-top: -15%;
+  position: absolute;
+  left: 0;
+}
+
+.splash-img-anim3 {
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  margin-top: -102%;
+}
+
+@media only screen and (max-width: 942px) {
+  .splash-img-anim1 {
+    margin-top: -12%;
+  }
+
+  .splash-img-anim2 {
+    margin-top: -12%;
+  }
+
+  .splash-img-anim3 {
+    margin-top: -90%;
+  }
+} 
+
+@media only screen and (max-width: 724px) {  
+  .splash-img-anim1 {
+    margin-top: 0%;
+  }
+
+  .splash-img-anim2 {
+    margin-top: 0%;
+  }
+
+  .splash-img-anim3 {
+    margin-top: -75%;
+  }
+}
+
+@media only screen and (max-width: 625px) {  
+  .splash-img-anim1 {
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 1500px;
+  }
+
+  .splash-img-anim2 {
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 1500px;
+  }
+
+  .splash-img-anim3 {
+    min-width: 100%;
+    max-width: 500px;
+    margin-top: -65%;
+  }
+}
+
+@keyframes example {
+  0% {
+    opacity:1;
+  }
+  20.5% {
+    opacity:0;
+  }
+  50% {
+    opacity:0;
+  }
+  87.5% {
+    opacity:1;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.splash-image-animation-container > img {
+  animation-name: example;
+  animation-duration: 24s;
+}
+
+.splash-img-anim1:nth-of-type(1) {
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 24s;
+}
+
+.splash-img-anim2:nth-of-type(2) {
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 16s;
+}
+.splash-img-anim3:nth-of-type(3) {
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 8s;
+}
+
+.splash-image-animation-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(68, 68, 70, 0.118);
+}
+
+.splash-animation-text-container {
+  position: relative;
+  align-self: center;
+  z-index: 1;
+}
+
+.splash-animation-text-container > h1 {
+  color: white;
+  font-family: Spartan;
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 2.5;
+  text-align: center;
+}
+
+.splash-anim-selects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.splash-anim-select-container {
+  width: 480px;
+  height: 48px;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.splash-anim-select {
+  display: flex;
+  height: 90%;
+  align-items: center;
+  position: relative;
+  font-family: Spartan;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.splash-anim-select > img {
+  height: 18px;
+}
+
+.con1 {
+  width: 157px;
+  border-right: 1px solid #EBEBEB;
+  padding-left: 8px;
+}
+
+.con2 {
+  width: 150px;
+  border-right: 1px solid #EBEBEB;
+  padding-left: 8px;
+}
+
+.con3 {
+  width: 150px;
+  padding-left: 8px;
+}
+
+.con3 > img {
+  height: 15px;
+}
+
+.splash-anim-select > select {
+  opacity: 0;
+  height: 110%;
+  width: 102%;
+  position: absolute;
+  margin-left: -10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.splash-anim-text-p {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0px 0px 10px;
+  width: 75%;
+}
+
+.splash-anim-input-container {
+  background: white;
+  border-radius: 5px;
+  margin-left: 25px;
+  width: 288px;
+  display: flex;
+  height: 48px;
+}
+
+.splash-anim-input-container > img {
+  align-self: center;
+  padding-left: 7px;
+}
+
+.splash-anim-input-container input {
+  border: none;
+  height: 40px;
+  width: 288px;
+  align-self: center;
+  border-radius: 5px;
+  position: absolute;
+  padding: 5px 0px 0px 40px;
+  background-color: rgba(238, 238, 238, 0);
+  font-family: Spartan;
+  font-size: 14px;
+  outline: 0;
+}
+
+.splash-anim-form-submit {
+  background-color: #DA3643;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  height: 48px;
+  width: 144px;
+  margin-left: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;  
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.splash-anim-form-submit:hover {
+  background-color: #B8222C;
+}
+
+@media only screen and (max-width: 999px) {
+  .splash-anim-selects {
+    flex-direction: column;
+    height: 175px;
+    justify-content: space-between;
+  }
+
+  .splash-anim-select-container {
+    width: 100%;
+  }
+
+  .splash-anim-select {
+    width: 33%
+  }
+
+  .splash-anim-text-p {
+    width: 80%;
+  }
+
+  .splash-anim-input-container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .splash-anim-input-container > input {
+    width: 100%;
+  }
+
+  .splash-anim-form-submit {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 707px) {
+  .splash-animation-text-container > h1 {
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+}
+
+.splash-logo {
+  margin-bottom: 7px;
+}
+
+/* Sign Up Modal CSS */
+
+.splash-modal-full-container-signup {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.413);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.splash-modal-inner-container-signup {
+  background: white;
+  height: 784px;
+  width: 460px;
+  margin-top: 20px;
+}
+
+.splash-modal-form-signup {
+  margin: 45px 30px 0px 30px;
+}
+
+.splash-modal-form-signup > h1 {
+  font-family: Spartan;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.splash-modal-divider-signup {
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.signup-divid1 {
+  margin: 17px 0 12px 0px;
+}
+
+.splash-modal-inputs {
+  padding: 15px;
+  width: 100%;
+  height: 52px;
+  margin: 0px 0px 15px 0;
+  font-family: Spartan;
+  font-size: 12px;
+  border: 1px solid rgb(223, 221, 221);
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.splash-modal-inputs:focus {
+  outline: 2px solid rgb(154, 153, 153);
+}
+
+.splash-modal-form-signup > select {
+  padding: 15px;
+  width: 100%;
+  height: 52px;
+  margin: 0px 0px 15px 0;
+  font-family: Spartan;
+  font-size: 12px;
+  border: 1px solid rgb(223, 221, 221);
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.splash-modal-form-signup > select:focus {
+  outline: 2px solid rgb(154, 153, 153);
+}
+
+.splash-modal-signup-p1 {
+  position: relative;
+  border: 1px solid rgb(223, 221, 221);
+  font-family: Spartan;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  padding: 18px 0px 18px 15px;
+  top: -66px;
+  border-radius: 3px;
+  color: #777777;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.splash-modal-signup-p1 > img {
+  margin-right: 18px;
+}
+
+.splash-modal-signup-p1-selected > img {
+  margin-right: 18px;
+}
+
+.splash-modal-signup-p1-selected {
+  position: relative;
+  border: 2px solid rgb(154, 153, 153);
+  font-family: Spartan;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  padding: 18px 0px 18px 15px;
+  top: -66px;
+  color: #777777; display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.splash-modal-bottom-container {
+  position: relative;
+  bottom: 40px;
+  font-family: Spartan;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.splash-modal-bottom-container > input {
+  margin-bottom: 20px;
+}
+
+.splash-modal-signup-account {
+  background-color: #DA3643;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  height: 53px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;  
+  font-family: Spartan;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+  outline: 0;
+}
+
+.splash-modal-signup-account:active {
+  outline: 2px solid rgb(182, 180, 180);
+}
+
+.splash-modal-signup-account:hover {
+  background-color: #B8222C;
+}
+
+.splash-modal-demo-account {
+  background-color: rgb(45, 191, 55);
+  border-radius: 3px;
+  border: none;
+  color: white;
+  height: 53px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;  
+  font-family: Spartan;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+  margin-top: 13px;
+  outline: 0;
+}
+
+.splash-modal-demo-account:active {
+  outline: 2px solid rgb(182, 180, 180);
+}
+
+.splash-modal-demo-account:hover {
+  background-color: rgb(38, 160, 27);
+}
+
+.second-modal-divider {
+  position: relative;
+  bottom: 19px;
+}
+
+.splash-modal-form-signup > p {
+  font-family: Spartan;
+  color: #A1A1A1;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  position: relative;
+  bottom: 3px;
+}
+
+/* Sign In Modal CSS */
+
+.splash-modal-full-container-signin {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.413);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.splash-modal-inner-container-signin {
+  background: white;
+  height: 410px;
+  width: 460px;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.splash-modal-form-signin {
+  margin: 45px 30px 0px 30px;
+}
+
+.splash-modal-form-signin > h1 {
+  font-family: Spartan;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.splash-modal-divider-signin {
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.signin-divid1 {
+  margin: 11px 0 10px 0px;
+}
+
+.splash-signin-modal-bottom-container {
+  font-family: Spartan;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  margin-top: 9px;
+}
+
+.splash-signin-modal-bottom-container > a {
+  color: #237B98;
+  text-decoration: none;
+  align-self: flex-end;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.splash-signin-modal-bottom-container > a:hover {
+  color: rgb(33, 90, 109)
+}
+
+.splash-modal-signin-account {
+  background-color: #DA3643;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  height: 53px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;  
+  font-family: Spartan;
+  transition: background-color 0.3s;
+  transition-timing-function: ease-out;
+  outline: 0;
+}
+
+.splash-modal-signin-account:hover {
+  background-color: #B8222C;
+}
+
+.splash-modal-signin-account:active {
+  outline: 2px solid rgb(182, 180, 180);
+}
+
+.second-modal-divider-signin {
+  position: relative;
+  bottom: -30px;
+}
+
+.splash-modal-form-signin > p {
+  position: relative;
+  bottom: -55px;
+  font-family: Spartan;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.signin-modal-create-account {
+  text-decoration: none;
+  color: #DA3643;
+}
+
+.signin-modal-create-account:hover {
+  color: #B8222C;
+}
+
+
+
+
+
+
+
+/* NavBar Signed In CSS */
+
+.splash-auth-container {
+  margin-right: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.splash-logged-divider {
+  border-right: 1px solid #F2F2F2;
+  margin: 0px 1.3vw;
+}
+
+.splash-auth-calendar {
+  height: 25px;
+  cursor: pointer;
+}
+
+.splash-auth-container > p {
+  font-family: Spartan;
+  font-size: 14px;
+  font-weight: 500;
+  align-self: center;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.splash-auth-caret {
+  align-self: center;
+  margin-left: 9px;
+  cursor: pointer;
+}
+
+
+.test {
+    transform: translate(0px, -6px);
+    box-shadow: 0 2px 4px rgba(45,51,63,.2);
+    transition: all .3s
+}
+
+.test2 {
+    transform: translate(0px, 0px);
+    transition: all .3s
+}
+
+.primary-li {
+    transform: translate(0px, 0px);
+    transition: all .3s
+}
+
+.secondary-li {
+    transform: translate(0px, 0px);
+    transition: all .3s
+}
+
+.carousel-holder-div {
+  height: 100%;
+  position: relative;
+  top: -100.1%;
+  opacity: 0;
+  z-index: 2;
+}
+
+#carousel-ul > li {
+  overflow: hidden;
+}
+
+#carousel-ul img {
+  transition: all .3s
+}
+
+.carousel-li-bottom-holder {
+  height: 44%;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+}
