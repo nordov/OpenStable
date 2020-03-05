@@ -6,7 +6,6 @@ import FeaturedAreas from '../general_layout/featured_areas/featured_areas';
 
 class Splash extends Component {
 
-
   render() {
                      
     return (
