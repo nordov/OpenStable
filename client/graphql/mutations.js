@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 const { singleFileUpload } = require("../../server/schema/s3");
-const { GraphQLUpload } = require('graphql-upload');
+// const { GraphQLUpload } = require('graphql-upload');
 
 export default {
   LOGIN_USER: gql`
