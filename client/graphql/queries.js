@@ -6,23 +6,5 @@ export default {
     query IsUserLoggedIn {
       isLoggedIn @client
     }
-  `,
-  FETCH_STABLE: gql`
-    query FetchStable($id: ID!){
-      stable(id: $id){
-        id
-        name
-        description
-        address
-        city
-        state
-        longitude
-        latitude
-        tours{
-          id
-          name
-        }
-      }
-    }
-  `,
+  `
 };
