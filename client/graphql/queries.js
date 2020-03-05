@@ -8,7 +8,7 @@ export default {
     }
   `,
   FETCH_STABLE: gql`
-    query FetchStable($id: id){
+    query FetchStable($id: ID!){
       stable(id: $id){
         id
         name
