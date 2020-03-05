@@ -7,7 +7,6 @@ import CalendarWidget from '../general_layout/calendar/calendar';
 
 class Splash extends Component {
 
-
   render() {
                      
     return (
