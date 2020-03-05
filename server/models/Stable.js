@@ -31,8 +31,14 @@ const StableSchema = new Schema({
     latitude: {
         type: Number,
         //required: true
-    }, 
-    images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],           
+    },
+    
+    // Tom - Old image version, kept it around just in case.
+    // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
+
+    // Tom - New version, treats image like strings for AWS.
+    image: { type: String },
+
     tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
     horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
 }, { timestamps: true }
