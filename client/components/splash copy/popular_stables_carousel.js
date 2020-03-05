@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import resetCSS from "../reset.css";
+//import resetCSS from "../reset.css";
 import splashCSS from "./splash.css";
 
 class PopularCarousel extends Component {
