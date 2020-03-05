@@ -1,10 +1,10 @@
 const AWS = require("aws-sdk");
 const fs = require("fs");
-const myCredentials = require("../../credentials.json");
+//const myCredentials = require("../../credentials.json");
 
 if (process.env.NODE_ENV !== "production") {
   // comment the line below out to access the frontend
-  AWS.config.loadFromPath("./credentials.json");
+  //AWS.config.loadFromPath("./credentials.json");
 }
 const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 

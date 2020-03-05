@@ -1,15 +1,15 @@
 import React from "react";
-import Splash from "./splash/splash";
+import Main from "./general_layout/main/main";
 import { Query } from "react-apollo";
-import { Route } from "react-router-dom";
 import Queries from "../graphql/queries";
+import resetCSS from "./reset.css";
 
 const { IS_LOGGED_IN } = Queries;
 
 const App = () => {
     return (
         <div>
-            <Route exact path="/" component={Splash} />
+            <Main />
         </div>
     );
 };
