@@ -1,4 +1,4 @@
-
+/*
 
 .main {
   max-width: 1600px;
@@ -406,8 +406,11 @@
   margin-bottom: 7px;
 }
 
+*/
 
 /* Popular Stables Carousel CSS */
+
+/*
 
 .splash-popular-full-container {
   display: flex;
@@ -582,7 +585,11 @@
   font-weight: 600;
 }
 
+*/
+
 /* Featured Areas CSS */
+
+/*
 
 .splash-featured-full-container {
   display: flex;
@@ -794,9 +801,11 @@
   }
 }
 
-
+*/
 
 /* NavBar Signed In CSS */
+
+/*
 
 .splash-auth-container {
   margin-right: 25px;
@@ -830,6 +839,8 @@
 }
 
 /* NavDropdown CSS*/
+
+/*
 
 .splash-dropdown-full-container {
   position: relative;
@@ -867,6 +878,8 @@
   -moz-transition: -moz-transform .15s ease-out,opacity .15s ease-out,position .15s ease-out,max-height 0s;
   transition: transform .15s ease-out, opacity .15s ease-out, margin-top .15s;
 } */
+
+/*
 
 .splash-drop-p {
   position: absolute;
@@ -947,6 +960,8 @@
   margin-top: 10px;
 } */
 
+/*
+
 .splash-dropdown-inner-container li {
   width: 232px;
   height: 42px;
@@ -1013,3 +1028,5 @@
   position: relative;
   z-index: 1;
 }
+
+*/

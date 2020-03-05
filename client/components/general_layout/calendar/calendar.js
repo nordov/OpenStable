@@ -14,7 +14,6 @@ class CalendarWidget extends Component{
 
     componentDidMount() {
         this.appendToCalendar();
-
     }
 
     appendToCalendar() {
@@ -31,16 +30,19 @@ class CalendarWidget extends Component{
         console.log(this.state.selectedDate);
 
         return(
-            <Calendar
-                onChange={selectedDate => {
-                    this.setState({ selectedDate });
-                }}
-                value={this.state.date}
-                className="react-calendar-full"
-                onActiveDateChange={() => {
-                    this.appendToCalendar();
-                }}
-            />            
+            <div className="calendar-full-container">
+                <p className="calendar-caret">▲</p>
+                <Calendar
+                    onChange={selectedDate => {
+                        this.setState({ selectedDate });
+                    }}
+                    value={this.state.date}
+                    className="react-calendar-full"
+                    onActiveDateChange={() => {
+                        this.appendToCalendar();
+                    }}
+                />    
+            </div>        
         );
     }
 
