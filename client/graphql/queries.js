@@ -18,6 +18,10 @@ export default {
         state
         longitude
         latitude
+        tours{
+          id
+          name
+        }
       }
     }
   `,

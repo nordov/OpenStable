@@ -4,6 +4,7 @@ import { Query } from 'react-apollo';
 import keys from '../../../config/keys';
 import queries from '../../graphql/queries';
 const { FETCH_STABLE } = queries;
+import mapCSS from './stable.css'
 export class StableMap extends React.Component{
   constructor(props){
     super(props)
@@ -12,13 +13,11 @@ export class StableMap extends React.Component{
       activeMarker: {},
       selectedPlace: {}
     };
+    // modify once integrated with the stable show page
     this.phUser = {
       userLoc: 'san jose'
     };
-    this.mapStyle = {
-      height: '310px',
-      width: '310px'
-    };
+
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMapClicked = this.onMapClicked.bind(this);
   }
@@ -64,11 +63,12 @@ export class StableMap extends React.Component{
               lat: data.stable.latitude,
               lng:data.stable.longitude,
             };
+            console.log(data)
             return(
-              <div>
+              <div className="map">
                 <Map google={this.props.google}
                   zoom={16}
-                  style={this.mapStyle}
+                  style={this.props.mapStyle}
                   initialCenter={mapOptions}
                   // below are controls, set to false to have a cleaner map
                   mapTypeControl={false}
@@ -84,7 +84,7 @@ export class StableMap extends React.Component{
                       visible={this.state.showingInfoWindow}>
                         <div className="stable-map-info-window">
                           <h3 className="stable-map-info-window-header">
-                            <a className="stable-map-info-window-directions" href={`https://www.google.com/maps/dir/?api=1&origin=${this.encodeURL(null, this.phUser.userLoc)}&destination=${this.encodeURL(data.stable.address, data.stable.city, data.stable.state)}&travelmode=${`driving`}`}
+                            <a className="stable-map-info-window-directions" href={`https://www.google.com/maps/dir/?api=1&origin=${this.encodeURL(null, this.phUser.userLoc)}&destination=${this.encodeURL(data.stable.address, data.stable.city, data.stable.state)}&travelmode=driving`}
                             target="blank">
                               {this.state.selectedPlace.name}
                               </a></h3>
