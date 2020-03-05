@@ -11,10 +11,6 @@ class TourMap extends React.Component{
       selectedPlace: {}
     };
     // place holders, will need to be passed in through parent
-    this.mapStyle = {
-      height: '500px',
-      width: '500px'
-    };
     this.mapOptions = {
       lat: 37.5293531,
       lng: -122.4969606
@@ -56,8 +52,8 @@ class TourMap extends React.Component{
     return(
       <div>
         <Map google={this.props.google}
-        zoom={16}
-        style={this.mapStyle}
+        zoom={17}
+        style={this.props.mStyle}
         // call the getCenter function and invoke its lat/lng functions in order to get the center coords
         initialCenter={{
           lat: bounds.getCenter().lat(),
