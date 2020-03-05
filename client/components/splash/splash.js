@@ -322,7 +322,6 @@ class Splash extends Component {
           <FeaturedAreas />
           <Footer />
         </div>
-        <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/1583369420807.jpeg"></img>
       </div>
     );
   }

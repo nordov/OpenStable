@@ -70,14 +70,60 @@
 }
 
 .react-calendar__navigation__prev-button {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 400;
   font-family: Spartan;
   color: #DA3643;
   transition: background-color 0.3s;
 }
 
+.react-calendar__navigation button {
+  min-width: 24px;
+  height: 28px;
+  margin: 12px 10px;
+}
+
+.react-calendar__navigation__next-button {
+  font-size: 26px;
+  font-weight: 400;
+  font-family: Spartan;
+  color: #DA3643;
+  transition: background-color 0.3s;
+  min-width: 20px;
+  height: 28px;
+} 
+
 .react-calendar__navigation__prev-button:hover {
   color: #B8222C;
-  background: none;
+}
+
+.react-calendar__navigation__next-button:hover {
+  color: #B8222C;
+}
+
+.react-calendar__navigation button:enabled:hover, .react-calendar__navigation button:enabled:focus {
+  background-color: white;
+}
+
+.react-calendar__navigation__label {
+  cursor: pointer;
+  position: relative;
+  z-index: -1;
+}
+
+.react-calendar__month-view__days > button:hover {
+  color: #DF5A65;
+  border-radius: 150%;
+  background-color: #F7D7D9 !important;
+  max-width: 10% !important;
+  margin: 0 6.9px;
+}
+
+.react-calendar__tile .react-calendar__month-view__days__day .react-calendar__month-view__days__day--weekend {
+  max-width: 10.29% !important;
+}
+
+.react-calendar__tile {
+  padding: 0.75em 0em;
+  margin: 0 0.5em;
 }
