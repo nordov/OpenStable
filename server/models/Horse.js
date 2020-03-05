@@ -30,7 +30,7 @@ const HorseSchema = new Schema({
     // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
     
     // Tom - New version, treats image like strings for AWS.
-    images: { type: String },
+    image: { type: String },
 
     tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
 }, { timestamps: true }
