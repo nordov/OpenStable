@@ -24,16 +24,60 @@
   border-bottom: 1px solid rgb(235, 229, 229);
   position: absolute;
   top: 89px;
-  margin: 0 8px;
-  width: 95%;
+  margin: 0 13px;
+  width: 92%;
 }
 
 .react-calendar__month-view__days button {
   font-family: Spartan;
   font-size: 12px;
+  margin-top: 2px;
   margin-bottom: 1px;
 }
 
+.react-calendar__month-view__weekdays {
+  margin: 0 13px;
+}
+
+.react-calendar__month-view__days {
+  margin: 0 13px;
+}
+
 .react-calendar__month-view__days__day--weekend {
-  /* color: black; */
+  color: black;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+}
+
+.react-calendar__tile--active {
+  color: white;
+}
+
+.react-calendar__navigation__label {
+  font-family: Spartan;
+  font-size: 13px;
+  padding-top: 9px;
+}
+
+.react-calendar__navigation__next2-button {
+  display: none;
+}
+
+.react-calendar__navigation__prev2-button {
+  display: none;
+}
+
+.react-calendar__navigation__prev-button {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: Spartan;
+  color: #DA3643;
+  transition: background-color 0.3s;
+}
+
+.react-calendar__navigation__prev-button:hover {
+  color: #B8222C;
+  background: none;
 }

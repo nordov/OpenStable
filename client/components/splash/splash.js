@@ -171,20 +171,6 @@ class Splash extends Component {
     const calendarDivider = document.createElement("div")
     calendarDivider.className = 'calendar-divider'
     calendarEle[0].parentElement.appendChild(calendarDivider);
-
-    const dates = document.getElementsByClassName(
-      "react-calendar__month-view__days__day--weekend"
-    );
-    Array.from(dates).forEach(date => {
-      if (
-        !Array.from(date.previousSibling.classList).includes(
-          "react-calendar__month-view__days__day--neighboringMonth"
-        )
-      ) {
-        debugger;
-        date.style.color === "black";
-      }
-    })
   }
 
   render() {
@@ -328,11 +314,15 @@ class Splash extends Component {
             }}
             value={this.state.date}
             className="react-calendar-full"
+            onActiveDateChange={() => {
+              this.appendToCalendar();
+            }}
           />
           <PopularCarousel />
           <FeaturedAreas />
           <Footer />
         </div>
+        <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/1583369420807.jpeg"></img>
       </div>
     );
   }
