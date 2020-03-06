@@ -26,7 +26,7 @@ class Tour extends Component {
                         return(
                             <div className="tour-container">
                                 <div className="tour-map">
-                                    <TourMap mStyle={mStyle} data={data} />
+                                    {/* <TourMap mStyle={mStyle} data={data} /> */}
                                 </div>
                                 <div className="tour-nav">
                                     {/* nav needs to sticky */}

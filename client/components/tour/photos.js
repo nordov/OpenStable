@@ -1,48 +1,41 @@
 import React from 'react';
 import photosCSS from './photos.css';
 
+import phData from '../modals/data';
+import PhotoModal from '../modals/photo_modal';
+
 class Photos extends React.Component{
   constructor(props){
     super(props)
-    this.phImages = [
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-      'https://static.dezeen.com/uploads/2018/07/caballerizas-matias-zegers-architecture_dezeen_2364_col_26.jpg',
-    ]
+    this.state = {
+      showPhotoModal: false
+    }
+
+    this.showPhotoModal = this.showPhotoModal.bind(this)
+
+    this.phImages = phData;
   }
-  
-  // 1 photo entire
-  // 2 half
-  // 3 event
-  // 4 event
-  // 5 - 1 big - 4 even
-  // 7 - 2 - 1big -4  6 even
-  // 8 - 2 - 1 - 2- 3
-    // 4 even - 3 small
+
+  showPhotoModal(){
+    this.setState({showPhotoModal: true});
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
+  }
+
+  photoModal(img){
+    return <PhotoModal image={img} closeModal={() => this.setState({ showPhotoModal: false })} />
+  }
 
   // 9 images
 
   render(){
+    console.log(this.state.showPhotoModal)
     let imgArr = this.phImages.slice(0)
     if(imgArr.length > 9){
       imgArr = imgArr.slice(0,9)
     }
-    console.log(imgArr)
+
+    let photoModal = <PhotoModal closeModal={() => this.setState({ showPhotoModal: false })} />
     
     return(
       <div className="photos-container">
@@ -51,9 +44,17 @@ class Photos extends React.Component{
         </div>
         <div className="photos-block">
           {
-            imgArr.map((img, idx) => <img key={idx} className="photo-tile" src={img}/>)
+            imgArr.map((img, idx) => (
+              <button key={idx} onClick={this.showPhotoModal}>
+                <img className="photo-tile" src={img}/>
+              </button>
+              
+            ))
           }
-        </div>
+          </div>
+          {
+            this.state.showPhotoModal ? photoModal : null
+          }
       </div>
     );
   }

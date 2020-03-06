@@ -23,7 +23,6 @@ class SignInModal extends Component {
   }
 
   updateCache(client, { data }) {
-    console.log(data);
     client.writeData({
       data: { isLoggedIn: data.login.loggedIn, userFirstName: data.login.fname }
     });
