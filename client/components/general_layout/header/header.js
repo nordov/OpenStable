@@ -3,6 +3,7 @@ import mainCSS from '../main/main';
 import { Query } from "react-apollo";
 import Queries from "../../../graphql/queries";
 import CalendarWidget from "../calendar/calendar";
+import { withRouter } from 'react-router-dom';
 
 
 class Header extends Component {
@@ -16,7 +17,10 @@ class Header extends Component {
         " " +
         new Date().toString().split(" ")[2] +
         ", " +
-        new Date().toString().split(" ")[3]
+        new Date().toString().split(" ")[3],
+      selectedTime: "7:00AM",
+      selectedPeople: "1 person",
+      location: ''
     };
 
     this.openCalendar = this.openCalendar.bind(this);
@@ -73,7 +77,14 @@ class Header extends Component {
     }
   }
 
+  update(field) {
+    return e => this.setState({ [field]: e.target.value })
+  }
+
     render() {
+        if (this.props.location.pathname === '/search') {
+          return (<h1>hello</h1>)
+        } else {
         return (
           <div>
             <div id="elem3-opened" className="splash-image-animation-container">
@@ -110,7 +121,14 @@ class Header extends Component {
                     </div>
                     <div className="splash-anim-select con2">
                       <img src="/static/images/splash-clock.png"></img>
-                      <select defaultValue={"19:00"}>
+                      <select
+                        defaultValue={"19:00"}
+                        onChange={event => {
+                          this.setState({
+                            selectedTime: event.target.selectedOptions[0].text
+                          });
+                        }}
+                      >
                         <option value="00:00">12:00AM</option>
                         <option value="00:30">12:30AM</option>
                         <option value="01:00">1:00AM</option>
@@ -161,7 +179,7 @@ class Header extends Component {
                         <option value="23:30">11:30PM</option>
                       </select>
                       <div className="splash-anim-text-p">
-                        <p>7:00 PM</p>
+                        <p>{this.state.selectedTime}</p>
                         <img
                           src="/static/images/upside-down-caret.png"
                           width="12"
@@ -170,7 +188,14 @@ class Header extends Component {
                     </div>
                     <div className="splash-anim-select con3">
                       <img src="/static/images/splash-person.png"></img>
-                      <select defaultValue={"selectedGroup"}>
+                      <select
+                        defaultValue={"selectedGroup"}
+                        onChange={event => {
+                          this.setState({
+                            selectedPeople: event.target.selectedOptions[0].text
+                          });
+                        }}
+                      >
                         <option>1 person</option>
                         <option value="selectedGroup">2 people</option>
                         <option>3 people</option>
@@ -184,7 +209,7 @@ class Header extends Component {
                         <option>Larger Party</option>
                       </select>
                       <div className="splash-anim-text-p">
-                        <p>1 person</p>
+                        <p>{this.state.selectedPeople}</p>
                         <img
                           src="/static/images/upside-down-caret.png"
                           width="12"
@@ -197,7 +222,11 @@ class Header extends Component {
                       src="/static/images/splash-search.png"
                       height="25"
                     ></img>
-                    <input type="value" placeholder="Location"></input>
+                    <input 
+                      value={this.state.location}
+                      onChange={this.update("location")} 
+                      placeholder="Location" 
+                    />
                   </div>
                   <button className="splash-anim-form-submit" type="submit">
                     Let's go
@@ -205,10 +234,15 @@ class Header extends Component {
                 </form>
               </div>
             </div>
-            <CalendarWidget updateSelectedDate={selectedDate => this.setState({ selectedDate })}/>
+            <CalendarWidget
+              updateSelectedDate={selectedDate =>
+                this.setState({ selectedDate })
+              }
+            />
           </div>
         );
+      }
     }
 }
 
-export default Header;
+export default withRouter(Header);
