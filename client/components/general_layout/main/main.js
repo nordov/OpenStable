@@ -23,7 +23,7 @@ class Main extends Component {
       <div className="app" id="test" >
         <div className="main">
           <NavBar />
-          <Header />
+          {/* <Header /> */}
           <Route exact path="/" component={Splash} />
           <Route exact path="/stable" component={Stable} />
           <Route exact path="/tour" component={Tour} />

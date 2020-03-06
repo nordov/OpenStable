@@ -9,3 +9,16 @@
       height: 100px;
       width: 100px;
     }
+
+.photos-block{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+.pb{
+  width: 640px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}

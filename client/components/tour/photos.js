@@ -8,7 +8,8 @@ class Photos extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      showPhotoModal: false
+      showPhotoModal: false,
+      modalImage: ''
     }
 
     this.showPhotoModal = this.showPhotoModal.bind(this)
@@ -16,26 +17,20 @@ class Photos extends React.Component{
     this.phImages = phData;
   }
 
-  showPhotoModal(){
-    this.setState({showPhotoModal: true});
-    document.body.style.height = "100vh";
-    document.body.style.overflow = "hidden";
+  showPhotoModal(e){
+    this.setState({
+      showPhotoModal: true,
+      modalImage: e.target.src
+    });
   }
-
-  photoModal(img){
-    return <PhotoModal image={img} closeModal={() => this.setState({ showPhotoModal: false })} />
-  }
-
-  // 9 images
 
   render(){
-    console.log(this.state.showPhotoModal)
     let imgArr = this.phImages.slice(0)
     if(imgArr.length > 9){
       imgArr = imgArr.slice(0,9)
     }
 
-    let photoModal = <PhotoModal closeModal={() => this.setState({ showPhotoModal: false })} />
+    let photoModal = <PhotoModal imageArr={phData} image={this.state.modalImage} closeModal={() => this.setState({ showPhotoModal: false })} />
     
     return(
       <div className="photos-container">
@@ -43,14 +38,17 @@ class Photos extends React.Component{
           {this.phImages.length} Photos
         </div>
         <div className="photos-block">
+          <ul className="pb">
           {
-            imgArr.map((img, idx) => (
-              <button key={idx} onClick={this.showPhotoModal}>
-                <img className="photo-tile" src={img}/>
-              </button>
+            imgArr.map((img, idx) => {
+            return (
+              <li key={idx} onClick={this.showPhotoModal}>
+                <img className="photo-tile" src={img.image_url}/>
+              </li>
               
-            ))
+            )})
           }
+            </ul>
           </div>
           {
             this.state.showPhotoModal ? photoModal : null
