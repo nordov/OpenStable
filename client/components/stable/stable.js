@@ -5,9 +5,9 @@ class Stable extends Component{
 
     render(){
         return(
-        <div>
-            <h1>Stables Component</h1>
-        </div>
+            <div>
+                <h1>Stables Component</h1>
+            </div>
         );
     };
 }
