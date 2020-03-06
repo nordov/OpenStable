@@ -20,7 +20,7 @@ class Main extends Component {
   render() {
 
     return (
-      <div className="app" id="test" >
+      <div className="app" id="app_area" >
         <div className="main">
           <NavBar />
           <Header />

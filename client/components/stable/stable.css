@@ -1,0 +1,104 @@
+/* Stablr page wrap */
+
+.stable-display{
+    width: 990px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    border: 0.5px solid red;
+}
+
+/* Stable main content area */
+.stable-main-wrap {
+    background-color: white;
+    padding: 0 16px;
+    margin-top: -48px;
+    z-index: 1;
+}
+
+
+.stable-main{
+    width: 640px;
+    min-height: 1000px;
+    color: #2d333f;   
+}
+
+/* Stable navigation bar */
+
+.stable-navigation {
+    display: block;
+}
+
+.stable-navigation ul{
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    background-color: white;
+    border-radius: 2px 2px 0 0;
+    padding: 0 .5rem;
+    border-bottom: 1px solid #d8d9db;
+}
+
+.stable-navigation ul::before{
+    content: "";
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    left: 1rem;
+    
+}
+
+.stable-navigation ul li{
+    width: 25%;
+    text-align: center;
+}
+
+    
+
+.stable-navigation ul li a{
+    color: #2d333f;
+    padding: 14px .5rem;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.stable-navigation ul li a:hover{
+    color: #da3743;
+    border-bottom: 2px solid #da3743;
+
+}
+
+/* Stable Overview Area */
+.stable-overview {
+    
+}
+
+.title{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    padding: 32px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid rgb(216, 217, 219);
+}
+
+.reviews {
+    margin-bottom: 32px;
+}
+
+.description {
+    line-height: 24px;
+}
+
+/* Stable sidebar details area */
+
+.stable-details{
+    width: 320px;
+}

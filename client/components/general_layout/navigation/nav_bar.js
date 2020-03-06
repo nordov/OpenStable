@@ -36,7 +36,7 @@ class NavBar extends Component {
             elem3.id = "elem3-opened";
             elem4.id = "elem4-opened";
 
-            document.getElementById("test").addEventListener("click", this.closeNavDropdown);
+            document.getElementById("app_area").addEventListener("click", this.closeNavDropdown);
         }
     }
 
@@ -46,7 +46,7 @@ class NavBar extends Component {
             event.target.className !== "splash-drop-noclose" &&
             localStorage.getItem("auth-token")
         ) {
-            document.getElementById("test").removeEventListener("click", this.closeNavDropdown);
+            document.getElementById("app_area").removeEventListener("click", this.closeNavDropdown);
             this.setState({ showNavDropDown: false });
             const elem1 = document.getElementById(
                 "splash-dropdown-inner-container-opened"
