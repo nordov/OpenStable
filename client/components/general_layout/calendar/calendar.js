@@ -7,13 +7,18 @@ class CalendarWidget extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            selectedDate: new Date()
-        }
+          selectedDate: ''
+        };
 
     }
 
     componentDidMount() {
         this.appendToCalendar();
+    }
+
+    componentDidUpdate(_prevProps, prevState) {
+      if (prevState.selectedDate !== this.state.selectedDate)
+        this.props.updateSelectedDate(this.state.selectedDate);
     }
 
     appendToCalendar() {
@@ -27,15 +32,16 @@ class CalendarWidget extends Component{
         const clickableDivs = document.getElementsByClassName(
           "react-calendar__month-view "
         );
-
         clickableDivs[0].lastElementChild.lastElementChild.className = "calendar-click-no-close"
+
+        const closingButtons = document.getElementsByClassName("react-calendar__tile");
+        const closingButtonsArr = Array.from(closingButtons);
+        closingButtonsArr.forEach(button => {
+          button.lastElementChild.className = "calendar-click-close"
+        })
     }    
 
-    render(){
-        const selectedDate = this.state.selectedDate.toString();
-        const selectedDateArr = selectedDate.split(" ")
-        const parsedSelectedDate = selectedDateArr[1] + " " + selectedDateArr[2] + ", "  + selectedDateArr[3]
-
+    render(){       
         return (
           <div
             id="calendar-container"
@@ -46,7 +52,15 @@ class CalendarWidget extends Component{
             </p>
             <Calendar
               onChange={selectedDate => {
-                this.setState({ selectedDate });
+                const newDate = selectedDate.toString();
+                const newDateArr = newDate.split(" ");
+                const parsedNewDate =
+                  newDateArr[1] +
+                  " " +
+                  newDateArr[2] +
+                  ", " +
+                  newDateArr[3];
+                this.setState({ selectedDate: parsedNewDate });
               }}
               value={this.state.date}
               className="react-calendar-full calendar-click-no-close"
