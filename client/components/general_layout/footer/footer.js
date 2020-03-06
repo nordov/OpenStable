@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import resetCSS from "../reset.css";
-import splashCSS from "./splash.css";
+//import resetCSS from "../reset.css";
+import footerCSS from "./footer.css";
 
 class Footer extends Component {
   constructor(props) {

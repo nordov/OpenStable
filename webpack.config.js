@@ -30,5 +30,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "client/index.html"
     })
-  ]
+  ],
+  node: {
+    fs: "empty"
+  }
 };
