@@ -10,11 +10,9 @@ class TourMap extends React.Component{
       activeMarker: {},
       selectedPlace: {}
     };
-    // place holders, will need to be passed in through parent
-    this.mapOptions = {
-      lat: 37.5293531,
-      lng: -122.4969606
-    };
+    this.stable = this.props.data.tour.stable
+    this.tour = this.props.data.tour
+    
     this.onMarkerClick = this.onMarkerClick.bind(this)
     this.onMapClicked = this.onMapClicked.bind(this)
   }
@@ -40,15 +38,16 @@ class TourMap extends React.Component{
     // like waypoint coords
     // we can have an initial start (like starting at the stable)
     // can also add more coords to the array to create a more geodesic route
-    const triangleCoords = [
-      {lat: 37.527404, lng: -122.499431},
-      {lat: 37.526466, lng: -122.490738}
+    const waypoints = [
+      {lat: this.stable.latitude, lng: this.stable.longitude}, // starting coordinates - stable lat/lng
+      {lat: 37.526466, lng: -122.490738} // end coordinates, but we can add more to make waypoints
     ];
     // allows us to create a boundry to help center the map between to place markers
     let bounds = new this.props.google.maps.LatLngBounds();
-    for(let i = 0; i < triangleCoords.length; i++){
-      bounds.extend(triangleCoords[i]);
+    for(let i = 0; i < waypoints.length; i++){
+      bounds.extend(waypoints[i]);
     }
+    
     return(
       <div>
         <Map google={this.props.google}
@@ -61,11 +60,11 @@ class TourMap extends React.Component{
         }}
         onClick={this.onMapClicked}
         bounds={bounds}>
-          <Marker position={triangleCoords[0]}
+          <Marker position={waypoints[0]}
             name={'Start point'}/>
-          <Marker position={triangleCoords[1]}
+          <Marker position={waypoints[1]}
             name={'End point'}/>
-          <Polyline path={triangleCoords}
+          <Polyline path={waypoints}
             strokeColor="#0000FF"
             strokeOpacity={0.8}
             strokeWeight={2}

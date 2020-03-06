@@ -39,6 +39,8 @@ export default {
         stable{
           id
           name
+          longitude
+          latitude
         }
       }
     }

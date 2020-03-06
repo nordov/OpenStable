@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import tourCSS from "./tour.css";
 import TourMap from './tour_map';
 import queries from '../../graphql/queries';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const { FETCH_TOUR } = queries;
 
@@ -12,7 +13,6 @@ const mStyle = {
 };
 
 class Tour extends Component {
-
     render() {
         return (
             <Query query={FETCH_TOUR}
@@ -20,13 +20,21 @@ class Tour extends Component {
                     {({loading, error, data}) => {
                         if(loading) return <p>Loading...</p>
                         if(error) return <p>Error...</p>
-                        console.log(data)
                         return(
                             <div className="tour-container">
                                 <div className="tour-map">
-                                    <TourMap mStyle={mStyle} />
+                                    <TourMap mStyle={mStyle} data={data} />
                                 </div>
-                                <h1 className="tour-title">{data.tour.name}</h1>
+                                <div className="tour-nav">
+                                    {/* nav needs to sticky */}
+                                    <div className="tour-nav-links">
+                                        <Link to="tour#overview">Overview</Link>
+                                        <Link to="tour#photos">Photos</Link>
+                                        <Link to="tour#horses">Horses</Link>
+                                        <Link to="tour#reviews">Reviews</Link>
+                                    </div>
+                                </div>
+                                <h1 className="tour-title"><a id="overview">{data.tour.name}</a></h1>
                                 <div className="tour-display">
                                 <div className="tour-main">
                                     <div className="tour-navigation">
@@ -34,27 +42,30 @@ class Tour extends Component {
                                             <li>Rating</li>
                                             <li>Reviews</li>
                                             <li>
-                                                <img src="/static/images/tour-duration.png"/>
-                                                {`${data.tour.duration} minutes`}</li>
+                                                <img src="/static/images/tour-start-time.png"/>
+                                                {data.tour.start_time}
+                                            </li>
                                             <li>
-                                                <img src="/static/images/tour-terrain.png"/>
-                                                {`${data.tour.terrain}`}</li>
+                                                <img src="/static/images/tour-capacity.png"/>
+                                                {`${data.tour.capacity}`}
+                                            </li>
                                         </ul>
                                     </div>
                                     <div className="tour-main-desc">
-                                        {data.tour.description}
+                                        {/* {data.tour.description} */}
+                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
                                     </div>
                                     <div className="tour-overview">
-                                        <h1>Overview Area</h1>
+                                            <h1><a id="photos">Photos Area</a></h1>
+                                            photo component
                                     </div>
-                                    <div className="tour-photos">
-                                        <h1>Photos Area</h1>
+                                    <div className="tour-overview">
+                                        <h1><a id="horses">Horses Area</a></h1>
+                                        horse component
                                     </div>
-                                    <div className="tour-tours">
-                                        <h1>Tours Area</h1>
-                                    </div>
-                                    <div className="tour-reviews">
-                                        <h1>Reviews Area</h1>
+                                    <div className="tour-overview">
+                                        <h1><a id="reviews">Reviews Area</a></h1>
+                                        review component
                                     </div>
                                 </div>
                                 {/* sidebar */}
@@ -63,6 +74,18 @@ class Tour extends Component {
                                         <h1>Make a reservation</h1>
                                     </div>
                                     <div className="details">
+                                        <div className="details-section">
+                                            <img src="/static/images/tour-duration.png"/>
+                                            {`${data.tour.duration} mins`}
+                                        </div>
+                                        <div className="details-section">
+                                            <img src="/static/images/tour-difficulty.png"/>
+                                            {data.tour.difficulty}
+                                        </div>
+                                        <div className="details-section">
+                                            <img src="/static/images/tour-terrain.png"/>
+                                            {data.tour.terrain}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
