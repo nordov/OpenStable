@@ -189,7 +189,76 @@ const TOUR_DIFFICULTY = () => {
   return Math.floor(Math.random() * 10);
 }
 
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_0.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_1.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_2.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_3.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_4.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_5.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_6.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_7.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_8.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_9.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_10.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_11.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_12.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_13.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_14.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_15.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_16.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_17.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_18.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_19.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_20.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_21.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_22.png
 // https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_23.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_24.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_25.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_26.png
+
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_0.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_1.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_2.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_4.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_5.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_6.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_7.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_8.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_9.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_10.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_11.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_12.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_13.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_14.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_15.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_16.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_17.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_18.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_19.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_20.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_21.png
+
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_0.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_1.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_2.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_3.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_4.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_5.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_6.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_7.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_8.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_9.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_10.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_11.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_12.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_13.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_14.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_15.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_16.png
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_17.png
+
 
 // https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_10.png
 
