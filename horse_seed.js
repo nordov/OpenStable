@@ -1,3 +1,18 @@
+const mongoose = require("mongoose");
+const db = require("./config/keys").mongoURI;
+
+const Horse = require("./server/models/Horse");
+const Tour = require("./server/models/Tour");
+const Stable = require("./server/models/Stable");
+
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log("starting seed"))
+  .catch(err => console.log(err));
+
+
+
+
 // Static arrays for seeding horses, tours and stables are below. ----------------------------------------------------------
 
 const HORSE_COLOR = [
@@ -12,27 +27,6 @@ const HORSE_COLOR = [
   "Roan",
   "Appaloosa",
   "Pinto"
-];
-
-const HORSE_NAMES = [
-  "Aspen",
-  "Charlie",
-  "Ralph",
-  "Medley",
-  "Bonny",
-  "Elijah",
-  "Ginger",
-  "Comet",
-  "Orlando",
-  "Victoria",
-  "Rupert",
-  "Marley",
-  "Sonny",
-  "Cedric",
-  "Sandie",
-  "Cricket",
-  "Massie",
-  "Bailey"
 ];
 
 const HORSE_NAMES = [
@@ -534,8 +528,8 @@ const createHorses = (horses) => {
 // Seeding functions are envoked below with starter arrays. ----------------------------------------------------------
 
 createStables(STABLE_STARTERS);
-createHorses(HORSE_STARTERS);
-createTours(TOUR_STARTERS);
+// createHorses(HORSE_STARTERS);
+// createTours(TOUR_STARTERS);
 
 
 
