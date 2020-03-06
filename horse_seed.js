@@ -189,9 +189,11 @@ const TOUR_DIFFICULTY = () => {
   return Math.floor(Math.random() * 10);
 }
 
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/stable_23.png
 
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_10.png
 
-
+// https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_17.png
 
 
 
