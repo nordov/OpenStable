@@ -45,4 +45,7 @@ export default {
       }
     }
   `,
+  // FETCH_IMAGE: gql`
+  //   query FetchImage()
+  // `,
 };

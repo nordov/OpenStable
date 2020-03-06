@@ -6,7 +6,7 @@ import tourCSS from "./tour.css";
 import queries from '../../graphql/queries';
 const { FETCH_TOUR } = queries;
 import TourMap from './tour_map';
-import Photo from './photo';
+import Photos from './photos';
 import Horse from './horse';
 import Review from './review';
 
@@ -52,7 +52,7 @@ class Tour extends Component {
                                     </div>
                                     <div className="tour-components">
                                         <h1><a id="photos">Photos Area</a></h1>
-                                        <Photo />
+                                        <Photos />
                                     </div>
                                     <div className="tour-components">
                                         <h1><a id="horses">Horses Area</a></h1>

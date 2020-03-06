@@ -1,0 +1,11 @@
+.photos-container{
+  border: 1px solid red;
+}
+  .photos-title{
+    border: 1px solid red;
+  }
+    .photo-tile{
+      border: 1px solid red;
+      height: 100px;
+      width: 100px;
+    }
