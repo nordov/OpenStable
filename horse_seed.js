@@ -519,6 +519,7 @@ const createHorses = (horses) => {
     })
   }
 }
+}
 
 
 
