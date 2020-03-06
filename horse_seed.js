@@ -477,13 +477,15 @@ const createStables = (stables) => {
       state: stables[i].state,
       city: stables[i].city,
     }).save().then(stable => {
-      STABLE_IDS.push(stable.id);
+      STABLE_IDS.push(stable._id);
       console.log(`${stable.name} stable added.`);
     })
+  }
 }
 
 const createTours = (tours) => {
   for (let i = 0; i < tours.length; i++) {
+    let stableId = STABLE_IDS[Math.floor(Math.random() * STABLE_IDS.length)];
     new Tour({
       name: tours[i].name,
       image: tours[i].image,
@@ -493,8 +495,9 @@ const createTours = (tours) => {
       start_time: TOUR_START_TIMES(),
       difficulty: TOUR_DIFFICULTY(),
       duration: TOUR_DURATION(),
+      stable: stableId,
     }).save().then(tour => {
-      TOUR_IDS.push(tour.id);
+      TOUR_IDS.push(tour._id);
       console.log(`${tour.name} tour added.`)
     })
   }
@@ -514,12 +517,12 @@ const createHorses = (horses) => {
       stable: stableId,
       tours: tourId,
     }).save().then(horse => {
-      HORSE_IDS.push(horse.id);
+      HORSE_IDS.push(horse._id);
       console.log(`${horse.name} horse added.`)
     })
   }
 }
-}
+
 
 
 
@@ -528,9 +531,9 @@ const createHorses = (horses) => {
 
 // Seeding functions are envoked below with starter arrays. ----------------------------------------------------------
 
-createStables(STABLE_STARTERS);
+// createStables(STABLE_STARTERS);
+createTours(TOUR_STARTERS);
 // createHorses(HORSE_STARTERS);
-// createTours(TOUR_STARTERS);
 
 
 
