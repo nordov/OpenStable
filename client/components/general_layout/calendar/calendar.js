@@ -23,26 +23,38 @@ class CalendarWidget extends Component{
         const calendarDivider = document.createElement("div")
         calendarDivider.className = 'calendar-divider'
         calendarEle[0].parentElement.appendChild(calendarDivider);
+
+        const clickableDivs = document.getElementsByClassName(
+          "react-calendar__month-view "
+        );
+
+        clickableDivs[0].lastElementChild.lastElementChild.className = "calendar-click-no-close"
     }    
 
     render(){
+        const selectedDate = this.state.selectedDate.toString();
+        const selectedDateArr = selectedDate.split(" ")
+        const parsedSelectedDate = selectedDateArr[1] + " " + selectedDateArr[2] + ", "  + selectedDateArr[3]
 
-        console.log(this.state.selectedDate);
-
-        return(
-            <div className="calendar-full-container">
-                <p className="calendar-caret">▲</p>
-                <Calendar
-                    onChange={selectedDate => {
-                        this.setState({ selectedDate });
-                    }}
-                    value={this.state.date}
-                    className="react-calendar-full"
-                    onActiveDateChange={() => {
-                        this.appendToCalendar();
-                    }}
-                />    
-            </div>        
+        return (
+          <div
+            id="calendar-container"
+            className="calendar-full-container-hidden calendar-click-no-close"
+          >
+            <p className="calendar-caret calendar-click-no-close">
+              ▲
+            </p>
+            <Calendar
+              onChange={selectedDate => {
+                this.setState({ selectedDate });
+              }}
+              value={this.state.date}
+              className="react-calendar-full calendar-click-no-close"
+              onActiveDateChange={() => {
+                this.appendToCalendar();
+              }}
+            />
+          </div>
         );
     }
 

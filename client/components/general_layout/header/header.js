@@ -7,6 +7,56 @@ const { IS_LOGGED_IN } = Queries;
 
 class Header extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      calendarOpened: false,
+      selectedData: ""
+    }
+
+    this.openCalendar = this.openCalendar.bind(this);
+    this.closeCalendar = this.closeCalendar.bind(this);
+    this.closeCalendarImmediately = this.closeCalendarImmediately.bind(this);
+  }
+
+  openCalendar() {
+    if (!this.state.calendarOpened) {
+      const calendar = document.getElementById("calendar-container");
+      calendar.className = "calendar-full-container";
+      this.setState({ calendarOpened: true })
+
+      document.getElementById("test").addEventListener("click", this.closeCalendar);
+    }
+  }
+
+  closeCalendar(event) {
+      if (
+        !event.target.className.includes("calendar-click-no-close") &&
+        !event.target.className.includes("react-calendar") &&
+        !event.target.parentElement.className.includes("react-calendar") &&
+        event.target.className !== "splash-anim-select con1"
+      ) {
+        const calendar = document.getElementById("calendar-container");
+        calendar.className = "calendar-full-container-hidden";
+        document
+          .getElementById("test")
+          .removeEventListener("click", this.closeCalendar);
+        this.setState({ calendarOpened: false });
+      }
+  }
+
+  closeCalendarImmediately() {
+    if (
+      event.target.className === "splash-anim-select con1"
+    ) {
+      const calendar = document.getElementById("calendar-container");
+      calendar.className = "calendar-full-container-hidden";
+      document
+        .getElementById("test")
+        .removeEventListener("click", this.closeCalendar);
+      this.setState({ calendarOpened: false });
+    }
+  }
 
     render() {
         return(
@@ -27,7 +77,7 @@ class Header extends Component {
               <h1>Find your stable for any occasion</h1>
               <form className="splash-anim-selects">
                 <div className="splash-anim-select-container">
-                  <div className="splash-anim-select con1">
+                  <div onClick={this.state.calendarOpened ? null : this.openCalendar} className="splash-anim-select con1">
                     <img src="/static/images/splash-calendar.png"></img>
                     <div className="splash-anim-text-p">
                       <p>Aug 8, 2020</p>
