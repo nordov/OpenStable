@@ -172,10 +172,6 @@ const TOUR_DESCRIPTIONS = [
   "offers the chance to see wildlife and is good for all skill levels. The trail is primarily used for hiking, walking, running, and bird watching."
 ]
 
-const TOUR_TERRAIN = [
-  
-]
-
 const TOUR_START_TIMES = () => {
   // Ranges from 6 AM to 4 PM military time and is given in single integers with no 15 minute or 30 minute increments.
   return Math.floor((Math.random() * 10) + 6);
@@ -266,6 +262,33 @@ const TOUR_IMAGES = [
   "https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_16.png",
   "https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_17.png"
 ]
+
+const TOUR_TERRAIN = [
+  "Inland Lakes",
+  "Beach Fronts",
+  "Low Canyons",
+  "Dry River Beds",
+  "Estuaries",
+  "Farmlands",
+  "Coniferous Forest",
+  "Deciduous Forest",
+  "Redwood Forest",
+  "Grasslands",
+  "Coastal Hills",
+  "Marshes",
+  "Meadows",
+  "Mountains",
+  "Orchards",
+  "Pastures",
+  "River Delta",
+  "Sand Dunes",
+  "Seaside",
+  "Tide Pools",
+  "Vallies",
+  "Vineyards",
+  "Waterfalls",
+  "Wetlands"
+];
 
 
 
