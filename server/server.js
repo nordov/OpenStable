@@ -2,15 +2,15 @@ const express = require("express");
 const expressGraphQL = require("express-graphql");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const models = require('./models/index');
+const models = require("./models");
 const db = require("../config/keys").mongoURI;
 const schema = require("./schema/schema");
 const path = require("path");
-const multer = require('multer');
+const multer = require("multer");
 const { s3, singleFileUpload } = require("./schema/s3");
 
 // graphqlUploadExpress imported for AWS connection
-const { graphqlUploadExpress } = require('graphql-upload');
+const { graphqlUploadExpress } = require("graphql-upload");
 
 const app = express();
 
@@ -38,8 +38,8 @@ app.use(
 
 // configuring the DiscStorage engine.
 const storage = multer.diskStorage({
-  destination: 'uploads/',
-  filename: function (req, file, cb) {
+  destination: "uploads/",
+  filename: function(req, file, cb) {
     cb(null, file.originalname);
   }
 });
@@ -47,7 +47,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 //POST method route for uploading file
-app.post('/upload', upload.single("file"), function (req, res) {
+app.post("/upload", upload.single("file"), function(req, res) {
   //Multer middleware adds file(in case of single file ) or files(multiple files) object to the request object.
   //req.file is the demo_file
   singleFileUpload(req.file.path, req.file.filename, res);

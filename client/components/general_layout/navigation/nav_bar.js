@@ -41,29 +41,34 @@ class NavBar extends Component {
     }
 
     closeNavDropdown(event) {
-        if (
-            this.state.showNavDropDown &&
-            event.target.className !== "splash-drop-noclose" &&
-            localStorage.getItem("auth-token")
-        ) {
-            document.getElementById("app_area").removeEventListener("click", this.closeNavDropdown);
-            this.setState({ showNavDropDown: false });
-            const elem1 = document.getElementById(
+        setTimeout(() => {
+            if (
+              this.state.showNavDropDown &&
+              event.target.className !== "splash-drop-noclose" &&
+              localStorage.getItem("auth-token")
+            ) {
+              document
+                .getElementById("test")
+                .removeEventListener("click", this.closeNavDropdown);
+              this.setState({ showNavDropDown: false });
+              const elem1 = document.getElementById(
                 "splash-dropdown-inner-container-opened"
-            );
-            const elem2 = document.getElementById("splash-drop-p-opened");
-            const elem3 = document.getElementById("elem3-opened");
-            const elem4 = document.getElementById("elem4-opened");
-            elem1.id = "elem1";
-            elem2.id = "elem2";
-            setTimeout(() => {
+              );
+              const elem2 = document.getElementById("splash-drop-p-opened");
+              const elem3 = document.getElementById("elem3-opened");
+              const elem4 = document.getElementById("elem4-opened");
+              elem1.id = "elem1";
+              elem2.id = "elem2";
+              setTimeout(() => {
                 elem4.id = "elem4";
-            }, 150);
-            // if (elem3) {
-            //   debugger
-            //   elem3.id = "elem3";
-            // }
-        }
+              }, 150);
+              // if (elem3) {
+              //   debugger
+              //   elem3.id = "elem3";
+              // }
+            }
+        }, 1)
+        
     }
 
     showSignUpModal() {

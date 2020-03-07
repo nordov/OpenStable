@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Stablr page wrap */
 
 .stable-display{
@@ -102,3 +103,18 @@
 .stable-details{
     width: 320px;
 }
+=======
+/* Sidebar */
+.stable-sidebar{
+  border: 1px solid red;
+}
+
+  .stable-sidebar-map-wrap{
+    border: 1px solid red;
+    height: 310px;
+    width: 310px;
+  }
+    .stable-sidebar-map-address{
+      font-size: 12px;
+    }
+>>>>>>> master
