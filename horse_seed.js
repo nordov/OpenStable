@@ -461,19 +461,18 @@ const TOUR_DIFFICULTY = () => {
   return (Math.floor(Math.random() * 4) + 1);
 }
 
-const shuffle = (array) => {
-  var currIdx = array.length;
-  var temporaryValue, randIdx;
+const shuffle = (arr) => {
+  let currIdx = arr.length;
+  let tempVal, randIdx;
 
-  while (0 !== currIdx) {
+  while (currIdx > 0) {
     randIdx = Math.floor(Math.random() * currIdx);
     currIdx -= 1;
-
-    temporaryValue = array[currIdx];
-    array[currIdx] = array[randIdx];
-    array[randIdx] = temporaryValue;
+    tempVal = arr[currIdx];
+    arr[currIdx] = arr[randIdx];
+    arr[randIdx] = tempVal;
   }
-  return array;
+  return arr;
 };
 
 
