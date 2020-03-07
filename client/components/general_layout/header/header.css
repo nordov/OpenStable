@@ -132,11 +132,100 @@ div.search-time_people-p {
 }
 
 @media only screen and (max-width: 1011px) {
-  .header-search-select {
-    color: red;
+  .header-search-text-container {
+    width: 95.6%;
+    min-width: 737px;
+  }
+
+  .header-search-input-container {
+    min-width: 198px;
+  }
+
+  .header-search-select-container {
+    width: 52.6%;
+  }
+
+  .search-select-date {
+    width: 48%;
+  }
+
+  .header-search-form > button {
+    min-width: 120px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header-image-search-container {
+    height: 128px;
+  }
+
+  .header-search-image-wood {
+    height: 128px;
   }
 
   .header-search-text-container {
-    
+    margin-top: 0;
+    min-width: 0;
+  }
+
+  .header-search-form {
+    flex-wrap: wrap;
+  }
+
+  .header-search-form-submit {
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .header-search-select-container {
+    width: 59.6%;
+  }
+
+  .header-search-input-container {
+    width: 35%;
+  }
+
+  .header-search-select-container {
+    width: 62.6%;
+  }
+
+  div.search-select-date {
+    width: 198px;
+  }
+
+  div.search-select-time {
+    width: 199px;
+  }
+
+  div.search-select-people {
+    width: 187px;
+  }
+} 
+
+@media only screen and (max-width: 640px) {
+  .header-image-search-container {
+    height: 176px;
+  }
+
+  .header-search-image-wood {
+    height: 176px;
+  }
+
+  .header-search-select-container {
+    width: 100%
+  }
+
+  .header-search-input-container {
+    width: 100%;
+    border-top: 1px solid #d4d3d3;
+    border-radius: 0;
+    margin-left: 0;
+    padding-left: 10px;
+  }
+
+  .header-search-select-container p {
+    width: 100%;
+    text-align: center;
   }
 }
