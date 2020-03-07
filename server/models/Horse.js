@@ -25,8 +25,8 @@ const HorseSchema = new Schema({
         type: Schema.Types.ObjectId, ref: 'Stable',
         //required: true
     },
-    images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
-    tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
+    images:[{ type: Schema.Types.ObjectId, ref: 'images'}],
+    tours:[{ type: Schema.Types.ObjectId, ref: 'tours'}],
 }, { timestamps: true }
 );
 

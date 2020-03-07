@@ -13,12 +13,14 @@
 .photos-block{
   border: 1px solid red;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  height: 500px;
+  justify-content: space-evenly;
 }
 
 .pb{
   width: 640px;
   border: 1px solid red;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
 }
