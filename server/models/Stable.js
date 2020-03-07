@@ -32,9 +32,9 @@ const StableSchema = new Schema({
         type: Number,
         //required: true
     }, 
-    images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],           
-    tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
-    horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
+    images:[{ type: Schema.Types.ObjectId, ref: 'images'}],           
+    tours:[{ type: Schema.Types.ObjectId, ref: 'tours'}],
+    horses:[{ type: Schema.Types.ObjectId, ref: 'horses'}]
 }, { timestamps: true }
 );
 
