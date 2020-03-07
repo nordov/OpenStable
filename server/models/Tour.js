@@ -43,6 +43,8 @@ const TourSchema = new Schema({
     // Tom - New version, treats image like strings for AWS.
     image: { type: String },
 
+    // Tom - Added, not sure if this syntax is correct?
+    images: { type: Array },
 
     horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
     reserved_horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
