@@ -461,7 +461,20 @@ const TOUR_DIFFICULTY = () => {
   return (Math.floor(Math.random() * 4) + 1);
 }
 
+const shuffle = (array) => {
+  var currIdx = array.length;
+  var temporaryValue, randIdx;
 
+  while (0 !== currIdx) {
+    randIdx = Math.floor(Math.random() * currIdx);
+    currIdx -= 1;
+
+    temporaryValue = array[currIdx];
+    array[currIdx] = array[randIdx];
+    array[randIdx] = temporaryValue;
+  }
+  return array;
+};
 
 
 
@@ -496,6 +509,7 @@ const createTours = (tours) => {
       difficulty: TOUR_DIFFICULTY(),
       duration: TOUR_DURATION(),
       stable: stableId,
+      images: TOUR_IMAGES
     }).save().then(tour => {
       TOUR_IDS.push(tour._id);
       console.log(`${tour.name} tour added.`)
@@ -506,7 +520,7 @@ const createTours = (tours) => {
 const createHorses = (horses) => {
   for (let i = 0; i < horses.length; i++) {
     let tourId = TOUR_IDS[Math.floor(Math.random() * TOUR_IDS.length)];
-    let stableId = Tours.find(tourId).stable; // <---------------------------- Is this valid Mongoose syntax?
+    let stableId = Tour.find(tourId).stable; // <---------------------------- Is this valid Mongoose syntax?
     new Horse({
       name: horses[i].name,
       image: horses[i].image,
@@ -531,9 +545,9 @@ const createHorses = (horses) => {
 
 // Seeding functions are envoked below with starter arrays. ----------------------------------------------------------
 
-// createStables(STABLE_STARTERS);
+createStables(STABLE_STARTERS);
 createTours(TOUR_STARTERS);
-// createHorses(HORSE_STARTERS);
+createHorses(HORSE_STARTERS);
 
 
 
