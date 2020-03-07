@@ -485,6 +485,7 @@ const createStables = (stables) => {
       name: stables[i].name,
       address: stables[i].address,
       description: stables[i].description,
+      images: shuffle(TOUR_IMAGES),
       image: stables[i].image,
       state: stables[i].state,
       city: stables[i].city,
@@ -501,6 +502,7 @@ const createTours = (tours) => {
     new Tour({
       name: tours[i].name,
       image: tours[i].image,
+      images: shuffle(TOUR_IMAGES),
       stable: TOUR_IDS[Math.floor(Math.random() * TOUR_IDS.length)],
       terrain: `${TOUR_TERRAIN[Math.floor(Math.random() * TOUR_TERRAIN.length)]} / ${TOUR_TERRAIN[Math.floor(Math.random() * TOUR_TERRAIN.length)]}`,
       description: TOUR_DESCRIPTIONS[Math.floor(Math.random() * TOUR_DESCRIPTIONS.length)],
@@ -508,7 +510,6 @@ const createTours = (tours) => {
       difficulty: TOUR_DIFFICULTY(),
       duration: TOUR_DURATION(),
       stable: stableId,
-      images: TOUR_IMAGES
     }).save().then(tour => {
       TOUR_IDS.push(tour._id);
       console.log(`${tour.name} tour added.`)

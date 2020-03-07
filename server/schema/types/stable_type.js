@@ -11,6 +11,9 @@ const {
 const { s3 } = require('../s3');
 
 const mongoose = require("mongoose");
+// Tom - Added schema for images array, not sure if that's right.
+const Schema = mongoose.Schema;
+
 const Stable = mongoose.model("stables");
 
 const StableType = new GraphQLObjectType({
@@ -46,6 +49,8 @@ const StableType = new GraphQLObjectType({
     // Tom - Boilerplate, should be adapted to multiple images once tested.
     image: {
       type: GraphQLString,
+
+      // Tom - Not sure if we need the rest of this since they're just url strings?
       resolve(parentValue) {
         let imageUrl;
         if (parentValue.image) {
@@ -56,7 +61,26 @@ const StableType = new GraphQLObjectType({
         }
         return imageUrl || parentValue.image;
       }
-    }
+    },
+
+    // Tom - Added this, took code directly from single image not sure if its right.
+    images: [
+      {
+        type: GraphQLString,
+
+        // Tom - Not sure if we need the rest of this since they're just url strings?
+        resolve(parentValue) {
+          let imageUrl;
+          if (parentValue.image) {
+            imageUrl = s3.getSignedUrl('getObject', {
+              Bucket: "aws-graphql-dev-testing",
+              Key: parentValue.image
+            });
+          }
+          return imageUrl || parentValue.image;
+        }
+      }
+    ]
 
     // Tom - Old image code, just in case something breaks.
     // images: {
