@@ -36,7 +36,7 @@ class NavBar extends Component {
             elem3.id = "elem3-opened";
             elem4.id = "elem4-opened";
 
-            document.getElementById("app_area").addEventListener("click", this.closeNavDropdown);
+            document.getElementById("test").addEventListener("click", this.closeNavDropdown);
         }
     }
 
