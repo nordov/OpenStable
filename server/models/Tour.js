@@ -36,9 +36,9 @@ const TourSchema = new Schema({
         type: Schema.Types.ObjectId, ref: 'Stable',
         required: true
     },
-    images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
-    horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
-    reserved_horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
+    images:[{ type: Schema.Types.ObjectId, ref: 'images'}],
+    horses:[{ type: Schema.Types.ObjectId, ref: 'horses'}],
+    reserved_horses:[{ type: Schema.Types.ObjectId, ref: 'horses'}]
 }, { timestamps: true }
 );
 

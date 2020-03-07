@@ -15,7 +15,7 @@ const Tour = mongoose.model('tours');
 const TourType = require('./tour_type');
 
 //Import Horse type
-const Horse = mongoose.model('horses');
+const Horse = require("../../models/Horse");
 const HorseType = require('./horse_type');
 
 //Import Image type
