@@ -39,6 +39,9 @@ const StableSchema = new Schema({
     // Tom - New version, treats image like strings for AWS.
     image: { type: String },
 
+    // Tom - Added, not sure if this syntax is correct?
+    images: { type: Array },
+
     tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
     horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
 }, { timestamps: true }
