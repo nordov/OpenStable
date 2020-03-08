@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import confirmationCSS from './confirmation.css';
+import ConfirmationTimer from './confirmation_timer';
 
 class Confirmation extends Component {
   constructor(props) {
@@ -20,24 +21,25 @@ class Confirmation extends Component {
               <div className="confirmation-reservation-info">
                 <h1>Crepe du Jour</h1>
                 <div className="confirmation-reservation-details">
-                  <i class="far fa-calendar">
+                  <i className="far fa-calendar">
                     <p>Fri, Mar 13</p>
                   </i>
-                  <i class="far fa-clock">
+                  <i className="far fa-clock">
                     <p>6:30 PM</p>
                   </i>
-                  <i class="far fa-user">
+                  <i className="far fa-user">
                     <p>3 people</p>
                   </i>
                 </div>
               </div>
             </div>
-            <div className="confirmation-table-hold-container">
+            {/* <div className="confirmation-table-hold-container">
               <p>
                 We're holding this table for you for
                 <strong>1:00 minutes</strong>
               </p>
-            </div>
+            </div> */}
+            <ConfirmationTimer />
             <p>
               <span>Sign in</span> or <span>sign up</span> to collect points for
               this reservation

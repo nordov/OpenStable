@@ -191,3 +191,24 @@
   font-size: 13px;
   color: #787B84;
 }
+
+.confirmation-table-hold-container strong {
+  font-weight: 600;
+}
+
+.confirmation-table-hold-container2 {
+  background-color: #FCEFEE;
+  border-radius: 3px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-family: Spartan;
+  margin-top: 17px;
+  margin-bottom: 37px;
+  width: 638px;
+}
+
+.confirmation-table-hold-container2 > p {
+  margin-left: 12px;
+}
