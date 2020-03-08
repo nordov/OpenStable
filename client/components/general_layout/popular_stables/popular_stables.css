@@ -172,3 +172,7 @@
 .carousel-li-bottom-holder > h2 {
   font-weight: 600;
 }
+
+.carousel-holder-div {
+  cursor: pointer;
+}
