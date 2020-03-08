@@ -5,7 +5,6 @@
 }
 
 .search-left-side-container {
-  border: 1px solid black;
   padding: 0 16px;
   width: 192px;
   height: 442px;
@@ -46,14 +45,6 @@
   color: white;
   font-size: 15px;
   font-weight: 200;
-}
-
-.search-right-side-container {
-  border: 1px solid black;
-}
-
-.search-empty-right-side {
-  border: 1px solid black;
 }
 
 .search-price-container {
@@ -179,4 +170,144 @@
 
 #fa-clock {
   color: black;
+}
+
+.search-right-side-container {
+  width: 768px;
+}
+
+.search-top-header-container {
+  width: 752px;
+  display: flex;
+  justify-content: space-between;
+  height: 78px;
+  border-bottom: 1px solid #F0F2F4;
+  margin: 0 12px;
+  align-items: center;
+}
+
+.search-top-header-container > h3 {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.search-top-header-container > button {
+  border: 2px solid #E4E4E4;
+  cursor: pointer;
+  width: 215px;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: 8px 16px;
+  align-items: center;
+  height: 37px;
+}
+
+.search-top-header-container > button:focus {
+  outline: solid 2px #4A6FDE;
+}
+
+.search-top-header-container i {
+  color: #9A9DA3;
+}
+
+.search-top-header-container > button:hover {
+  border: 2px solid #DA3742;
+}
+
+.search-right-side-container img {
+  border-radius: 4px;
+  height: 46.5%;
+  width: 26.76%;
+}
+
+.search-right-side-container li {
+  display: flex;
+  padding: 14px 0px 14px 0px;
+  margin-left: 14px;
+  border-bottom: 1px solid #F0F2F4;
+}
+
+.search-right-side-container > ul {
+  margin-top: 12px;
+  padding-bottom: 20px;
+}
+
+.search-li-container {
+  padding-left: 19px;
+  margin-top: 10px;
+}
+
+.search-li-container > a {
+  text-decoration: none;
+  color: #247F9E;
+  font-weight: 700;
+  font-family: Spartan;
+  font-size: 15px;
+  padding: 0 0 0 0;
+}
+
+.search-li-container > a:hover {
+  text-decoration: underline;
+}
+
+.search-ratings-container {
+  display: flex;
+  height: 35px;
+  align-items: center;
+}
+
+.search-ratings-container > i:last-of-type {
+  color: #D8D8DB;
+}
+
+.search-ratings-container > i {
+  color: #FCAF07;
+}
+
+.search-ratings-container > p {
+  color: #6F737B;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: Spartan;
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+.search-li-info-container {
+  margin-top: 2px;
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 11px;
+}
+
+.search-li-info-container > span:nth-of-type(2)::before {
+  margin-left: 10px;
+  padding-right: 10px;
+  content: '•';
+  color: #d8d9db;
+}
+
+.search-li-timeslots-container {
+  padding-top: 11px;
+}
+
+.search-li-timeslots-container > a:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.search-li-timeslots-container > a {
+  text-decoration: none;
+  background: #DB3642;
+  margin-left: 4px;
+  color: white;
+  padding: 7px 25px 7px 25px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.search-li-timeslots-container > a:hover {
+  background: #BB232D;
 }
