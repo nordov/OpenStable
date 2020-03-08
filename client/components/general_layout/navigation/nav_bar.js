@@ -84,7 +84,6 @@ class NavBar extends Component {
     }
 
     render() {
-
         const signUpModal = <SignUpModal closeModal={() => this.setState({ showSignUpModal: false })} />
         const signInModal = <SignInModal
             closeModal={() => this.setState({ showSignInModal: false })}
@@ -159,7 +158,7 @@ class NavBar extends Component {
                     </div>
                     <div className="splash-auth-container">
                         <button onClick={this.showSignUpModal}>Sign up</button>
-                        <a href="#" onClick={this.showSignInModal}>
+                        <a onClick={this.showSignInModal}>
                             Sign in
                 </a>
                     </div>

@@ -6,19 +6,24 @@ class Search extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    const searchCalendar = document.getElementById("calendar-container");
+    searchCalendar.id = "calendar-full-container-hidden-search";
+  }
+
   render() {
     return (
       <div className="search-full-body-container">
         <div className="search-left-side-container">
           <div className="search-map-image-container">
             <div className="search-map-button">
-              <i class="far fa-map"></i>
+              <i className="far fa-map"></i>
               <a href="#">Map</a>
             </div>
           </div>
           <div className="search-price-container">
             <div className="search-price-text">
-              <i class="fas fa-credit-card"></i>
+              <i className="fas fa-credit-card"></i>
               <h2>Price</h2>
             </div>
             <div className="search-price-filters-container">
@@ -30,8 +35,8 @@ class Search extends React.Component {
             </div>
           </div>
           <div className="search-neighborhood-container">
-            <div class="search-neighborhood-text-container">
-              <i class="fas fa-map-marker-alt"></i>
+            <div className="search-neighborhood-text-container">
+              <i className="fas fa-map-marker-alt"></i>
               <h2>Neighborhood</h2>
             </div>
             <div className="search-neighborhood-inputs">
@@ -65,8 +70,8 @@ class Search extends React.Component {
             <div className="search-divider-line"></div>
           </div>
           <div className="search-time-container">
-            <div class="search-neighborhood-text-container">
-              <i id="fa-clock" class="far fa-clock"></i>
+            <div className="search-neighborhood-text-container">
+              <i id="fa-clock" className="far fa-clock"></i>
               <h2>Time</h2>
             </div>
             <div className="search-neighborhood-inputs">
@@ -90,7 +95,7 @@ class Search extends React.Component {
             <h3>46 stables available</h3>
             <button>
               <p>Featured</p>
-              <i class="fas fa-angle-down"></i>
+              <i className="fas fa-angle-down"></i>
             </button>
           </div>
           <ul>
@@ -99,11 +104,11 @@ class Search extends React.Component {
               <div className="search-li-container">
                 <a href="#">Stable name</a>
                 <div className="search-ratings-container">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <p>Awesome</p>
                 </div>
                 <div className="search-li-info-container">
@@ -124,11 +129,11 @@ class Search extends React.Component {
               <div className="search-li-container">
                 <a href="#">Stable name</a>
                 <div className="search-ratings-container">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <p>Awesome</p>
                 </div>
                 <div className="search-li-info-container">
@@ -149,11 +154,11 @@ class Search extends React.Component {
               <div className="search-li-container">
                 <a href="#">Stable name</a>
                 <div className="search-ratings-container">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <p>Awesome</p>
                 </div>
                 <div className="search-li-info-container">

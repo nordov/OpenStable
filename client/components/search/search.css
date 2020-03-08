@@ -311,3 +311,32 @@
 .search-li-timeslots-container > a:hover {
   background: #BB232D;
 }
+
+#calendar-full-container-search {
+  position: absolute;
+  left: 20.6%;
+  z-index: 1;
+  font-family: Spartan;
+  height: 316px;
+  width: 352px;
+  border-radius: 3px;
+  /* display: block; */
+  opacity: 1;
+  transition: transform .15s ease-out, opacity .15s ease-out, margin-top .15s;
+  top: 122px;
+  /* left */
+}
+
+#calendar-full-container-hidden-search {
+  position: absolute;
+  top: 122px;
+  left: 220.6%;
+  z-index: -1;
+  font-family: Spartan;
+  height: 316px;
+  width: 352px;
+  border-radius: 3px;
+  margin-top: -10px;
+  transition: transform .15s ease-out, opacity .15s ease-out, margin-top .15s, z-index .35s;
+  opacity: 0;
+}

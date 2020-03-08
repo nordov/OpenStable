@@ -31,8 +31,16 @@ class Header extends Component {
 
   openCalendar() {
     if (!this.state.calendarOpened) {
-      const calendar = document.getElementById("calendar-container");
-      calendar.className = "calendar-full-container";
+      if (this.props.location.pathname === "/") {
+        const calendar = document.getElementById("calendar-container");
+        calendar.className = "calendar-full-container";
+      } else if (this.props.location.pathname === "/search") {
+        const calendar = document.getElementById(
+          "calendar-full-container-hidden-search"
+          );
+          calendar.id = "calendar-full-container-search";
+      }
+      
       this.setState({ calendarOpened: true })
 
       document.getElementById("test").addEventListener("click", this.closeCalendar);
@@ -46,8 +54,16 @@ class Header extends Component {
         !event.target.parentElement.className.includes("react-calendar") &&
         event.target.className !== "splash-anim-select con1"
       ) {
-        const calendar = document.getElementById("calendar-container");
-        calendar.className = "calendar-full-container-hidden";
+        if (this.props.location.pathname === "/") {
+          const calendar = document.getElementById("calendar-container");
+          calendar.className = "calendar-full-container-hidden";
+        } else if (this.props.location.pathname === "/search") {
+          const calendar = document.getElementById(
+            "calendar-full-container-search"
+          );
+          calendar.id = "calendar-full-container-hidden-search";
+        }
+        
         document
           .getElementById("test")
           .removeEventListener("click", this.closeCalendar);
@@ -56,12 +72,20 @@ class Header extends Component {
                event.target.className.includes("react-calendar__tile") ||
                event.target.className.includes("calendar-click-close")
              ) {
-               const calendar = document.getElementById("calendar-container");
-               calendar.className = "calendar-full-container-hidden";
-               document
+              if (this.props.location.pathname === "/") {
+                const calendar = document.getElementById("calendar-container");
+                calendar.className = "calendar-full-container-hidden";
+              } else if (this.props.location.pathname === "/search") {
+                const calendar = document.getElementById(
+                  "calendar-full-container-search"
+                );
+                calendar.id = "calendar-full-container-hidden-search";
+              }
+               
+              document
                  .getElementById("test")
                  .removeEventListener("click", this.closeCalendar);
-               this.setState({ calendarOpened: false });
+              this.setState({ calendarOpened: false });
              }
   }
 
@@ -375,7 +399,7 @@ class Header extends Component {
                       placeholder="Location" 
                     />
                   </div>
-                  <button className="splash-anim-form-submit" type="submit">
+                  <button className="splash-anim-form-submit" type="submit" onClick={() => this.props.history.push("/search")}>
                     Let's go
                   </button>
                 </form>
