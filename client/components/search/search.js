@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchCSS from './search.css';
+import SearchListItem from './search_list_item';
 
 class Search extends React.Component {
   constructor(props) {
@@ -92,89 +93,13 @@ class Search extends React.Component {
         </div>
         <div className="search-right-side-container">
           <div className="search-top-header-container">
-            <h3>46 stables available</h3>
+            <h3>3 stables available</h3>
             <button>
               <p>Featured</p>
               <i className="fas fa-angle-down"></i>
             </button>
           </div>
-          <ul>
-            <li>
-              <img src="https://resizer.otstatic.com/v2/photos/legacy/2/26143634.jpg"></img>
-              <div className="search-li-container">
-                <a href="#">Stable name</a>
-                <div className="search-ratings-container">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <p>Awesome</p>
-                </div>
-                <div className="search-li-info-container">
-                  <span>$$</span>
-                  <span>Neighborhood</span>
-                </div>
-                <div className="search-li-timeslots-container">
-                  <a href="#">6:30 PM</a>
-                  <a href="#">6:45 PM</a>
-                  <a href="#">7:00 PM</a>
-                  <a href="#">7:15 PM</a>
-                  <a href="#">7:30 PM</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://resizer.otstatic.com/v2/photos/legacy/2/26143634.jpg"></img>
-              <div className="search-li-container">
-                <a href="#">Stable name</a>
-                <div className="search-ratings-container">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <p>Awesome</p>
-                </div>
-                <div className="search-li-info-container">
-                  <span>$$</span>
-                  <span>Neighborhood</span>
-                </div>
-                <div className="search-li-timeslots-container">
-                  <a href="#">6:30 PM</a>
-                  <a href="#">6:45 PM</a>
-                  <a href="#">7:00 PM</a>
-                  <a href="#">7:15 PM</a>
-                  <a href="#">7:30 PM</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://resizer.otstatic.com/v2/photos/legacy/2/26143634.jpg"></img>
-              <div className="search-li-container">
-                <a href="#">Stable name</a>
-                <div className="search-ratings-container">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <p>Awesome</p>
-                </div>
-                <div className="search-li-info-container">
-                  <span>$$</span>
-                  <span>Neighborhood</span>
-                </div>
-                <div className="search-li-timeslots-container">
-                  <a href="#">6:30 PM</a>
-                  <a href="#">6:45 PM</a>
-                  <a href="#">7:00 PM</a>
-                  <a href="#">7:15 PM</a>
-                  <a href="#">7:30 PM</a>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <SearchListItem />
         </div>
         <div className="search-empty-right-side"></div>
       </div>

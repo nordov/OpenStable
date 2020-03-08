@@ -220,6 +220,7 @@
   border-radius: 4px;
   height: 46.5%;
   width: 26.76%;
+  cursor: pointer;
 }
 
 .search-right-side-container li {
