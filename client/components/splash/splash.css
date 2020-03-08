@@ -1,5 +1,3 @@
-
-
 .main {
   max-width: 1600px;
   margin: 0 auto;
@@ -406,7 +404,6 @@
   margin-bottom: 7px;
 }
 
-
 /* Popular Stables Carousel CSS */
 
 .splash-popular-full-container {
@@ -583,6 +580,8 @@
 }
 
 /* Featured Areas CSS */
+
+/* 
 
 .splash-featured-full-container {
   display: flex;
@@ -794,9 +793,11 @@
   }
 }
 
-
+*/
 
 /* NavBar Signed In CSS */
+
+/*
 
 .splash-auth-container {
   margin-right: 25px;
@@ -829,7 +830,11 @@
   cursor: pointer;
 }
 
+*/
+
 /* NavDropdown CSS*/
+
+/*
 
 .splash-dropdown-full-container {
   position: relative;
@@ -837,7 +842,7 @@
   top: 35px;
 }
 
-/* .splash-dropdown-full-container > p {
+.splash-dropdown-full-container > p {
   position: absolute;
   right: 2px;
   top: -10px;
@@ -846,9 +851,9 @@
   font-size: 14px;
   text-shadow: 0px 0 rgb(255, 255, 255), 0 -2px rgb(235, 226, 226);
   z-index: 1;
-} */
+} 
 
-/* .splash-dropdown-inner-container {
+.splash-dropdown-inner-container {
   background: white;
   border: 1px solid rgb(235, 226, 226);
   border-radius: 3px;
@@ -866,7 +871,7 @@
   -webkit-transition: -webkit-transform .15s ease-out,opacity .15s ease-out,position .15s ease-out,max-height 0s;
   -moz-transition: -moz-transform .15s ease-out,opacity .15s ease-out,position .15s ease-out,max-height 0s;
   transition: transform .15s ease-out, opacity .15s ease-out, margin-top .15s;
-} */
+}
 
 .splash-drop-p {
   position: absolute;
@@ -940,12 +945,12 @@
   transform: translateY(0) perspective(600px) rotateY(0);
 }
 
-/* .splash-dropdown-inner-container:hover {
+.splash-dropdown-inner-container:hover {
   transform: translateY(0) perspective(600px) rotateY(0);
   height: 168px;
   opacity: 1;
   margin-top: 10px;
-} */
+}
 
 .splash-dropdown-inner-container li {
   width: 232px;
@@ -968,7 +973,6 @@
   background: #F7F7F7;
   color: black;
 }
-
 
 .test {
     transform: translate(0px, -6px);
@@ -1013,3 +1017,5 @@
   position: relative;
   z-index: 1;
 }
+
+*/

@@ -33,17 +33,20 @@ const StableSchema = new Schema({
         //required: true
     },
     
+    // Tom - New versions for image/images, treats image urls like strings for AWS. Do we want to implement this?
+    // image: { type: String },
+    // images: { type: Array },
+
+    // Tom - Different syntax from older version, kept it commented out just in case.
+    // tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
+    // horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
+
     // Tom - Old image version, kept it around just in case.
     // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
 
-    // Tom - New version, treats image like strings for AWS.
-    image: { type: String },
-
-    // Tom - Added, not sure if this syntax is correct?
-    images: { type: Array },
-
-    tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
-    horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
+    images:[{ type: Schema.Types.ObjectId, ref: 'images'}],           
+    tours:[{ type: Schema.Types.ObjectId, ref: 'tours'}],
+    horses:[{ type: Schema.Types.ObjectId, ref: 'horses'}]
 }, { timestamps: true }
 );
 

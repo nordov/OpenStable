@@ -16,6 +16,8 @@ const Schema = mongoose.Schema;
 
 const Stable = mongoose.model("stables");
 
+const Tour = mongoose.model("horses");
+
 const StableType = new GraphQLObjectType({
   name: "StableType",
   fields: () => ({
@@ -32,8 +34,11 @@ const StableType = new GraphQLObjectType({
       resolve(parentValue){
           return Stable.findById(parentValue.id)
             .populate("horses")
-            .then(stable => stable.horses)
-            .catch(err => null)
+            .then(stable => {
+              console.log(stable);
+              return stable.horses;
+            })
+            .catch(err => console.log(err));
       }
     },
     tours: { 
@@ -42,56 +47,79 @@ const StableType = new GraphQLObjectType({
           return Stable.findById(parentValue.id)
             .populate("tours")
             .then(stable => stable.tours)
-            .catch(err => null)
+            .catch(err => console.log(err));
       }
     }, 
 
-    // Tom - Boilerplate, should be adapted to multiple images once tested.
-    image: {
-      type: GraphQLString,
 
-      // Tom - Not sure if we need the rest of this since they're just url strings?
-      resolve(parentValue) {
-        let imageUrl;
-        if (parentValue.image) {
-          imageUrl = s3.getSignedUrl('getObject', {
-            Bucket: "aws-graphql-dev-testing",
-            Key: parentValue.image
-          });
-        }
-        return imageUrl || parentValue.image;
-      }
-    },
 
-    // Tom - Added this, took code directly from single image not sure if its right.
-    images: [
-      {
-        type: GraphQLString,
 
-        // Tom - Not sure if we need the rest of this since they're just url strings?
-        resolve(parentValue) {
-          let imageUrl;
-          if (parentValue.image) {
-            imageUrl = s3.getSignedUrl('getObject', {
-              Bucket: "aws-graphql-dev-testing",
-              Key: parentValue.image
-            });
-          }
-          return imageUrl || parentValue.image;
-        }
-      }
-    ]
+
+    // Tom - Boilerplate, should be adapted to multiple images once tested. Commented this out for now (on Sunday) to resolve merge conflict.
+    // image: {
+    //   type: GraphQLString,
+
+    //   // Tom - Not sure if we need the rest of this since they're just url strings?
+    //   resolve(parentValue) {
+    //     let imageUrl;
+    //     if (parentValue.image) {
+    //       imageUrl = s3.getSignedUrl('getObject', {
+    //         Bucket: "aws-graphql-dev-testing",
+    //         Key: parentValue.image
+    //       });
+    //     }
+    //     return imageUrl || parentValue.image;
+    //   }
+    // },
+
+    // // Tom - Added this, took code directly from single image not sure if its right.
+    // images: [
+    //   {
+    //     type: GraphQLString,
+
+    //     // Tom - Not sure if we need the rest of this since they're just url strings?
+    //     resolve(parentValue) {
+    //       let imageUrl;
+    //       if (parentValue.image) {
+    //         imageUrl = s3.getSignedUrl('getObject', {
+    //           Bucket: "aws-graphql-dev-testing",
+    //           Key: parentValue.image
+    //         });
+    //       }
+    //       return imageUrl || parentValue.image;
+    //     }
+    //   }
+    // ]
+
+
+
+
+
+
+    // image: {
+    //   type: GraphQLString,
+    //   resolve(parentValue) {
+    //     let imageUrl;
+    //     if (parentValue.image) {
+    //       imageUrl = s3.getSignedUrl('getObject', {
+    //         Bucket: "aws-graphql-dev-testing",
+    //         Key: parentValue.image
+    //       });
+    //     }
+    //     return imageUrl || parentValue.image;
+    //   }
+    // }
 
     // Tom - Old image code, just in case something breaks.
-    // images: {
-    //   type: new GraphQLList(require("./image_type")),
-    //   resolve(parentValue){
-    //       return Stable.findById(parentValue.id)
-    //         .populate("images")
-    //         .then(stable => stable.images)
-    //         .catch(err => null)
-    //   }
-    // },        
+    images: {
+      type: new GraphQLList(require("./image_type")),
+      resolve(parentValue){
+          return Stable.findById(parentValue.id)
+            .populate("images")
+            .then(stable => stable.images)
+            .catch(err => null);
+      }
+    },        
   })
 });
 

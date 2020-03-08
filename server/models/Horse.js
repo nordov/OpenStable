@@ -26,13 +26,12 @@ const HorseSchema = new Schema({
         //required: true
     },
     
-    // Tom - Old image version, kept it around just in case.
-    // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
-    
-    // Tom - New version, treats image like strings for AWS.
-    image: { type: String },
+    // Tom - New version, treats image like strings for AWS. Do we want to implement this or keep it as it is below?
+    // image: { type: String },
 
-    tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
+    // Tom - Do we want these to be capitalized and singular? (ie 'Image' instead of 'images')
+    images:[{ type: Schema.Types.ObjectId, ref: 'images'}],
+    tours:[{ type: Schema.Types.ObjectId, ref: 'tours'}],
 }, { timestamps: true }
 );
 

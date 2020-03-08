@@ -40,14 +40,17 @@ const TourSchema = new Schema({
     // Tom - Old image version, kept it around just in case.
     // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
 
-    // Tom - New version, treats image like strings for AWS.
-    image: { type: String },
+    // Tom - New version, treats image like strings for AWS. Not sure if this syntax is correct?
+    // image: { type: String },
+    // images: { type: Array },
 
-    // Tom - Added, not sure if this syntax is correct?
-    images: { type: Array },
+    // Tom - Older versions, kept them commented out just in case.
+    // horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
+    // reserved_horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
 
-    horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
-    reserved_horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}]
+    images:[{ type: Schema.Types.ObjectId, ref: 'images'}],
+    horses:[{ type: Schema.Types.ObjectId, ref: 'horses'}],
+    reserved_horses:[{ type: Schema.Types.ObjectId, ref: 'horses'}]
 }, { timestamps: true }
 );
 

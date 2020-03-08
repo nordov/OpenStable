@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== "production") {
   // const myConfig = new AWS.Config({ credentials: myCredentials })
   //const myCredentials = require("../../credentials.json");
   // comment the line below out to access the frontend
-  AWS.config.loadFromPath("./credentials.json");
+  // AWS.config.loadFromPath("./credentials.json");
 }
 
 const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
@@ -26,7 +26,7 @@ const singleFileUpload = async (source, targetName, res) => {
   // const Key = new Date().getTime().toString() + path.extname(targetName);
   // const result = await s3.upload(uploadParams).promise();
 
-  fs.readFile(source, function (err, filedata) {
+  fs.readFile(source, function(err, filedata) {
     if (!err) {
       const uploadParams = {
         // name of your bucket here
@@ -34,7 +34,7 @@ const singleFileUpload = async (source, targetName, res) => {
         Key: targetName,
         Body: filedata
       };
-      
+
       s3.putObject(uploadParams, function(err) {
         if (err) {
           console.log(err);
@@ -46,7 +46,7 @@ const singleFileUpload = async (source, targetName, res) => {
         }
       });
     }
-  })
+  });
 
   // const getUrl = targetName => {
   //   const params = { Bucket: "aws-graphql-dev-testing", Key: targetName };
