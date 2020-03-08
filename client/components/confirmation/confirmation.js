@@ -1,13 +1,47 @@
 import React, { Component } from 'react';
 import confirmationCSS from './confirmation.css';
 import ConfirmationTimer from './confirmation_timer';
+import SignUpModal from "../modals/signup_modal";
+import SignInModal from "../modals/signin_modal";
 
 class Confirmation extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      showSignUpModal: false,
+      showSignInModal: false
+    };
+
+    this.showSignUpModal = this.showSignUpModal.bind(this);
+    this.showSignInModal = this.showSignInModal.bind(this);
+  }
+
+  showSignUpModal() {
+    this.setState({ showSignUpModal: true });
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
+  }
+
+  showSignInModal() {
+    this.setState({ showSignInModal: true });
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
   }
 
   render() {
+    const signUpModal = (
+      <SignUpModal
+        closeModal={() => this.setState({ showSignUpModal: false })}
+      />
+    );
+    const signInModal = (
+      <SignInModal
+        closeModal={() => this.setState({ showSignInModal: false })}
+        changeModal={() =>
+          this.setState({ showSignInModal: false, showSignUpModal: true })
+        }
+      />
+    );     
     return (
       <div className="confirmation-full-page-container">
         <div className="confirmation-inner-container">
@@ -37,8 +71,9 @@ class Confirmation extends Component {
 
             {localStorage.getItem("auth-token") ? null : (
               <p>
-                <span>Sign in</span> or <span>sign up</span> to collect points
-                for this reservation
+                <span onClick={this.showSignInModal}>Sign in</span> or{" "}
+                <span onClick={this.showSignUpModal}>sign up</span> to collect
+                points for this reservation
               </p>
             )}
             <form className="confirmation-submit-form">
@@ -69,6 +104,8 @@ class Confirmation extends Component {
           </div>
           <div className="confirmation-margin-block"></div>
         </div>
+        {this.state.showSignUpModal ? signUpModal : null}
+        {this.state.showSignInModal ? signInModal : null}
       </div>
     );
   }
