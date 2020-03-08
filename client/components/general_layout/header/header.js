@@ -254,6 +254,8 @@ class Header extends Component {
               />
             </div>
           );
+        } else if (this.props.location.pathname === "/book") {
+          return null
         } else {
         // Splash page
         return (

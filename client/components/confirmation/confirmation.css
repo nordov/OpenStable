@@ -1,0 +1,55 @@
+.confirmation-full-page-container {
+  background-color: white;
+  border-top: 1px solid #EFEFEF;
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-inner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.confirmation-content-container {
+  border: 1px solid black;
+}
+
+.confirmation-content-container > h3 {
+  font-weight: 599;
+  font-family: Spartan;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+
+.confirmation-reservation-information-container {
+  display: flex;
+}
+
+.confirmation-reservation-information-container > img {
+  border-radius: 4px;
+}
+
+.confirmation-reservation-info {
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.confirmation-reservation-info > h1 {
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Spartan;
+  letter-spacing: -0.5px;
+}
+
+.confirmation-reservation-details {
+  display: flex;
+}
+
+.confirmation-margin-block {
+  width: 275px;
+  height: 590px;
+}
