@@ -13,13 +13,22 @@ class Confirmation extends Component {
           <div className="confirmation-content-container">
             <h3>You're almost done!</h3>
             <div className="confirmation-reservation-information-container">
-              <img height="100" src="https://resizer.otstatic.com/v2/photos/legacy/2/26143634.jpg"></img>
+              <img
+                height="100"
+                src="https://resizer.otstatic.com/v2/photos/legacy/2/26143634.jpg"
+              ></img>
               <div className="confirmation-reservation-info">
                 <h1>Crepe du Jour</h1>
                 <div className="confirmation-reservation-details">
-                  <p>Fri, Mar 13</p>
-                  <p>6:30 PM</p>
-                  <p>3 people</p>
+                  <i class="far fa-calendar">
+                    <p>Fri, Mar 13</p>
+                  </i>
+                  <i class="far fa-clock">
+                    <p>6:30 PM</p>
+                  </i>
+                  <i class="far fa-user">
+                    <p>3 people</p>
+                  </i>
                 </div>
               </div>
             </div>
@@ -29,18 +38,24 @@ class Confirmation extends Component {
                 <strong>1:00 minutes</strong>
               </p>
             </div>
-            <p>Sign in or sign up to collect points for this reservation</p>
+            <p>
+              <span>Sign in</span> or <span>sign up</span> to collect points for
+              this reservation
+            </p>
             <form className="confirmation-submit-form">
               <div className="confirmation-form-input">
                 <input type="text" placeholder="First name"></input>
                 <input type="text" placeholder="Last name"></input>
               </div>
               <div className="confirmation-form-input">
-                <input type="number" placeholder="Phone number"></input>
+                <input type="tel" placeholder="Phone number"></input>
                 <input type="email" placeholder="Email"></input>
               </div>
               <div className="confirmation-form-checkbox">
-                <input type="checkbox"></input>
+                <label className="confirmation-custom-checkmark">
+                  <input type="checkbox" />
+                  <span></span>
+                </label>
                 <p>
                   Sign me up to receive riding offers and news from this stable
                   by email.
