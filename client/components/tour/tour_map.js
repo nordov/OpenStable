@@ -49,7 +49,6 @@ class TourMap extends React.Component{
     }
     
     return(
-      <div>
         <Map google={this.props.google}
         zoom={17}
         style={this.props.mStyle}
@@ -72,7 +71,6 @@ class TourMap extends React.Component{
             gestureHandling="greedy"
             geodesic={true}/>
         </Map>
-      </div>
     )
   }
 };

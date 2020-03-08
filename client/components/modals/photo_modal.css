@@ -19,9 +19,9 @@
   border: 1px solid red;
   width: 600px;
   height: 600px;
-  background-color: yellow;
+  /* background-color: yellow; */
   position: fixed;
-  top: 35%;
+  top: 30%;
   display: flex;
   align-items: center;
   justify-content: center;

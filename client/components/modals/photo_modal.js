@@ -46,14 +46,17 @@ class PhotoModal extends React.Component{
   }
 
   render(){
-    const currentIdx = this.state.defaultIdx
-    console.log(currentIdx)
+    const currentIdx = this.state.defaultIdx;
+    const arrLength = this.imageArr.length;
+    const rightArrow = <div className="photo-modal-arrow" onClick={this.rightClick}>{'>'}</div>;
+    const leftArrow = <div className="photo-modal-arrow" onClick={this.leftClick}>{'<'}</div>;
+
     return(
       <div className="photo-modal-container" onClick={this.closeModal}>
         <div className="photo-modal-wrap">
-          <div className="photo-modal-arrow" onClick={this.leftClick}>{'<'}</div>
-          <img className="photo-modal-tile" src={this.imageArr[currentIdx].image_url} />
-          <div className="photo-modal-arrow" onClick={this.rightClick}>{'>'}</div>
+          { currentIdx === 0 ? null : leftArrow }
+          <img className="photo-modal-tile" src={this.imageArr[currentIdx].image_url} text={this.imageArr[currentIdx].image_text} />
+          { currentIdx === arrLength - 1 ? null : rightArrow }
         </div>
       </div>
     );

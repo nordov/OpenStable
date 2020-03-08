@@ -38,7 +38,7 @@ class Photos extends React.Component{
           {this.phImages.length} Photos
         </div>
         <div className="photos-block">
-          <ul className="pb">
+          <ul className="photos-block-list">
           {
             imgArr.map((img, idx) => {
             return (
