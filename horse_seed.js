@@ -461,10 +461,9 @@ const TOUR_DIFFICULTY = () => {
   return (Math.floor(Math.random() * 4) + 1);
 }
 
-const shuffle = (arr) => {
+const tomShuffle = (arr) => {
   let currIdx = arr.length;
   let tempVal, randIdx;
-
   while (currIdx > 0) {
     randIdx = Math.floor(Math.random() * currIdx);
     currIdx -= 1;
@@ -483,10 +482,10 @@ const createStables = (stables) => {
   for (let i = 0; i < stables.length; i++) {
     new Stable({
       name: stables[i].name,
-      address: stables[i].address,
-      description: stables[i].description,
-      images: shuffle(TOUR_IMAGES),
       image: stables[i].image,
+      images: tomShuffle(TOUR_IMAGES),
+      description: stables[i].description,
+      address: stables[i].address,
       state: stables[i].state,
       city: stables[i].city,
     }).save().then(stable => {
@@ -494,6 +493,7 @@ const createStables = (stables) => {
       console.log(`${stable.name} stable added.`);
     })
   }
+  console.log(`All stables added. <-----`)
 }
 
 const createTours = (tours) => {
@@ -502,7 +502,7 @@ const createTours = (tours) => {
     new Tour({
       name: tours[i].name,
       image: tours[i].image,
-      images: shuffle(TOUR_IMAGES),
+      images: tomShuffle(TOUR_IMAGES),
       stable: TOUR_IDS[Math.floor(Math.random() * TOUR_IDS.length)],
       terrain: `${TOUR_TERRAIN[Math.floor(Math.random() * TOUR_TERRAIN.length)]} / ${TOUR_TERRAIN[Math.floor(Math.random() * TOUR_TERRAIN.length)]}`,
       description: TOUR_DESCRIPTIONS[Math.floor(Math.random() * TOUR_DESCRIPTIONS.length)],
@@ -515,6 +515,7 @@ const createTours = (tours) => {
       console.log(`${tour.name} tour added.`)
     })
   }
+  console.log(`All tours added. <-----`)
 }
 
 const createHorses = (horses) => {
@@ -535,6 +536,7 @@ const createHorses = (horses) => {
       console.log(`${horse.name} horse added.`)
     })
   }
+  console.log(`All horses added. <-----`)
 }
 
 
@@ -545,9 +547,13 @@ const createHorses = (horses) => {
 
 // Seeding functions are envoked below with starter arrays. ----------------------------------------------------------
 
+console.log(`Seeding started. <----------`)
+
 createStables(STABLE_STARTERS);
 createTours(TOUR_STARTERS);
 createHorses(HORSE_STARTERS);
+
+console.log(`Seeding finished. <----------`)
 
 
 
