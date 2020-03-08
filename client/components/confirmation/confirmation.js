@@ -34,7 +34,7 @@ class Confirmation extends Component {
             </div>
             <div className="confirmation-table-hold-container">
               <p>
-                We're holding this table for you for{" "}
+                We're holding this table for you for
                 <strong>1:00 minutes</strong>
               </p>
             </div>
