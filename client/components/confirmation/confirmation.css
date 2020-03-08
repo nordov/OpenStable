@@ -89,7 +89,7 @@
   margin-left: 12px;
 }
 
-.confirmation-content-container > p:nth-of-type(1) {
+.confirmation-timer-container > p:nth-of-type(1) {
   font-size: 15px;
   font-weight: 500;
 } 
@@ -160,7 +160,7 @@
   content: '\2713';
   background: #DA3742;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   position: relative;
   top: -1;
 }
@@ -186,7 +186,7 @@
   background-color: #B8222C;
 }
 
-.confirmation-content-container > p:nth-of-type(2) {
+.confirmation-policy {
   margin-top: 16px;
   font-size: 13px;
   color: #787B84;
@@ -211,4 +211,17 @@
 
 .confirmation-table-hold-container2 > p {
   margin-left: 12px;
+}
+
+@media only screen and (min-height: 882px) {
+  .confirmation-full-page-container {
+    height: 72%;
+  }
+}
+
+@media only screen and (min-height: 912px) {
+  .confirmation-full-page-container {
+    height: 80%;
+    align-items: center;
+  }
 }

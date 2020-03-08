@@ -33,17 +33,14 @@ class Confirmation extends Component {
                 </div>
               </div>
             </div>
-            {/* <div className="confirmation-table-hold-container">
-              <p>
-                We're holding this table for you for
-                <strong>1:00 minutes</strong>
-              </p>
-            </div> */}
             <ConfirmationTimer />
-            <p>
-              <span>Sign in</span> or <span>sign up</span> to collect points for
-              this reservation
-            </p>
+
+            {localStorage.getItem("auth-token") ? null : (
+              <p>
+                <span>Sign in</span> or <span>sign up</span> to collect points
+                for this reservation
+              </p>
+            )}
             <form className="confirmation-submit-form">
               <div className="confirmation-form-input">
                 <input type="text" placeholder="First name"></input>
@@ -65,7 +62,7 @@ class Confirmation extends Component {
               </div>
               <input type="submit" value="Complete Reservation"></input>
             </form>
-            <p>
+            <p className="confirmation-policy">
               By clicking "Complete reservation" you agree to OpenStable's Terms
               of Use and Privacy Policy.
             </p>

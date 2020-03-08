@@ -6,7 +6,7 @@ class ConfirmationTimer extends Component {
     super(props)
     this.state = {
       minutes: '5',
-      seconds: '00' 
+      seconds: '00'
     }
 
     this.tick = this.tick.bind(this);
@@ -30,7 +30,7 @@ class ConfirmationTimer extends Component {
     }
 
     if (min === 0 & sec === 0) {
-      clearInterval(this.timerCountdown)
+      return clearInterval(this.timerCountdown)
     }
 
     this.secondsRemaining--
@@ -45,6 +45,7 @@ class ConfirmationTimer extends Component {
   render() {
     let minutesPlural;
     if (this.state.minutes > 1) minutesPlural = "minutes";
+    else if (this.state.minutes === 0) minutesPlural = "seconds";
     else minutesPlural = "minute"
 
     console.log(this.state)
@@ -75,16 +76,7 @@ class ConfirmationTimer extends Component {
     }
 
     return (
-      <div>
-        {/* <p>
-          We're holding this table for you for{" "}
-          <strong>
-            {this.state.minutes.toString() +
-              ":" +
-              this.state.seconds.toString()}{" "}
-            {minutesPlural}
-          </strong>
-        </p> */}
+      <div className="confirmation-timer-container">
         {timerBlock}
       </div>
     );
