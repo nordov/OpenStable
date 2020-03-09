@@ -387,7 +387,7 @@ class Header extends Component {
                     <input 
                       value={this.state.location}
                       onChange={this.update("location")} 
-                      placeholder="Location" 
+                      placeholder="Search Bay Area" 
                     />
                   </div>
                   <button className="splash-anim-form-submit" type="submit" onClick={() => this.props.history.push("/search")}>
