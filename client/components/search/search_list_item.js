@@ -28,11 +28,11 @@ class SearchListItem extends React.Component {
                   <span>Neighborhood</span>
                 </div>
                 <div className="search-li-timeslots-container">
-                  <a href="#">6:30 PM</a>
-                  <a href="#">6:45 PM</a>
-                  <a href="#">7:00 PM</a>
-                  <a href="#">7:15 PM</a>
-                  <a href="#">7:30 PM</a>
+                  <a href="#/book">6:30 PM</a>
+                  <a href="#/book">6:45 PM</a>
+                  <a href="#/book">7:00 PM</a>
+                  <a href="#/book">7:15 PM</a>
+                  <a href="#/book">7:30 PM</a>
                 </div>
               </div>
             </li>
