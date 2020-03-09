@@ -171,7 +171,7 @@ class BayAreaCarousel extends Component {
           >
             <ul id="carousel-ul">
               <li id="first-li" className="primary-li">
-                <img src="https://mk0nationaltodayijln.kinstacdn.com/wp-content/uploads/2019/12/national-horse-day-640x514.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_0.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's</h2>
                   <h3>Ratings placeholder</h3>
@@ -189,7 +189,7 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="second-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_2.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's</h2>
                   <h3>Ratings placeholder</h3>
@@ -206,7 +206,7 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="third-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_4.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's</h2>
                   <h3>Ratings placeholder</h3>
@@ -223,7 +223,7 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="fourth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's</h2>
                   <h3>Ratings placeholder</h3>
@@ -240,7 +240,7 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="first-li" className="secondary-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_5.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's2</h2>
                   <h3>Ratings placeholder</h3>
@@ -258,7 +258,7 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="sixth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_7.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's2</h2>
                   <h3>Ratings placeholder</h3>
@@ -275,7 +275,7 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="seventh-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_8.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's2</h2>
                   <h3>Ratings placeholder</h3>
@@ -292,7 +292,7 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="eigth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_11.png"></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>Soby's2</h2>
                   <h3>Ratings placeholder</h3>
