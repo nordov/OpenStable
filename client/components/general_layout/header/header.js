@@ -263,7 +263,7 @@ class Header extends Component {
           <div>
             <div id="elem3-opened" className="splash-image-animation-container city-image">
               <div className="splash-animation-text-container">
-                <h1>Find your stable for any occasion</h1>
+                <h1 class="city-header-h1">Find Bay Area Stables</h1>
                 <form className="splash-anim-selects">
                   <div className="splash-anim-select-container">
                     <div
