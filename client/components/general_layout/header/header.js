@@ -34,7 +34,7 @@ class Header extends Component {
       if (this.props.location.pathname === "/") {
         const calendar = document.getElementById("calendar-container");
         calendar.className = "calendar-full-container";
-      } else if (this.props.location.pathname === "/search") {
+      } else if (this.props.location.pathname === "/search" || this.props.location.pathname === "/bayarea") {
         const calendar = document.getElementById(
           "calendar-full-container-hidden-search"
           );
@@ -57,7 +57,7 @@ class Header extends Component {
         if (this.props.location.pathname === "/") {
           const calendar = document.getElementById("calendar-container");
           calendar.className = "calendar-full-container-hidden";
-        } else if (this.props.location.pathname === "/search") {
+        } else if (this.props.location.pathname === "/search" || this.props.location.pathname === "/bayarea") {
           const calendar = document.getElementById(
             "calendar-full-container-search"
           );
@@ -75,7 +75,7 @@ class Header extends Component {
               if (this.props.location.pathname === "/") {
                 const calendar = document.getElementById("calendar-container");
                 calendar.className = "calendar-full-container-hidden";
-              } else if (this.props.location.pathname === "/search") {
+              } else if (this.props.location.pathname === "/search" || this.props.location.pathname === "/bayarea") {
                 const calendar = document.getElementById(
                   "calendar-full-container-search"
                 );
@@ -108,7 +108,7 @@ class Header extends Component {
 
     render() {
         // Search Page
-        if (this.props.location.pathname === '/search') {
+        if (this.props.location.pathname === '/search' || this.props.location.pathname === "/bayarea") {
           return (
             <div>
               <div id="elem3-opened" className="header-image-search-container">
