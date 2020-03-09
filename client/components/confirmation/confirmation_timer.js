@@ -48,7 +48,6 @@ class ConfirmationTimer extends Component {
     else if (this.state.minutes === 0) minutesPlural = "seconds";
     else minutesPlural = "minute"
 
-    console.log(this.state)
     let timerBlock;
     if (this.state.minutes === 0 && this.state.seconds === "00") {
       timerBlock = (
