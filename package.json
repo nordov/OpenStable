@@ -4,7 +4,9 @@
   "description": "GraphQL/Dockers group Project",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --ignore client"
+    "dev": "nodemon index.js --ignore client",
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,9 @@
   "dependencies": {
     "apollo-boost": "^0.4.7",
     "apollo-cache-inmemory": "^1.6.5",
+    "apollo-link": "^1.2.13",
+    "apollo-link-error": "^1.1.12",
+    "apollo-link-http": "^1.5.16",
     "aws-sdk": "^2.634.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

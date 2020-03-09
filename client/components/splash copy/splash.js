@@ -174,7 +174,6 @@ class Splash extends Component {
   }
 
   render() {
-    console.log(this.state.selectedDate)
     const signUpModal = <SignUpModal closeModal={() => this.setState({ showSignUpModal: false })} />
     const signInModal = <SignInModal 
                           closeModal={() => this.setState({ showSignInModal: false })} 

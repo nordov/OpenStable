@@ -156,7 +156,6 @@ class PopularCarousel extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="splash-popular-full-container">
         <div className="splash-popular-inner-container">
