@@ -50,7 +50,7 @@ class Confirmation extends Component {
             <div className="confirmation-reservation-information-container">
               <img
                 height="100"
-                src="https://resizer.otstatic.com/v2/photos/legacy/2/26143634.jpg"
+                src="static/images/newyork.jpeg"
               ></img>
               <div className="confirmation-reservation-info">
                 <h1>Crepe du Jour</h1>
