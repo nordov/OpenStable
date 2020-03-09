@@ -235,11 +235,13 @@ div.search-time_people-p {
 /* Tom - CSS for bay area page */
 
 .city-image {
-  background-image: url('https://sfchamber.com/wp-content/uploads/2017/11/merlin_136702122_448a1ddc-b5e9-4303-bc0d-701c9addf3f3-superJumbo.jpg');
+  /* background-image: url('https://sfchamber.com/wp-content/uploads/2017/11/merlin_136702122_448a1ddc-b5e9-4303-bc0d-701c9addf3f3-superJumbo.jpg'); */
+  /* background-image: url('https://images.squarespace-cdn.com/content/5a1dda174c326df2710b8e91/1546044497907-X1JHPS8O1W9IQQJQ34DU/James+Winnie-Engagement+Photos-0176.jpg?content-type=image%2Fjpeg'); */
+  background-image: url('https://img4.goodfon.com/wallpaper/nbig/c/c8/koni-loshadi-beg-voda-bryzgi-zakat.jpg');
   background-position: center;
   background-size: cover;
 }
 
 .city-header-h1 {
-  text-shadow: 3px 3px 10px rgba(0,0,0,.6);
+  text-shadow: 3px 3px 12px rgba(100,100,100,.9);
 }

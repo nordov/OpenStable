@@ -1,5 +1,6 @@
 import React from 'react';
 import './cities.css';
+import BayAreaCarousel from "../bayarea_stables/bayarea_stables_carousel";
 
 class Cities extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Cities extends React.Component {
   render() {
     return (
       <div>
-        <h1>Cities</h1>
+        <BayAreaCarousel />
       </div>
     )
   }
