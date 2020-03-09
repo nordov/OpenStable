@@ -95,7 +95,7 @@ class Confirmation extends Component {
                   by email.
                 </p>
               </div>
-              <input type="submit" value="Complete Reservation"></input>
+              <input onClick={() => this.props.history.push("/")} type="submit" value="Complete Reservation"></input>
             </form>
             <p className="confirmation-policy">
               By clicking "Complete reservation" you agree to OpenStable's Terms
