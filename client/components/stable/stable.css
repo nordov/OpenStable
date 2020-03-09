@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
-    border: 0.5px solid red;
+    /* border: 0.5px solid red; */
 }
 
 /* Stable main content area */
@@ -30,53 +30,66 @@
     display: block;
 }
 
-.stable-navigation ul{
-    display: flex;
-    flex-direction: row;
-    height: 48px;
-    background-color: white;
-    border-radius: 2px 2px 0 0;
-    padding: 0 .5rem;
-    border-bottom: 1px solid #d8d9db;
+    .stable-navigation ul{
+        display: flex;
+        flex-direction: row;
+        height: 48px;
+        background-color: white;
+        border-radius: 2px 2px 0 0;
+        padding: 0 .5rem;
+        border-bottom: 1px solid #d8d9db;
+    }
+
+        .stable-navigation ul::before{
+            content: "";
+            position: absolute;
+            right: 1rem;
+            bottom: 0;
+            left: 1rem;
+            
+        }
+
+        .stable-navigation ul li{
+            width: 25%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+        }
+
+            .stable-navigation ul li a:hover{
+                color: #da3743;
+                border-bottom: 2px solid #da3743;
+
+            }
+
+
+.stable-block {
+    margin-bottom: 15px;
 }
 
-.stable-navigation ul::before{
-    content: "";
-    position: absolute;
-    right: 1rem;
-    bottom: 0;
-    left: 1rem;
-    
-}
+    .stable-block h2 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        color: #2d333f;
+        border-bottom: 1px solid #d8d9db;
+        margin: 0 0 16px 0;
+    }
 
-.stable-navigation ul li{
-    width: 25%;
-    text-align: center;
-}
+    .stable-block h3 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        color: #2d333f;
+        margin: 5px 0;
+    }    
 
-    
-
-.stable-navigation ul li a{
-    color: #2d333f;
-    padding: 14px .5rem;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-}
-
-.stable-navigation ul li a:hover{
-    color: #da3743;
-    border-bottom: 2px solid #da3743;
-
-}
 
 /* Stable Overview Area */
 .stable-overview {
-    
+    background-color: white;
 }
 
 .title{
@@ -97,11 +110,73 @@
     line-height: 24px;
 }
 
+.tours{
+    background-color: white;
+}
+
+    .tour-listing{
+        display: flex;
+        flex-direction: row;
+        max-height: 125px;
+        border: 1px solid #d2d2d3;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+        .tour-listing:hover {
+            background-color: #f1f2f3;
+        }    
+
+        .tour-image img{
+            width: 100px;
+            height: 125px;
+            object-fit: cover;
+            margin-right: 10px;
+            
+        }
+
+        .tour-detail-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+            .tour-detail button {
+                background-color: red;
+                color: white;
+                font-weight: 600;
+                border-radius: 5px;
+                border: none;
+                line-height: 20px;
+                display: block;
+                margin: 0 auto;
+            }        
+
+        .tour-detail ul{
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+        }
+
+            .tour-detail li {
+                display: flex;
+                flex-direction: row;
+                font-weight: 600;
+                line-height: 24px;
+            }
+
+                .tour-detail li i{
+                    font-weight: 500;
+                    margin: 0 5px 0 15px;
+                    font-size: 12px;
+                }
+
 /* Stable sidebar details area */
 
 .stable-details{
     width: 320px;
 }
+
 /* Sidebar */
 .stable-sidebar{
   border: 1px solid red;
