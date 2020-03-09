@@ -82,6 +82,7 @@
   margin-right: 25px;
   transition: background-color 0.3s;
   transition-timing-function: ease-out;
+  cursor: pointer;
 }
 
 .splash-auth-container > a:hover {
@@ -284,6 +285,7 @@
   width: 157px;
   border-right: 1px solid #EBEBEB;
   padding-left: 8px;
+  cursor: pointer;
 }
 
 .con2 {
@@ -413,7 +415,7 @@
 /* Sign Up Modal CSS */
 
 .splash-modal-full-container-signup {
-  height: 100vh;
+  height: 102vh;
   width: 100vw;
   position: absolute;
   top: 0;

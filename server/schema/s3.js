@@ -1,12 +1,23 @@
+// const AWS = require("aws-sdk");
+// if (process.env.NODE_ENV !== "production") {
+//   AWS.config.loadFromPath("./credentials.json");;
+// }
+// const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
+
 const AWS = require("aws-sdk");
+// const myCredentials = require("../../credentials.json");
 const fs = require("fs");
 // const myCredentials = require("../../credentials.json");
 
 if (process.env.NODE_ENV !== "production") {
+  // const myConfig = new AWS.Config({ credentials: myCredentials })
+  //const myCredentials = require("../../credentials.json");
   // comment the line below out to access the frontend
   // AWS.config.loadFromPath("./credentials.json");
 }
+
 const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
+
 
 const singleFileUpload = async (source, targetName, res) => {
   // const { filename, mimetype, createReadStream } = await file;

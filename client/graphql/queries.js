@@ -7,6 +7,19 @@ export default {
       isLoggedIn @client
     }
   `,
+  FETCH_STABLES: gql`
+    query FetchStables {
+      stables {
+        id,
+        name,
+        address,
+        description,
+        image,
+        state,
+        city
+      }
+    }
+  `,
   FETCH_STABLE: gql`
     query FetchStable($id: ID!){
       stable(id: $id){

@@ -1,0 +1,227 @@
+.confirmation-full-page-container {
+  background-color: white;
+  border-top: 1px solid #EFEFEF;
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-inner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.confirmation-content-container {
+  width: 66%;
+  height: 589px;
+}
+
+.confirmation-content-container > h3 {
+  font-weight: 599;
+  font-family: Spartan;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+
+.confirmation-reservation-information-container {
+  display: flex;
+}
+
+.confirmation-reservation-information-container > img {
+  border-radius: 4px;
+}
+
+.confirmation-reservation-info {
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.confirmation-reservation-info > h1 {
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Spartan;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.confirmation-reservation-details {
+  display: flex;
+  margin-top: 15px;
+}
+
+.confirmation-margin-block {
+  width: 334px;
+  height: 590px;
+}
+
+.confirmation-reservation-details > i {
+  display: flex;
+  font-size: 18px;
+  width: 132px;
+}
+
+.confirmation-reservation-details p {
+  margin-left: 10px;
+  font-family: Spartan;
+  font-size: 14px;
+  font-weight: 500;
+  align-self: center;
+  margin-top: 4px;
+}
+
+.confirmation-table-hold-container {
+  background-color: #EEF8FB;
+  border-radius: 3px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-family: Spartan;
+  margin-top: 17px;
+  margin-bottom: 37px;
+  width: 638px;
+}
+
+.confirmation-table-hold-container > p {
+  margin-left: 12px;
+}
+
+.confirmation-timer-container > p:nth-of-type(1) {
+  font-size: 15px;
+  font-weight: 500;
+} 
+
+.confirmation-content-container span {
+  color: red;
+  cursor: pointer;
+}
+
+.confirmation-content-container span:hover {
+  text-decoration: underline;
+}
+
+.confirmation-form-input > input {
+  height: 48px;
+  width: 308px;
+  margin: 13px 16px 4px 0px;
+  border-radius: 3px;
+  border: 1px solid rgb(213, 211, 211);
+  font-size: 15px;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.confirmation-form-input > input:hover {
+  border: 1px solid black;
+}
+
+.confirmation-form-checkbox {
+  font-size: 14px;
+  display: flex;
+  font-weight: 300;
+  align-items: center;
+  margin: 15px 3px;
+}
+
+.confirmation-custom-checkmark {
+  display: inline;
+}
+
+.confirmation-custom-checkmark > input[type=checkbox]:checked + .confirmation-custom-checkmark:before {
+  background: red;
+}
+
+.confirmation-custom-checkmark > input {
+  visibility: hidden;
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.confirmation-custom-checkmark > span {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 3px;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.confirmation-custom-checkmark > input[type=checkbox]:checked {
+  background-color: #DA3742;
+}
+
+.confirmation-custom-checkmark > input[type=checkbox]:checked + span:before {
+  content: '\2713';
+  background: #DA3742;
+  color: white;
+  font-size: 17px;
+  position: relative;
+  top: -1;
+}
+
+.confirmation-form-checkbox > p {
+  margin-left: 6px;
+}
+
+.confirmation-submit-form > input {
+  width: 632px;
+  height: 49px;
+  color: white;
+  background-color: #D4333F;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: ease-out .3s background-color;
+  margin-top: 8px;
+}
+
+.confirmation-submit-form > input:hover {
+  background-color: #B8222C;
+}
+
+.confirmation-policy {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #787B84;
+}
+
+.confirmation-table-hold-container strong {
+  font-weight: 600;
+}
+
+.confirmation-table-hold-container2 {
+  background-color: #FCEFEE;
+  border-radius: 3px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-family: Spartan;
+  margin-top: 17px;
+  margin-bottom: 37px;
+  width: 638px;
+}
+
+.confirmation-table-hold-container2 > p {
+  margin-left: 12px;
+}
+
+@media only screen and (min-height: 882px) {
+  .confirmation-full-page-container {
+    height: 72%;
+  }
+}
+
+@media only screen and (min-height: 912px) {
+  .confirmation-full-page-container {
+    height: 80%;
+    align-items: center;
+  }
+}
