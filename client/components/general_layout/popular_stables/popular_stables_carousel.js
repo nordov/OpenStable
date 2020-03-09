@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //import resetCSS from "../reset.css";
 import popularStablesCSS from "./popular_stables.css";
+import { withRouter } from 'react-router-dom';
 
 class PopularCarousel extends Component {
   constructor(props) {
@@ -170,7 +171,11 @@ class PopularCarousel extends Component {
             onScroll={this.handleScroll}
           >
             <ul id="carousel-ul">
-              <li id="first-li" className="primary-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="first-li"
+                className="primary-li"
+              >
                 <img src={this.props.stables[1].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[1].name}</h2>
@@ -195,7 +200,10 @@ class PopularCarousel extends Component {
                   }}
                 ></div>
               </li>
-              <li id="second-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="second-li"
+              >
                 <img src={this.props.stables[2].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[2].name}</h2>
@@ -219,7 +227,10 @@ class PopularCarousel extends Component {
                   }}
                 ></div>
               </li>
-              <li id="third-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="third-li"
+              >
                 <img src={this.props.stables[3].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[3].name}</h2>
@@ -243,7 +254,10 @@ class PopularCarousel extends Component {
                   }}
                 ></div>
               </li>
-              <li id="fourth-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="fourth-li"
+              >
                 <img src={this.props.stables[4].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[4].name}</h2>
@@ -267,7 +281,11 @@ class PopularCarousel extends Component {
                   }}
                 ></div>
               </li>
-              <li id="first-li" className="secondary-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="first-li"
+                className="secondary-li"
+              >
                 <img src={this.props.stables[5].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[5].name}</h2>
@@ -292,7 +310,10 @@ class PopularCarousel extends Component {
                   }}
                 ></div>
               </li>
-              <li id="sixth-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="sixth-li"
+              >
                 <img src={this.props.stables[6].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[6].name}</h2>
@@ -316,7 +337,10 @@ class PopularCarousel extends Component {
                   }}
                 ></div>
               </li>
-              <li id="seventh-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="seventh-li"
+              >
                 <img src={this.props.stables[7].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[7].name}</h2>
@@ -340,7 +364,10 @@ class PopularCarousel extends Component {
                   }}
                 ></div>
               </li>
-              <li id="eigth-li">
+              <li
+                onClick={() => this.props.history.push("/stable")}
+                id="eigth-li"
+              >
                 <img src={this.props.stables[8].image}></img>
                 <div className="carousel-li-bottom-holder">
                   <h2>{this.props.stables[8].name}</h2>
@@ -390,4 +417,4 @@ class PopularCarousel extends Component {
   }
 }
 
-export default PopularCarousel;
+export default withRouter(PopularCarousel);
