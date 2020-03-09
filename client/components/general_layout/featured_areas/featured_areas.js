@@ -21,21 +21,21 @@ class FeaturedAreas extends Component {
                 <li id="featured-first-img">
                   <img src="/static/images/newyork.jpeg"></img>
                   <div className="overlay">
-                    <h3>New York Area</h3>
+                    <h3>Marin Headlands</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li>
                   <img src="/static/images/chicago.jpeg"></img>
                   <div className="overlay">
-                    <h3>Chicago</h3>
+                    <h3>Golden Gate Park</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li id="featured-last-img">
                   <img src="/static/images/losangeles.jpeg"></img>
                   <div className="overlay">
-                    <h3>Los Angeles</h3>
+                    <h3>Richmond / San Pablo</h3>
                     <p>stables</p>
                   </div>
                 </li>
@@ -44,21 +44,21 @@ class FeaturedAreas extends Component {
                 <li id="featured-first-img">
                   <img src="/static/images/sanfrancisco.jpeg"></img>
                   <div className="overlay">
-                    <h3>San Francisco</h3>
+                    <h3>Oakland Hills / Tilden</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li>
                   <img src="/static/images/miami.jpeg"></img>
                   <div className="overlay">
-                    <h3>Miami</h3>
+                    <h3>Alemeda / Hayward</h3>
                     <p>stables</p>
                   </div>
                 </li>
                 <li id="featured-last-img">
                   <img src="/static/images/lasvegas.jpeg"></img>
                   <div className="overlay">
-                    <h3>Las Vegas</h3>
+                    <h3>South San Francisco</h3>
                     <p>stables</p>
                   </div>
                 </li>
@@ -67,20 +67,20 @@ class FeaturedAreas extends Component {
           </div>
           <div className="splash-featured-text-container">
             <div>
-              <p>Atlanta</p>
-              <p>Los Angelos</p>
+              <p>Marin Headlands</p>
+              <p>Mill Valley / San Rafael</p>
             </div>
             <div>
-              <p>Houston</p>
-              <p>San Francisco</p>
+              <p>Richmond / San Pablo</p>
+              <p>Oakland Hills / Tilden</p>
             </div>
             <div>
-              <p>New York</p>
-              <p>Miami</p>
+              <p>Alemeda / Hayward</p>
+              <p>South San Francisco</p>
             </div>
             <div>
-              <p>Chicago</p>
-              <p>Las Vegas</p>
+              <p>Daly City / Merced</p>
+              <p>Golden Gate Park</p>
             </div>
           </div>
         </div>
