@@ -29,6 +29,7 @@ const StableType = new GraphQLObjectType({
     state: { type: GraphQLString },
     longitude: { type: GraphQLFloat },
     latitude: { type: GraphQLFloat },
+    image: { type: GraphQLString },
     horses: { 
       type: new GraphQLList(require("./horse_type")),
       resolve(parentValue){

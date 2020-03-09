@@ -55,7 +55,7 @@ class NavDropdown extends Component {
                     localStorage.removeItem("auth-token");
                     localStorage.removeItem("fname");
                     client.writeData({ data: { isLoggedIn: false } });
-                    this.props.history.push("/");
+                    this.props.history.push(this.props.location.pathname);
                   }}
                 >
                   <p
@@ -65,7 +65,7 @@ class NavDropdown extends Component {
                       localStorage.removeItem("auth-token");
                       localStorage.removeItem("fname");
                       client.writeData({ data: { isLoggedIn: false } });
-                      this.props.history.push("/");
+                      this.props.history.push(this.props.location.pathname);
                     }}
                   >
                     Sign Out

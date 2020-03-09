@@ -34,7 +34,7 @@ const StableSchema = new Schema({
     },
     
     // Tom - New versions for image/images, treats image urls like strings for AWS. Do we want to implement this?
-    // image: { type: String },
+    image: { type: String },
     // images: { type: Array },
 
     // Tom - Different syntax from older version, kept it commented out just in case.

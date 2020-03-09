@@ -8,6 +8,7 @@ import Splash from "../../splash/splash";
 import Stable from "../../stable/stable";
 import Tour from '../../tour/tour';
 import Search from '../../search/search';
+import Confirmation from '../../confirmation/confirmation';
 
 import { Query } from "react-apollo";
 import Queries from "../../../graphql/queries";
@@ -29,6 +30,7 @@ class Main extends Component {
           <Route exact path="/stable" component={Stable} />
           <Route exact path="/tour" component={Tour} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/book" component={Confirmation} />
           <Footer />
         </div>
       </div>
