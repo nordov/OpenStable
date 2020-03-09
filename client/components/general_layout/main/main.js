@@ -31,6 +31,7 @@ class Main extends Component {
           <Route exact path="/tour" component={Tour} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/book" component={Confirmation} />
+          <Route exact path="/bayarea" component={Cities} />
           <Footer />
         </div>
       </div>
