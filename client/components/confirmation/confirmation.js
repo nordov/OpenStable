@@ -50,10 +50,10 @@ class Confirmation extends Component {
             <div className="confirmation-reservation-information-container">
               <img
                 height="100"
-                src="static/images/newyork.jpeg"
+                src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/tour_5.png"
               ></img>
               <div className="confirmation-reservation-info">
-                <h1>Crepe du Jour</h1>
+                <h1>Bay Area Ridge Trail</h1>
                 <div className="confirmation-reservation-details">
                   <i className="far fa-calendar">
                     <p>Fri, Mar 13</p>
@@ -95,7 +95,11 @@ class Confirmation extends Component {
                   by email.
                 </p>
               </div>
-              <input onClick={() => this.props.history.push("/")} type="submit" value="Complete Reservation"></input>
+              <input
+                onClick={() => this.props.history.push("/")}
+                type="submit"
+                value="Complete Reservation"
+              ></input>
             </form>
             <p className="confirmation-policy">
               By clicking "Complete reservation" you agree to OpenStable's Terms
