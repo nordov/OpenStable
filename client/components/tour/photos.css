@@ -25,7 +25,9 @@
   justify-content: space-evenly;
 }
   .photos-block-list li{
+    display: flex;
     border: 1px solid red;
     width: fit-content;
     height: fit-content;
+    padding: 5px 5px 5px 5px;
   }
