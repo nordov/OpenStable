@@ -10,7 +10,6 @@ const { FETCH_STABLES } = Queries;
 class Splash extends Component {
 
   render() {
-
     return (
       <Query query={FETCH_STABLES}>
         {({ loading, error, data }) => {
@@ -25,13 +24,6 @@ class Splash extends Component {
         }}
       </Query>
     )
-                     
-    // return (
-    //   <div>
-    //     <PopularCarousel />
-    //     <FeaturedAreas />
-    //   </div>
-    // );
   }
 }
 
