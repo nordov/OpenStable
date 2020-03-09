@@ -171,11 +171,11 @@ class BayAreaCarousel extends Component {
           >
             <ul id="carousel-ul">
               <li id="first-li" className="primary-li">
-                <img src="https://mk0nationaltodayijln.kinstacdn.com/wp-content/uploads/2019/12/national-horse-day-640x514.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_16.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Aspen</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>An excitable 4 year old with a faint star marking on his face, and his four leg markings consist of a sock on his right front leg...</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -189,11 +189,11 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="second-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_14.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Charlie</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>A reserved 11 year old with an interrupted blaze marking on her face, and her four leg markings consist of nothing on her right...</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -206,11 +206,11 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="third-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Elijah</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>A sweet 8 year old with a stripe and snip marking on her face, and her four leg markings consist of a half stocking on her right...</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -223,11 +223,11 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="fourth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_4.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Andy</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>A lovable 6 year old with a stripe marking on his face, and his four leg markings consist of nothing on his right front leg, a half...</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -240,11 +240,11 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="first-li" className="secondary-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_13.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Massie</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>A is an intelligent 2 year old with a faint star marking on her face, and her four leg markings consist of a sock on her right front...</p>
                 </div>
                 <div
                   id="secondary-li"
@@ -258,11 +258,11 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="sixth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_7.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Trevor</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>A calm 5 year old with a star and stripe marking on his face, and his four leg markings consist of nothing on his right front leg...</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -275,11 +275,11 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="seventh-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_15.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Cricket</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>A beautiful 7 year old with a star and stripe marking on her face, and her four leg markings consist of nothing on her right front leg...</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -292,11 +292,11 @@ class BayAreaCarousel extends Component {
                 ></div>
               </li>
               <li id="eigth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png"></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>Sandie</h2>
+                  {/* <h3>Ratings placeholder</h3> */}
+                  <p>A sweet 5 year old with a star and snip marking on his face, and his four leg markings consist of nothing on his right front leg...</p>
                 </div>
                 <div
                   className="carousel-holder-div"
