@@ -8,6 +8,7 @@ import Splash from "../../splash/splash";
 import Stable from "../../stable/stable";
 import Tour from '../../tour/tour';
 import Search from '../../search/search';
+import Cities from '../cities/cities';
 import Confirmation from '../../confirmation/confirmation';
 
 import { Query } from "react-apollo";
@@ -31,6 +32,7 @@ class Main extends Component {
           <Route exact path="/tour" component={Tour} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/book" component={Confirmation} />
+          <Route exact path="/bayarea" component={Cities} />
           <Footer />
         </div>
       </div>
