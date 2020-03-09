@@ -23,7 +23,6 @@ class SignInModal extends Component {
   }
 
   updateCache(client, { data }) {
-    console.log(data);
     client.writeData({
       data: { isLoggedIn: data.login.loggedIn, userFirstName: data.login.fname }
     });
@@ -47,7 +46,7 @@ class SignInModal extends Component {
           localStorage.setItem("auth-token", token);
           localStorage.setItem("fname", fname)
           this.props.closeModal();
-          this.props.history.push("/")
+          this.props.history.push(this.props.location.pathname);
         }}
         update={(client, data) => this.updateCache(client, data)}
       >

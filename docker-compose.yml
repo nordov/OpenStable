@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  web:
+      build: .
+      image: skhan1211/openstable
+      ports: 
+        - 5000:5000
+      environment:
+        - MONGO_URI=mongodb+srv://slack:YIzBxuMTeFSK5sxS@cluster0-wbklx.mongodb.net/openstable?retryWrites=true&w=majority
+        - SECRET_OR_KEY=d383c39d-d96c-4e26-9ddc-80191a010ce4
+        - MAP_API=AIzaSyAIqbPh_xVkDoj_56nRyngpudGW1-oSs6g
+        - NODE_ENV=production

@@ -31,7 +31,19 @@ const StableSchema = new Schema({
     latitude: {
         type: Number,
         //required: true
-    }, 
+    },
+    
+    // Tom - New versions for image/images, treats image urls like strings for AWS. Do we want to implement this?
+    image: { type: String },
+    // images: { type: Array },
+
+    // Tom - Different syntax from older version, kept it commented out just in case.
+    // tours:[{ type: Schema.Types.ObjectId, ref: 'Tour'}],
+    // horses:[{ type: Schema.Types.ObjectId, ref: 'Horse'}],
+
+    // Tom - Old image version, kept it around just in case.
+    // images:[{ type: Schema.Types.ObjectId, ref: 'Image'}],
+
     images:[{ type: Schema.Types.ObjectId, ref: 'images'}],           
     tours:[{ type: Schema.Types.ObjectId, ref: 'tours'}],
     horses:[{ type: Schema.Types.ObjectId, ref: 'horses'}]

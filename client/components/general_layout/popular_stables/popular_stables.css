@@ -172,3 +172,46 @@
 .carousel-li-bottom-holder > h2 {
   font-weight: 600;
 }
+
+.carousel-holder-div {
+  cursor: pointer;
+}
+
+.carousel-li-bottom-holder {
+  display: flex;
+  flex-direction: column;
+  margin: 13px 0px 0px 8px;
+}
+
+.carousel-ratings-container {
+  display: flex;
+  height: 35px;
+  align-items: center;
+}
+
+.carousel-ratings-container > i:last-of-type {
+  color: #D8D8DB;
+}
+
+.carousel-ratings-container > i {
+  color: #DA3742;
+}
+
+.carousel-ratings-container > p {
+  color: #6F737B;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: Spartan;
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+.carousel-li-bottom-holder > h2 {
+  font-size: 15px;
+}
+
+.carousel-li-bottom-holder > p {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+}

@@ -5,6 +5,7 @@ import SignInModal from '../../modals/signin_modal';
 import NavDropdown from './nav_dropdown';
 import { Query } from "react-apollo";
 import Queries from "../../../graphql/queries";
+import { withRouter } from 'react-router-dom';
 
 
 class NavBar extends Component {
@@ -31,9 +32,12 @@ class NavBar extends Component {
             const elem2 = document.getElementById("elem2");
             const elem3 = document.getElementById("elem3-opened");
             const elem4 = document.getElementById("elem4");
+
             elem1.id = "splash-dropdown-inner-container-opened";
             elem2.id = "splash-drop-p-opened";
-            elem3.id = "elem3-opened";
+            if (this.props.location.pathname !== '/book') {
+                elem3.id = "elem3-opened";
+            }
             elem4.id = "elem4-opened";
 
             document.getElementById("test").addEventListener("click", this.closeNavDropdown);
@@ -84,7 +88,6 @@ class NavBar extends Component {
     }
 
     render() {
-
         const signUpModal = <SignUpModal closeModal={() => this.setState({ showSignUpModal: false })} />
         const signInModal = <SignInModal
             closeModal={() => this.setState({ showSignInModal: false })}
@@ -159,7 +162,7 @@ class NavBar extends Component {
                     </div>
                     <div className="splash-auth-container">
                         <button onClick={this.showSignUpModal}>Sign up</button>
-                        <a href="#" onClick={this.showSignInModal}>
+                        <a onClick={this.showSignInModal}>
                             Sign in
                 </a>
                     </div>
@@ -171,4 +174,4 @@ class NavBar extends Component {
     }
 }//End of class NavBar
 
-export default NavBar;
+export default withRouter(NavBar);
