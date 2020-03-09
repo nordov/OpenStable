@@ -6,7 +6,7 @@ import Queries from "../../../graphql/queries";
 import CalendarWidget from "../calendar/calendar";
 import { withRouter } from 'react-router-dom';
 
-// const SFImage = "https://images.squarespace-cdn.com/content/5a1dda174c326df2710b8e91/1546044497907-X1JHPS8O1W9IQQJQ34DU/James+Winnie-Engagement+Photos-0176.jpg?content-type=image%2Fjpeg";
+const SFImage = "https://images.squarespace-cdn.com/content/5a1dda174c326df2710b8e91/1546044497907-X1JHPS8O1W9IQQJQ34DU/James+Winnie-Engagement+Photos-0176.jpg?content-type=image%2Fjpeg";
 // const SFImage = "https://sfchamber.com/wp-content/uploads/2017/11/merlin_136702122_448a1ddc-b5e9-4303-bc0d-701c9addf3f3-superJumbo.jpg";
 
 class Header extends Component {
