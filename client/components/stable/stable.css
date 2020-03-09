@@ -61,7 +61,6 @@
             .stable-navigation ul li a:hover{
                 color: #da3743;
                 border-bottom: 2px solid #da3743;
-
             }
 
 
@@ -179,11 +178,11 @@
 
 /* Sidebar */
 .stable-sidebar{
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
   .stable-sidebar-map-wrap{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 310px;
     width: 310px;
   }
