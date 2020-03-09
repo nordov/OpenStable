@@ -156,6 +156,7 @@ class PopularCarousel extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="splash-popular-full-container">
         <div className="splash-popular-inner-container">
@@ -171,11 +172,18 @@ class PopularCarousel extends Component {
           >
             <ul id="carousel-ul">
               <li id="first-li" className="primary-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[1].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[1].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>12 reviews</p>
+                  </div>
+                  <p>Booked 5 times today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -189,11 +197,18 @@ class PopularCarousel extends Component {
                 ></div>
               </li>
               <li id="second-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[2].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[2].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>10 reviews</p>
+                  </div>
+                  <p>Booked 12 times today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -206,11 +221,18 @@ class PopularCarousel extends Component {
                 ></div>
               </li>
               <li id="third-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[3].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[3].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>10 reviews</p>
+                  </div>
+                  <p>Booked 1 times today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -223,11 +245,18 @@ class PopularCarousel extends Component {
                 ></div>
               </li>
               <li id="fourth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[4].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[4].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>9 reviews</p>
+                  </div>
+                  <p>Booked 2 times today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -240,11 +269,18 @@ class PopularCarousel extends Component {
                 ></div>
               </li>
               <li id="first-li" className="secondary-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[5].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[5].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>4 review</p>
+                  </div>
+                  <p>Booked 3 times today</p>
                 </div>
                 <div
                   id="secondary-li"
@@ -258,11 +294,18 @@ class PopularCarousel extends Component {
                 ></div>
               </li>
               <li id="sixth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[6].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[6].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>11 reviews</p>
+                  </div>
+                  <p>Booked 21 times today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -275,11 +318,18 @@ class PopularCarousel extends Component {
                 ></div>
               </li>
               <li id="seventh-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[7].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[7].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>18 reviews</p>
+                  </div>
+                  <p>Booked 3 times today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
@@ -292,11 +342,18 @@ class PopularCarousel extends Component {
                 ></div>
               </li>
               <li id="eigth-li">
-                <img src="https://images.otstatic.com/prod/25898919/1/medium.jpg"></img>
+                <img src={this.props.stables[8].image}></img>
                 <div className="carousel-li-bottom-holder">
-                  <h2>Soby's2</h2>
-                  <h3>Ratings placeholder</h3>
-                  <p>Booked x times today</p>
+                  <h2>{this.props.stables[8].name}</h2>
+                  <div className="carousel-ratings-container">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <p>10 reviews</p>
+                  </div>
+                  <p>Booked 12 times today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
