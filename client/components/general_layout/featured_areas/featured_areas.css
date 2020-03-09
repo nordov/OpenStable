@@ -209,3 +209,15 @@
     margin: 0 0 4% 0;
   }
 }
+
+
+/* Tom - CSS for cities section */
+
+.city-text-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.city-picture-text-link {
+  text-decoration: none;
+}
