@@ -102,7 +102,7 @@ class Search extends React.Component {
               </div>
               <div className="search-right-side-container">
                 <div className="search-top-header-container">
-                  <h3>3 stables available</h3>
+                  <h3>9 stables available</h3>
                   <button>
                     <p>Featured</p>
                     <i className="fas fa-angle-down"></i>

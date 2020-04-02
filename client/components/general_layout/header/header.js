@@ -21,8 +21,8 @@ class Header extends Component {
         new Date().toString().split(" ")[2] +
         ", " +
         new Date().toString().split(" ")[3],
-      selectedTime: "7:00AM",
-      selectedPeople: "1 person",
+      selectedTime: "7:00PM",
+      selectedPeople: "2 person",
       location: ''
     };
 
