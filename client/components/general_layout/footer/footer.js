@@ -21,7 +21,7 @@ class Footer extends Component {
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
-              <a href="#">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/thesuhaibkhan/" target="_blank">LinkedIn</a>
             </div>
           </div>
           <div className="footer-programmer-container">
@@ -34,7 +34,7 @@ class Footer extends Component {
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
-              <a href="#">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/mishevong/" target="_blank">LinkedIn</a>
             </div>
           </div>
           <div className="footer-programmer-container">
@@ -47,7 +47,7 @@ class Footer extends Component {
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
-              <a href="#">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/nordov/" target="_blank">LinkedIn</a>
             </div>
           </div>
           <div className="footer-programmer-container">
@@ -60,7 +60,7 @@ class Footer extends Component {
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
-              <a href="#">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/tombetthauser/" target="_blank">LinkedIn</a>
             </div>
           </div>
         </div>
