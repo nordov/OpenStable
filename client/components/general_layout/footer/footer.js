@@ -60,7 +60,7 @@ class Footer extends Component {
             </div>
             <div className="footer-github-img">
               <img src="/static/images/linkedin.png" width="25"></img>
-              <a href="#">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/tombetthauser/">LinkedIn</a>
             </div>
           </div>
         </div>
