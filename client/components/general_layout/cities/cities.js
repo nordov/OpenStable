@@ -5,6 +5,7 @@ import BayAreaCarousel from "../bayarea_stables/bayarea_stables_carousel";
 import { Query } from 'react-apollo';
 import Queries from '../../../graphql/queries'
 import SearchListItem from '../../search/search_list_item';
+import { Link } from 'react-router-dom';
 
 
 
@@ -53,9 +54,11 @@ class Cities extends React.Component {
                     {
                       this.shuffle(data.stables).map(stable => (
                         <li>
-                          <img className="cities-stables-image" src={stable.image}></img>
+                          <Link to="/book">
+                            <img className="cities-stables-image" src={stable.image}></img>
+                          </Link>
                           <div className="search-li-container">
-                            <a href="#">{stable.name}</a>
+                            <a href="#/book">{stable.name}</a>
                             <div className="search-ratings-container">
                               <i className="fas fa-star"></i>
                               <i className="fas fa-star"></i>

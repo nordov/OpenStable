@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //import resetCSS from "../reset.css";
 import "./bayarea_stables_carousel.css";
+import { Link } from 'react-router-dom';
 
 class BayAreaCarousel extends Component {
   constructor(props) {
@@ -171,142 +172,158 @@ class BayAreaCarousel extends Component {
           >
             <ul id="carousel-ul">
               <li id="first-li" className="primary-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_16.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Aspen</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">An excitable 4 year old with a faint star marking on his face, and his four leg markings consist of a sock on his right front leg...</p>
-                </div>
-                <div
-                  className="carousel-holder-div"
-                  id="primary-li"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("primary-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("primary-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_16.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Aspen</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">An excitable 4 year old with a faint star marking on his face, and his four leg markings consist of a sock on his right front leg...</p>
+                  </div>
+                  <div
+                    className="carousel-holder-div"
+                    id="primary-li"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("primary-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("primary-li");
+                    }}
+                    ></div>
+                  </Link>
               </li>
               <li id="second-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_14.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Charlie</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">A reserved 11 year old with an interrupted blaze marking on her face, and her four leg markings consist of nothing on her right...</p>
-                </div>
-                <div
-                  className="carousel-holder-div"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("second-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("second-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_14.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Charlie</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">A reserved 11 year old with an interrupted blaze marking on her face, and her four leg markings consist of nothing on her right...</p>
+                  </div>
+                  <div
+                    className="carousel-holder-div"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("second-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("second-li");
+                    }}
+                  ></div>
+                </Link>
               </li>
               <li id="third-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Elijah</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">A sweet 8 year old with a stripe and snip marking on her face, and her four leg markings consist of a half stocking on her right...</p>
-                </div>
-                <div
-                  className="carousel-holder-div"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("third-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("third-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Elijah</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">A sweet 8 year old with a stripe and snip marking on her face, and her four leg markings consist of a half stocking on her right...</p>
+                  </div>
+                  <div
+                    className="carousel-holder-div"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("third-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("third-li");
+                    }}
+                  ></div>
+                </Link>
               </li>
               <li id="fourth-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_4.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Andy</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">A lovable 6 year old with a stripe marking on his face, and his four leg markings consist of nothing on his right front leg, a half...</p>
-                </div>
-                <div
-                  className="carousel-holder-div"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("fourth-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("fourth-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_4.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Andy</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">A lovable 6 year old with a stripe marking on his face, and his four leg markings consist of nothing on his right front leg, a half...</p>
+                  </div>
+                  <div
+                    className="carousel-holder-div"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("fourth-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("fourth-li");
+                    }}
+                  ></div>
+                </Link>
               </li>
               <li id="first-li" className="secondary-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_13.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Massie</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">A is an intelligent 2 year old with a faint star marking on her face, and her four leg markings consist of a sock on her right front...</p>
-                </div>
-                <div
-                  id="secondary-li"
-                  className="carousel-holder-div"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("secondary-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("secondary-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_13.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Massie</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">A is an intelligent 2 year old with a faint star marking on her face, and her four leg markings consist of a sock on her right front...</p>
+                  </div>
+                  <div
+                    id="secondary-li"
+                    className="carousel-holder-div"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("secondary-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("secondary-li");
+                    }}
+                  ></div>
+                </Link>
               </li>
               <li id="sixth-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_7.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Trevor</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">A calm 5 year old with a star and stripe marking on his face, and his four leg markings consist of nothing on his right front leg...</p>
-                </div>
-                <div
-                  className="carousel-holder-div"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("sixth-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("sixth-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_7.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Trevor</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">A calm 5 year old with a star and stripe marking on his face, and his four leg markings consist of nothing on his right front leg...</p>
+                  </div>
+                  <div
+                    className="carousel-holder-div"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("sixth-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("sixth-li");
+                    }}
+                  ></div>
+                </Link>
               </li>
               <li id="seventh-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_15.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Cricket</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">A beautiful 7 year old with a star and stripe marking on her face, and her four leg markings consist of nothing on her right front leg...</p>
-                </div>
-                <div
-                  className="carousel-holder-div"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("seventh-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("seventh-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_15.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Cricket</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">A beautiful 7 year old with a star and stripe marking on her face, and her four leg markings consist of nothing on her right front leg...</p>
+                  </div>
+                  <div
+                    className="carousel-holder-div"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("seventh-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("seventh-li");
+                    }}
+                  ></div>
+                </Link>
               </li>
               <li id="eigth-li">
-                <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png"></img>
-                <div className="carousel-li-bottom-holder">
-                  <h2>Sandie</h2>
-                  {/* <h3>Ratings placeholder</h3> */}
-                  <p className="carousel-li-p">A sweet 5 year old with a star and snip marking on his face, and his four leg markings consist of nothing on his right front leg...</p>
-                </div>
-                <div
-                  className="carousel-holder-div"
-                  onMouseEnter={() => {
-                    this.upwardAnimation("eigth-li");
-                  }}
-                  onMouseLeave={() => {
-                    this.leaveAnimation("eigth-li");
-                  }}
-                ></div>
+                <Link className="cities-carosel-link" to="/book">
+                  <img src="https://open-stable-app-dev.s3-us-west-1.amazonaws.com/horse_3.png"></img>
+                  <div className="carousel-li-bottom-holder">
+                    <h2>Sandie</h2>
+                    {/* <h3>Ratings placeholder</h3> */}
+                    <p className="carousel-li-p">A sweet 5 year old with a star and snip marking on his face, and his four leg markings consist of nothing on his right front leg...</p>
+                  </div>
+                  <div
+                    className="carousel-holder-div"
+                    onMouseEnter={() => {
+                      this.upwardAnimation("eigth-li");
+                    }}
+                    onMouseLeave={() => {
+                      this.leaveAnimation("eigth-li");
+                    }}
+                  ></div>
+                </Link>
               </li>
             </ul>
           </div>

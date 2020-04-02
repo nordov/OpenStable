@@ -54,10 +54,13 @@
   /* max-width: 150px !important; */
 }
 
+.cities-carosel-link {
+  text-decoration: none;
+  color: #222;
+}
+
 @media only screen and (max-width: 1600px) {
   .search-right-side-container {
     width: 950px !important;
   }
 }
-
-/* 1600px */
