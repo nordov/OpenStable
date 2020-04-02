@@ -14,6 +14,23 @@ class Cities extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
+  shuffle(array) {
+      var currentIndex = array.length;
+      var temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+  }
+
   render() {
     const { FETCH_STABLES } = Queries;
     
@@ -27,12 +44,16 @@ class Cities extends React.Component {
             return (
               <div className="search-full-body-container">
                 <div className="search-right-side-container">
-                  {/* <SearchListItem stables={data.stables} /> */}
+                <div className="splash-popular-top-heading">
+                  <h1>Bay Area Stables</h1>
+                  <a href="#">View all</a>
+                </div>
+                  <div className="splash-popular-divider"></div>
                   <ul>
                     {
-                      data.stables.map(stable => (
+                      this.shuffle(data.stables).map(stable => (
                         <li>
-                          <img src={stable.image}></img>
+                          <img className="cities-stables-image" src={stable.image}></img>
                           <div className="search-li-container">
                             <a href="#">{stable.name}</a>
                             <div className="search-ratings-container">
@@ -54,6 +75,8 @@ class Cities extends React.Component {
                               <a href="#/book">7:15 PM</a>
                               <a href="#/book">7:30 PM</a>
                             </div>
+                            <p className="cities-stable-description-p">{stable.description}</p>
+                            <p className="cities-stable-address-p">{stable.address} – {stable.city}, {stable.state}</p>
                           </div>
                         </li>
                       ))
