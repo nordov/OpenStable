@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js --ignore client",
     "start": "node index.js",
+    "heroku-prebuild": "npm install --dev",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "repository": {
