@@ -33,6 +33,9 @@ class Header extends Component {
     this.closeCalendarImmediately = this.closeCalendarImmediately.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleSearchFormSubmit = this.handleSearchFormSubmit.bind(this);
+    this.locationUnclick = this.locationUnclick.bind(this);
+    this.locationClick = this.locationClick.bind(this);
+    this.setLocation = this.setLocation.bind(this);
   }
 
   openCalendar() {
@@ -135,6 +138,30 @@ class Header extends Component {
         location: this.state.location
       }
     });
+  }
+
+  locationClick() {
+    const dropdown = document.getElementsByClassName("search-input-dropdown-lis-hidden");
+    const dropdownUl = document.getElementById("search-drop");
+    while (dropdown.length) {
+      dropdown[0].className = "search-input-dropdown-lis"
+    }
+    dropdownUl.style.opacity = "1";
+    document.getElementById("test").addEventListener("click", this.locationUnclick)
+  }
+
+  locationUnclick() {
+    const dropdown = document.getElementsByClassName("search-input-dropdown-lis");
+    const dropdownUl = document.getElementById("search-drop");
+    while (dropdown.length) {
+      dropdown[0].className = "search-input-dropdown-lis-hidden"
+    }
+    dropdownUl.style.opacity = "0";
+    document.getElementById("test").removeEventListener("click", this.locationUnclick)
+  }
+
+  setLocation() {
+    this.setState({ location: event.target.innerText });
   }
 
     render() {
@@ -363,7 +390,15 @@ class Header extends Component {
                               value={this.state.location}
                               onChange={this.update("location")}
                               placeholder="Search Bay Area"
+                              onClick={this.locationClick}
                             />
+                            <div className="search-input-dropdown">
+                              <ul id="search-drop">
+                                <li className="search-input-dropdown-lis-hidden" onClick={this.setLocation}>San Francisco</li>
+                                <li className="search-input-dropdown-lis-hidden" onClick={this.setLocation}>Daly City</li>
+                                <li className="search-input-dropdown-lis-hidden" onClick={this.setLocation}>Mill Valley</li>
+                              </ul>
+                            </div>
                           </div>
                           <button className="splash-anim-form-submit" type="submit" onClick={(event) => this.handleFormSubmit(event, client)}>
                             Let's go
@@ -491,7 +526,15 @@ class Header extends Component {
                             value={this.state.location}
                             onChange={this.update("location")}
                             placeholder="Location"
+                            onClick={this.locationClick}
                           />
+                          <div className="search-input-dropdown">
+                            <ul id="search-drop">
+                                <li className="search-input-dropdown-lis-hidden" onClick={this.setLocation}>San Francisco</li>
+                                <li className="search-input-dropdown-lis-hidden" onClick={this.setLocation}>Daly City</li>
+                                <li className="search-input-dropdown-lis-hidden" onClick={this.setLocation}>Mill Valley</li>
+                              </ul>
+                          </div>
                         </div>
                         <button className="splash-anim-form-submit" type="submit">
                           Let's go
