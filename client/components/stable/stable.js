@@ -64,11 +64,11 @@ class Stable extends Component{
                       </p>
                       <ul>
                         <li>
-                          <i class="far fa-hourglass"></i>
+                          <i className="fa fa-hourglass-o"></i>
                           Duration
                         </li>
                         <li>
-                          <i class="fas fa-signal"></i><i class="fas fa-signal"></i>
+                          <i className="fa fa-signal"></i>
                           Difficulty
                         </li>
                         <li>
