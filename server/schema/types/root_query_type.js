@@ -1,5 +1,5 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLList, GraphQLNonNull, GraphQLID} = graphql;
+const { GraphQLObjectType, GraphQLList, GraphQLNonNull, GraphQLID, GraphQLString } = graphql;
 const mongoose = require('mongoose');
 
 //Import User type
@@ -49,6 +49,13 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
       resolve(parentValue, { id }) {
         return Stable.findById(id);
+      }
+    },
+    stablesbycity: {
+      type: new GraphQLList(StableType),
+      args: { city: { type: GraphQLString } },
+      resolve(parentValue, { city }) {
+        return Stable.find({ city })
       }
     },
     tours: {

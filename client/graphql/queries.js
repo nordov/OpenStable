@@ -38,4 +38,25 @@ export default {
       }
     }
   `,
-};
+  GET_SELECTED: gql`
+    query GetSelected {
+      selectedDate @client,
+      selectedTime @client,
+      selectedPeople @client,
+      location @client
+    }
+  `,
+  FETCH_STABLES_BY_CITY: gql`
+    query FetchStablesByCity($city: String!) {
+      stablesbycity(city: $city) {
+        id,
+        name,
+        description,
+        address,
+        city,
+        state,
+        image
+      }
+    }
+  `
+};  
