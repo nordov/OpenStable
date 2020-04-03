@@ -144,6 +144,7 @@ class Header extends Component {
     const dropdown = document.getElementsByClassName("search-input-dropdown-lis-hidden");
     const dropdownUl = document.getElementById("search-drop");
     while (dropdown.length) {
+      dropdown[0].style.visibility = "visible";
       dropdown[0].className = "search-input-dropdown-lis"
     }
     dropdownUl.style.opacity = "1";
@@ -151,13 +152,16 @@ class Header extends Component {
   }
 
   locationUnclick() {
-    const dropdown = document.getElementsByClassName("search-input-dropdown-lis");
-    const dropdownUl = document.getElementById("search-drop");
-    while (dropdown.length) {
-      dropdown[0].className = "search-input-dropdown-lis-hidden"
-    }
-    dropdownUl.style.opacity = "0";
-    document.getElementById("test").removeEventListener("click", this.locationUnclick)
+    setTimeout(() => {
+      const dropdown = document.getElementsByClassName("search-input-dropdown-lis");
+      const dropdownUl = document.getElementById("search-drop");
+      while (dropdown.length) {
+        dropdown[0].style.visibility = "hidden";
+        dropdown[0].className = "search-input-dropdown-lis-hidden"
+      }
+      dropdownUl.style.opacity = "0";
+      document.getElementById("test").removeEventListener("click", this.locationUnclick)
+    }, 10)
   }
 
   setLocation() {
