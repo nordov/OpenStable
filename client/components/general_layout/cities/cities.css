@@ -51,12 +51,12 @@
 
 .cities-stable-description-p {
   margin-top: 20px;
-  font-family: sans-serif;
-  font-size: 12px;
   line-height: 15px;
   max-width: 400px;
-  /* white-space: wrap !important; */
   display: block;
+  font-family: Spartan;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .cities-stable-address-p {

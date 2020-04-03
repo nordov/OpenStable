@@ -69,7 +69,7 @@ class Cities extends React.Component {
                             </div>
                             <div className="search-li-info-container">
                               <span>$$</span>
-                              <span>Neighborhood</span>
+                              <span>{stable.city}</span>
                             </div>
                             <div className="search-li-timeslots-container">
                               <a href="#/book">6:30 PM</a>

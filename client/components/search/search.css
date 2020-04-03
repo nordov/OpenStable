@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   background-color: white;
+  min-height: 652px;
 }
 
 .search-left-side-container {
