@@ -30,7 +30,7 @@ class Search extends React.Component {
 
   componentDidMount() {
     const searchCalendar = document.getElementById("calendar-container");
-    searchCalendar.id = "calendar-full-container-hidden-search";
+    if (searchCalendar) searchCalendar.id = "calendar-full-container-hidden-search";
   }
 
   mapStablesToState(data) {
