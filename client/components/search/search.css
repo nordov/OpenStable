@@ -180,7 +180,7 @@
   width: 752px;
   display: flex;
   justify-content: space-between;
-  height: 78px;
+  height: 55px;
   border-bottom: 1px solid #F0F2F4;
   margin: 0 12px;
   align-items: center;
@@ -408,4 +408,19 @@
   #search-drop {
     width: 107.7%;
   }
+}
+
+.search-correct-input {
+  margin: 19px 0px 0px 11px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-correct-input span {
+  color: #db3642;
+}
+
+.search-second-span:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }

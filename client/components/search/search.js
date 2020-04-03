@@ -9,7 +9,9 @@ const availableCities = [
   "san francisco", "daly city", "mill valley", 
   "sanfrancisco", "dalycity", "millvalley",
   "San Francisco", "Daly City", "Mill Valley",
-  "SAN FRANCISCO", "DALY CITY", "MILL VALLEY"
+  "SAN FRANCISCO", "DALY CITY", "MILL VALLEY",
+  "San francisco", "Daly city", "Mill valley",
+  "san Francisco", "daly City", "mill Valley"
 ];
 
 class Search extends React.Component {
@@ -22,6 +24,8 @@ class Search extends React.Component {
       selectedPeople: "",
       location: ""
     }
+
+    this.handleCorrectInput = this.handleCorrectInput.bind(this);
   }
 
   componentDidMount() {
@@ -44,14 +48,32 @@ class Search extends React.Component {
   }
 
   selectCorrectCity(locationText) {
-    if (["san francisco", "sanfrancisco", "San Francisco", "SAN FRANCISCO"].includes(locationText)) {
+    if (["san francisco", "sanfrancisco", "San Francisco", "SAN FRANCISCO", "san Francisco", "San francisco"].includes(locationText)) {
       return "San Francisco";
-    } else if (["daly city", "dalycity", "Daly City", "DALY CITY"].includes(locationText)) {
+    } else if (["daly city", "dalycity", "Daly City", "DALY CITY", "Daly city", "daly City"].includes(locationText)) {
       return "Daly City";
-    } else if (["mill valley", "millvalley", "Mill Valley", "MILL VALLEY"].includes(locationText)) {
+    } else if (["mill valley", "millvalley", "Mill Valley", "MILL VALLEY", "mill Valley", "Mill valley"].includes(locationText)) {
       return "Mill Valley";
     } else {
       return locationText;
+    }
+  }
+
+  correctInputClick(event, client) {
+    client.writeData({ data: { location: event.target.innerText } });
+  }
+
+  handleCorrectInput() {
+    if (this.state.location === "") {
+      return <h1 className="search-correct-input">All Results</h1>
+    } else if (this.selectCorrectCity(this.state.location) !== "San Francisco" && 
+                this.selectCorrectCity(this.state.location) !== "Daly City" && 
+                this.selectCorrectCity(this.state.location) !== "Mill Valley")  {
+      return <h1 className="search-correct-input">
+        No results for "{this.state.location}", try: <span>"<span onClick={() => this.correctInputClick(event, this.props.client)} className="search-second-span">San Francisco</span>"</span>, <span>"<span onClick={() => this.correctInputClick(event, this.props.client)} className="search-second-span">Daly City</span>"</span>, or <span>"<span onClick={() => this.correctInputClick(event, this.props.client)}  className="search-second-span">Mill Valley</span>"</span>
+              </h1>
+    } else {
+      return <h1 className="search-correct-input">Results for "{this.selectCorrectCity(this.state.location)}"</h1>;
     }
   }
 
@@ -108,28 +130,7 @@ class Search extends React.Component {
                             <input type="checkbox" />
                             <span></span>
                           </label>
-                          <span>Neighborhood1</span>
-                        </div>
-                        <div className="search-neighborhood-inputs">
-                          <label className="search-custom-checkmark">
-                            <input type="checkbox" />
-                            <span></span>
-                          </label>
-                          <span>Neighborhood2</span>
-                        </div>
-                        <div className="search-neighborhood-inputs">
-                          <label className="search-custom-checkmark">
-                            <input type="checkbox" />
-                            <span></span>
-                          </label>
-                          <span>Neighborhood3</span>
-                        </div>
-                        <div className="search-neighborhood-inputs">
-                          <label className="search-custom-checkmark">
-                            <input type="checkbox" />
-                            <span></span>
-                          </label>
-                          <span>Neighborhood4</span>
+                          <span>Bay Area</span>
                         </div>
                         <div className="search-divider-line"></div>
                       </div>
@@ -148,6 +149,7 @@ class Search extends React.Component {
                       </div>
                     </div>
                     <div className="search-right-side-container">
+                      {this.handleCorrectInput()}
                       <div className="search-top-header-container">
                         <h3>{this.state.stables.length} stables available</h3>
                         <button>
