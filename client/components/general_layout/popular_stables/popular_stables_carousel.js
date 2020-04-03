@@ -187,7 +187,7 @@ class PopularCarousel extends Component {
                     <i className="fas fa-star"></i>
                     <p>12 reviews</p>
                   </div>
-                  <p>Booked 5 times today</p>
+                  <p>Booked 5 times just today</p>
                 </div>
                 <div
                   className="carousel-holder-div"
