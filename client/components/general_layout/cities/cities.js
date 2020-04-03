@@ -44,7 +44,7 @@ class Cities extends React.Component {
             if (error) return <p>Error: `${error}`</p>;
             return (
               <div className="search-full-body-container">
-                <div className="search-right-side-container">
+                <div className="search-right-side-container2">
                 <div className="splash-popular-top-heading">
                   <h1>Bay Area Stables</h1>
                   <a href="#">View all</a>

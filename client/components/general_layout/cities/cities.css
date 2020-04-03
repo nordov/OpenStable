@@ -6,9 +6,30 @@
   margin-top: 0px;
 }
 
-.search-right-side-container {
+.search-right-side-container2 {
   width: 1200px !important;
+  width: 768px;
   /* white-space: nowrap; */
+}
+
+.search-right-side-container2 img {
+  border-radius: 4px;
+  height: 201px;
+  width: 201px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.search-right-side-container2 li {
+  display: flex;
+  padding: 14px 0px 14px 0px;
+  margin-left: 14px;
+  border-bottom: 1px solid #F0F2F4;
+}
+
+.search-right-side-container2 > ul {
+  margin-top: 12px;
+  padding-bottom: 20px;
 }
 
 .splash-popular-full-container {
