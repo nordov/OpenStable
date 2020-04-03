@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchCSS from './search.css';
+import { withRouter } from 'react-router-dom';
 
 class SearchListItem extends React.Component {
   constructor(props) {
@@ -45,9 +46,9 @@ class SearchListItem extends React.Component {
         {
           this.props.stables.map(stable => (
             <li key={stable.id}>
-              <img src={stable.image}></img>
+              <img src={stable.image} onClick={() => this.props.history.push("/stable")}></img>
               <div className="search-li-container">
-                <a href="#">{stable.name}</a>
+                <a href="/#/stable">{stable.name}</a>
                 <div className="search-ratings-container">
                   <i className="fas fa-star"></i>
                   <i className="fas fa-star"></i>
@@ -78,4 +79,4 @@ class SearchListItem extends React.Component {
   }
 }
 
-export default SearchListItem;
+export default withRouter(SearchListItem);
