@@ -5,6 +5,12 @@ import { Query, withApollo } from 'react-apollo';
 import Queries from '../../graphql/queries'
 
 const { FETCH_STABLES, GET_SELECTED, FETCH_STABLES_BY_CITY } = Queries;
+const availableCities = [
+  "san francisco", "daly city", "mill valley", 
+  "sanfrancisco", "dalycity", "millvalley",
+  "San Francisco", "Daly City", "Mill Valley",
+  "SAN FRANCISCO", "DALY CITY", "MILL VALLEY"
+];
 
 class Search extends React.Component {
   constructor(props) {
@@ -37,11 +43,23 @@ class Search extends React.Component {
     })
   }
 
+  selectCorrectCity(locationText) {
+    if (["san francisco", "sanfrancisco", "San Francisco", "SAN FRANCISCO"].includes(locationText)) {
+      return "San Francisco";
+    } else if (["daly city", "dalycity", "Daly City", "DALY CITY"].includes(locationText)) {
+      return "Daly City";
+    } else if (["mill valley", "millvalley", "Mill Valley", "MILL VALLEY"].includes(locationText)) {
+      return "Mill Valley";
+    } else {
+      return locationText;
+    }
+  }
+
   render() {
     let query;
-    this.state.location === '' ? query = FETCH_STABLES : query = FETCH_STABLES_BY_CITY;
+    !availableCities.includes(this.state.location) ? query = FETCH_STABLES : query = FETCH_STABLES_BY_CITY;
     return (
-      <Query query={query} variables={{city: this.state.location}}>
+      <Query query={query} variables={{city: this.selectCorrectCity(this.state.location)}}>
         {({ loading, error, data }) => {
           if (loading) return <p>Loading...</p>;
           if (error) return <p>Error: `${error}`</p>;
@@ -126,13 +144,6 @@ class Search extends React.Component {
                             <span></span>
                           </label>
                           <span>Newly Added Stables</span>
-                        </div>
-                        <div className="search-neighborhood-inputs">
-                          <label className="search-custom-checkmark">
-                            <input type="checkbox" />
-                            <span></span>
-                          </label>
-                          <span>7:00 PM Only</span>
                         </div>
                       </div>
                     </div>
